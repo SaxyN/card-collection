@@ -14,14 +14,15 @@ const styles = makeStyles((theme) => ({
     },
     normalBack: {
         transition: "box-shadow 0.1s ease-out",
+        overflow: "hidden",
         "&:hover": {
-            // boxShadow: "-20px -20px 20px -5px white, 0px 0px 10px -2px white, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
+            boxShadow: "0 0 30px -5px white,0 0 10px -2px white, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
         }
     },
     holoBack: {
         transition: "box-shadow 0.1s ease-out",
         "&:hover": {
-            // boxShadow: "-20px -20px 30px -25px red, 20px 20px 30px -25px red, -7px -7px 10px -5px red, 7px 7px 10px -5px red, 0 0 13px 4px rgba(255,255,255,0.3), 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
+            boxShadow: "-20px -20px 30px -25px red, 20px 20px 30px -25px red, -7px -7px 10px -5px red, 7px 7px 10px -5px red, 0 0 13px 4px rgba(255,255,255,0.3), 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
         }
     },
     shatterBack: {
@@ -45,13 +46,13 @@ const CardFlip = ({ cardImg, cardType }) => {
     return (
         <ReactCardFlip isFlipped={flipped} flipDirection='horizontal'>
             <div onClick={() => handleFlip()} className={cardType === "holo" ? classes.holoBack : cardType === "shatter" ? classes.shatterBack : classes.normalBack}>
-                <img src={card_back} alt="logo" style={{ width: "210px", height: "295px", position: "relative" }} />
+                <img src={card_back} alt="logo" style={{ width: "210px", height: "295px", position: "relative", borderRadius: "5% / 3.5%" }} />
             </div>
-            <>
+            <div style={{margin: "-10px"}}>
                 {/* <HoloCard /> */}
                 {cardType === "holo" ? <HoloCard /> : cardType === "shatter" ? <ShatterCard /> : <NormalCard />}
                 {/* <ShatterCard /> */}
-            </>
+            </div>
         </ReactCardFlip>
     )
 }
