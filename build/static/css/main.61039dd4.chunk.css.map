@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/Base.scss"],"names":[],"mappings":"AAAA,KACI,UAAA,CACA,wBAAA,CACA,8BAAA,CACA,QAAA","file":"main.61039dd4.chunk.css","sourcesContent":["body {\r\n    color: white;\r\n    background-color: #333844;\r\n    font-family: \"Heebo\", sans-serif;\r\n    margin: 0;\r\n}"]}

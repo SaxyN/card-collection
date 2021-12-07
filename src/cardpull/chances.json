@@ -1,0 +1,16 @@
+{
+    "chances": [
+        {
+            "type": "normal",
+            "weight": 5
+        },
+        {
+            "type": "holo",
+            "weight": 80
+        },
+        {
+            "type": "shatter",
+            "weight": 90
+        }
+    ]
+}
