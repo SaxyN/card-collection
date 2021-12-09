@@ -83,7 +83,7 @@ const PacksFrame = () => {
                     <Typography className={classes.packDescription} variant="body1">Normal 6 Card Pack</Typography>
                 </CardContent>
                 <Divider orientation='horizontal' />
-                <CardActions style={{ justifyContent: "center", padding: "30px" }}>
+                <CardActions style={{ justifyContent: "center", padding: "15px" }}>
                     <Button className={classes.subButton} variant="contained" component={Link} to={`${match.url}/packgenerate`}>Open Now</Button>
                 </CardActions>
             </Card>
@@ -94,7 +94,7 @@ const PacksFrame = () => {
                     <Typography className={classes.packDescription} variant="body1">Epic Card Guarenteed</Typography>
                 </CardContent>
                 <Divider orientation='horizontal' />
-                <CardActions style={{ justifyContent: "center", padding: "30px" }}>
+                <CardActions style={{ justifyContent: "center", padding: "15px" }}>
                     <Button className={classes.subButton} variant="contained" component={Link} to={`${match.url}/packgenerate`}>Open Now</Button>
                 </CardActions>
             </Card>

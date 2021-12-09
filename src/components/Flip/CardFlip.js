@@ -24,7 +24,7 @@ const styles = makeStyles((theme) => ({
         transition: "box-shadow 0.1s ease-out",
         borderRadius: "5%/3.5%",
         "&:hover": {
-            boxShadow: "0 0 30px -5px lightblue, 0 0 10px -2px green, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
+            boxShadow: "0 0 30px 5px blue, 0 0 10px -2px blue, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
         }
     },
     shatterBack: {
@@ -32,7 +32,7 @@ const styles = makeStyles((theme) => ({
         transition: "box-shadow 0.1s ease-out",
         borderRadius: "5%/3.5%",
         "&:hover": {
-            boxShadow: "0 0 30px -5px gold, 0 0 10px -2px gold, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
+            boxShadow: "0 0 30px 5px gold, 0 0 10px -2px gold, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
         }
     }
 }))
