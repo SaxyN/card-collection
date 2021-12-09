@@ -2,15 +2,21 @@
     "chances": [
         {
             "type": "normal",
-            "weight": 5
+            "weight": 5,
+            "lower": 0,
+            "upper": 85
         },
         {
             "type": "holo",
-            "weight": 80
+            "weight": 20,
+            "lower": 90,
+            "upper": 97
         },
         {
             "type": "shatter",
-            "weight": 90
+            "weight": 10,
+            "lower": 98,
+            "upper": 100
         }
     ]
 }

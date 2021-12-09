@@ -34,7 +34,7 @@ function Base() {
                     <Route exact path="/signup" component={SignUpContainer} />
                     <Route exact path="/signup/account-details" component={AccountDetails} />
                     <Route exact path="/inventory" component={InventoryContainer} />
-                    <Route exact path="/packs" component={PacksContianer} />
+                    <Route path="/packs" component={PacksContianer} />
                     <Route exact path="/openpack" component={OpenPackContainer} />
                 </Router>
             </Provider>

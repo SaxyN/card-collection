@@ -8,7 +8,7 @@ const OpenPackContainer = () => {
     return (
         <div>
             <Header />
-            <div style={{ width: "100vw", display: "flex", justifyContent: "space-around", paddingTop: "25px" }}>
+            <div style={{ width: "100%", display: "flex", justifyContent: "center", paddingTop: "25px" }}>
                 <CardFlip cardType={generateCard()} />
                 <CardFlip cardType={generateCard()} />
                 <CardFlip cardType={generateCard()} />
