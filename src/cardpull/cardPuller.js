@@ -56,13 +56,20 @@ export function generatePack(packType, packSize) {
 
             if (randomNumber <= v.upper && randomNumber >= v.lower) {
                 newPack.push({ type: v.type, id: "156_chupador" });
+                break;
             };
         }
     }
-    console.log("%cNew Pack Generation", "color:green");
-    console.log(newPack);
-    newPack = shuffle(newPack);
-    console.log(newPack);
+    if (newPack.length !== packSize) {
+        console.log("%cBAD PACK GENERATION", "color:red");
+        newPack = generatePack(packType, packSize);
+    } else {
+        console.log("%cNew Pack Generation", "color:green");
+        newPack = shuffle(newPack);
+        console.log(newPack);
+        return newPack;
+    }
+
 }
 
 export default generateCard;
