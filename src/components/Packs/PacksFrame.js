@@ -11,6 +11,10 @@ import pack_design3 from '../../assets/pack_design3.png';
 import MainCard from '../CardItem/MainCard/MainCard';
 import HoloCard from '../CardItem/HoloCard/HoloCard';
 
+import * as storeActions from "../../store/cards/cards.action";
+import { useSelector } from 'react-redux';
+import Pack from "../Packs/Pack";
+
 const useStyles = makeStyles((theme) => ({
     main: {
         width: "100%",
@@ -59,13 +63,21 @@ const useStyles = makeStyles((theme) => ({
 const PacksFrame = () => {
     const classes = useStyles();
     let match = useRouteMatch()
+    const { packs } = useSelector((state) => ({
+        packs: state.cards.packs,
+    }))
 
-    // function autoGenerate() { // Auto Generates 1000 pack pulls and displays the results
+    const handlePackOpen = (packData) => {
 
-    // }
+    }
 
     return (
         <div className={classes.main}>
+            {packs.map((item, index) => {
+                return (
+                    <Pack packData={item} imageSize={"l"} handlePackOpen={handlePackOpen} />
+                )
+            })}
             {/* <div className={classes.subMain}> */}
             {/* <Card className={classes.cardStyle}>
                 <CardContent>
@@ -76,7 +88,7 @@ const PacksFrame = () => {
                     <Button className={classes.subButton} variant="contained">Open Now</Button>
                 </CardActions>
             </Card> */}
-            <Card className={classes.cardStyle}>
+            {/* <Card className={classes.cardStyle}>
                 <CardContent>
                     <img src={pack_design3} alt="logo" className={classes.pack} />
                     <Divider orientation='horizontal' />
@@ -84,7 +96,7 @@ const PacksFrame = () => {
                 </CardContent>
                 <Divider orientation='horizontal' />
                 <CardActions style={{ justifyContent: "center", padding: "15px" }}>
-                    <Button className={classes.subButton} variant="contained" component={Link} to={`${match.url}/packgenerate`}>Open Now</Button>
+                    <Button className={classes.subButton} variant="contained" component={Link} to={`${match.url}/packgenerate`} onClick={() => handlePackOpen()}>Open Now</Button>
                 </CardActions>
             </Card>
             <Card className={classes.cardStyle}>
@@ -97,7 +109,7 @@ const PacksFrame = () => {
                 <CardActions style={{ justifyContent: "center", padding: "15px" }}>
                     <Button className={classes.subButton} variant="contained" component={Link} to={`${match.url}/packgenerate`}>Open Now</Button>
                 </CardActions>
-            </Card>
+            </Card> */}
             {/* </div> */}
             {/* <div className={classes.subMain}>
                 <img src={pack_design2} alt="logo" className={classes.pack} />
