@@ -4,14 +4,14 @@ import card_template_face from "./card_template_face.png";
 import blurred_shatter from "./blurred_shatter.png";
 import $ from 'jquery'
 
-import "./normalstyle.scss";
+import "./legendarystyle.scss";
 
-const NormalCard = () => {
+const LegendaryCard = () => {
     const [hover, setHover] = React.useState(false);
 
 
     var x;
-    var $cards = $(".card_normal");
+    var $cards = $(".card_legendary");
     var $style = $(".hover");
 
     $cards
@@ -46,8 +46,8 @@ const NormalCard = () => {
             var tf = `transform: rotateX(${ty}deg) rotateY(${tx}deg) scale(1.1)`
             // need to use a <style> tag for psuedo elements
             var style = `
-      .card_normal:hover:before { ${grad_pos} }  /* gradient */
-      .card_normal:hover:after { ${sprk_pos} ${opc} }   /* sparkles */ 
+      .card_legendary:hover:before { ${grad_pos} }  /* gradient */
+      .card_legendary:hover:after { ${sprk_pos} ${opc} }   /* sparkles */ 
     `
             // set / apply css class and style
             $cards.removeClass("active");
@@ -70,11 +70,11 @@ const NormalCard = () => {
 
     return (
         <>
-            <div className="card_normal eevee animated" onMouseOver={() => setHover(true)}></div>
+            <div className="card_legendary eevee animated" onMouseOver={() => setHover(true)}></div>
             <style className='hover'></style>
         </>
     )
 
 }
 
-export default NormalCard;
+export default LegendaryCard;

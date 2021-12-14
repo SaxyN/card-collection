@@ -43,7 +43,7 @@ const HoloCard = () => {
             var grad_pos = `background-position: ${lp}% ${tp}%;`
             var sprk_pos = `background-position: ${px_spark}% ${py_spark}%;`
             var opc = `opacity: ${p_opc / 100};`
-            var tf = `transform: rotateX(${ty}deg) rotateY(${tx}deg)`
+            var tf = `transform: rotateX(${ty}deg) rotateY(${tx}deg) scale(1.1)`
             // need to use a <style> tag for psuedo elements
             var style = `
       .card_holo:hover:before { ${grad_pos} }  /* gradient */

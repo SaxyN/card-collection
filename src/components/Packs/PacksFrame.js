@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from "@mui/styles";
 import { Button, Card, CardContent, CardActions, Divider, Typography } from "@mui/material";
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link, useRouteMatch, Redirect } from 'react-router-dom';
 import card_back from "./card_back.png";
 import pack_design from '../../assets/pack_design.png';
 import pack_design2 from '../../assets/pack_design2.png';
@@ -12,7 +12,8 @@ import MainCard from '../CardItem/MainCard/MainCard';
 import HoloCard from '../CardItem/HoloCard/HoloCard';
 
 import * as storeActions from "../../store/cards/cards.action";
-import { useSelector } from 'react-redux';
+import generateCard, { generatePack } from '../../cardpull/cardPuller';
+import { useDispatch, useSelector } from 'react-redux';
 import Pack from "../Packs/Pack";
 
 const useStyles = makeStyles((theme) => ({
@@ -62,13 +63,15 @@ const useStyles = makeStyles((theme) => ({
 
 const PacksFrame = () => {
     const classes = useStyles();
-    let match = useRouteMatch()
+    const dispatch = useDispatch();
     const { packs } = useSelector((state) => ({
         packs: state.cards.packs,
     }))
 
     const handlePackOpen = (packData) => {
-
+        let pack = generatePack(packData.type, packData.size)
+        // console.log(pack);
+        dispatch(storeActions.loadNewPack(pack));
     }
 
     return (

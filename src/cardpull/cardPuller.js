@@ -34,11 +34,11 @@ function shuffle(array) {
     return array;
 }
 
-export function generatePack(packType, packSize) {
+export function generatePack(packType, packSize,) {
     let epic = false;
-    if (packType === "pack_2") {
-        epic = true;
-    }
+    let legendary = false;
+    if (packType === "epic") epic = true;
+    if (packType === "legendary") legendary = true;
     let newPack = [];
     var LootTable = LootData.chances;
     var v, i, j;
@@ -50,7 +50,13 @@ export function generatePack(packType, packSize) {
             epic = false;
             continue;
         }
-        randomNumber = Math.floor(Math.random() * 100);
+        if (legendary) {
+            newPack.push({ type: "legendary", id: "156_chupador" });
+            legendary = false;
+            continue;
+        }
+        randomNumber = Math.floor(Math.random() * 1000);
+        console.log(randomNumber)
         for (i = 0; i < LootTable.length; i++) {
             v = LootTable[i]
 

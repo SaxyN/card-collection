@@ -4,19 +4,25 @@
             "type": "normal",
             "weight": 5,
             "lower": 0,
-            "upper": 89
+            "upper": 919
         },
         {
             "type": "holo",
             "weight": 20,
-            "lower": 90,
-            "upper": 97
+            "lower": 920,
+            "upper": 970
         },
         {
             "type": "shatter",
             "weight": 10,
-            "lower": 98,
-            "upper": 100
+            "lower": 971,
+            "upper": 980
+        },
+        {
+            "type": "legendary",
+            "weight": 10,
+            "lower": 981,
+            "upper": 1000
         }
     ]
 }

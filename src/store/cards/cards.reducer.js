@@ -16,7 +16,7 @@ const cardsData = {
             "description": "Epic Card Guanteed",
             "image": "pack_design2",
             "size": 6,
-            "type": "epic"
+            "type": "legendary"
         }
     ],
 }
