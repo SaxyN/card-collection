@@ -14,5 +14,15 @@
             "size": 6,
             "type": "legendary"
         }
+    ],
+    "inventory": [
+        {
+            "id": "156_chupador",
+            "type": "holo",
+            "count": 1
+        }
+    ],
+    "set": [
+        
     ]
 }

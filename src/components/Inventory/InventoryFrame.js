@@ -35,7 +35,7 @@ const InventoryFrame = ({ inventory }) => {
                             )
                         } else {
                             return (
-                                <div key={index} style={{ position: "relative" }}>
+                                <div key={index} style={{ position: "relative", padding: "10px" }}>
                                     <InventoryItem itemId={inventory[item].card_id} itemCount={inventory[item].count} itemType={inventory[item].type} />
                                     {/* <InventoryItem key={index} itemId={inventory[item].card_id} itemCount={inventory[item].count} />
                                     <InventoryItem key={index} itemId={inventory[item].card_id} itemCount={inventory[item].count} /> */}
