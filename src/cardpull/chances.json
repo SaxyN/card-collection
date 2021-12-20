@@ -24,5 +24,21 @@
             "lower": 981,
             "upper": 1000
         }
+    ],
+    "packs": [
+        {
+            "name": "1st Edition Pack",
+            "description": "6 Card Pack",
+            "image": "pack_design3",
+            "size": 6,
+            "type": "standard"
+        },
+        {
+            "name": "Staff Pack",
+            "description": "Epic Card Guanteed",
+            "image": "pack_design2",
+            "size": 6,
+            "type": "epic"
+        }
     ]
 }

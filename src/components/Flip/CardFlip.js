@@ -11,7 +11,7 @@ import LegendaryCard from "../CardItem/LegendaryCard/LegendaryCard";
 import cardFlipSfx from "../../assets/card_flip.wav";
 import holoFlipSfx from "../../assets/nice.mp3";
 import epicFlipSfx from "../../assets/ohmygod.wav";
-import legendaryFlipSfx from "../../assets/ehh.mp3";
+import legendaryFlipSfx from "../../assets/english_rare.mp3";
 import useSound from 'use-sound';
 
 const styles = makeStyles((theme) => ({
@@ -39,7 +39,7 @@ const styles = makeStyles((theme) => ({
         transition: "box-shadow 0.1s ease-out",
         borderRadius: "5%/3.5%",
         "&:hover": {
-            boxShadow: "0 0 30px 5px gold, 0 0 10px -2px gold, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
+            boxShadow: "0 0 30px 5px #18E3CE, 0 0 10px -2px #18E3CE, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
         }
     },
     legendaryBack: {
@@ -47,7 +47,7 @@ const styles = makeStyles((theme) => ({
         transition: "box-shadow 0.1s ease-out",
         borderRadius: "5%/3.5%",
         "&:hover": {
-            boxShadow: "0 0 30px 5px orange, 0 0 10px -2px orange, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
+            boxShadow: "0 0 30px 5px gold, 0 0 10px -2px gold, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
         }
     }
 }))

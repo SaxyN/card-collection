@@ -1,5 +1,5 @@
 :root {
-    --eeveefront: url(card_template.png);
+    // --eeveefront: url(card_template.png);
   }
   
   .card_legendary {
@@ -37,7 +37,7 @@
     will-change: transform, filter;
     
     background-color: #040712;
-    background-image: var(--front);
+    // background-image: var(--front);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -124,12 +124,12 @@
   .card_legendary:after {
     opacity: 1;
     background-image:
-    // url(https://assets.codepen.io/13471/holo.png),
-    url("./prism.png"),
+    url(https://assets.codepen.io/13471/holo.png),
+    // url("./waves.png"),
     linear-gradient(125deg, #e02d1650 15%, #fbff0a40 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
     //   clip-path: polygon(0% 0%, 0% 100%, 8% 100%, 8% 10.5%, 92.5% 10.5%, 92.5% 60%, 8% 60%, 8% 100%, 100% 100%, 100% 0%);
       // clip-path: polygon(8% 10.5%, 8% 59.5%, 92.5% 59.5%, 92.5% 10.5%); // Just Picture
-      clip-path: polygon(0% 0%, 0% 100%, 8% 100%, 8% 10.5%, 92.5% 10.5%, 92.5% 60%, 8% 60%, 8% 100%, 100% 100%, 100% 0%); // Exluding Picture
+      // clip-path: polygon(0% 0%, 0% 100%, 8% 100%, 8% 10.5%, 92.5% 10.5%, 92.5% 60%, 8% 60%, 8% 100%, 100% 100%, 100% 0%); // Exluding Picture
     background-position: 50% 50%;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -138,7 +138,7 @@
     filter: brightness(1.0) contrast(0.65);
     transition: all .33s ease;
     mix-blend-mode: color-dodge;
-    opacity: .75;
+    // opacity: 1;
   }
   
   .card_legendary.active:after,
@@ -270,7 +270,7 @@
       var(--color5) 64%,
       transparent 100%
     );
-    opacity: 0.4;
-    clip-path: polygon(8% 10.5%, 8% 59.5%, 92.5% 59.5%, 92.5% 10.5%); // Just Picture
+    opacity: 0.6;
+    // clip-path: polygon(8% 10.5%, 8% 59.5%, 92.5% 59.5%, 92.5% 10.5%); // Just Picture
     // clip-path: polygon(0% 0%, 0% 100%, 8% 100%, 8% 10.5%, 92.5% 10.5%, 92.5% 60%, 8% 60%, 8% 100%, 100% 100%, 100% 0%); // Excluding Picture
   }

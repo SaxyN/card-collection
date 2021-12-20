@@ -8,6 +8,7 @@ import HoloCard from '../CardItem/HoloCard/HoloCard';
 import ShatterCard from '../CardItem/ShatterCard/ShatterCard';
 import NormalCard from '../CardItem/NormalCard/NormalCard';
 import LegendaryCard from "../CardItem/LegendaryCard/LegendaryCard";
+import TestCard from "../CardItem/TestCard/TestCard";
 
 const useStyles = makeStyles((theme) => ({
     frame: {
@@ -51,11 +52,11 @@ const InventoryFrame = ({ inventory }) => {
                 :
                 // <>Empty</>
                 <>
-                <NormalCard />
-                <HoloCard />
-                <ShatterCard />
-                <LegendaryCard />
-                
+                    <NormalCard />
+                    <HoloCard />
+                    <ShatterCard />
+                    <LegendaryCard />
+                    {/* <TestCard /> */}
                 </>
             }
         </Card>

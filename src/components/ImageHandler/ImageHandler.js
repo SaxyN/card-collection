@@ -2,15 +2,16 @@ import CARD_BACK from "../../assets/card_back.png";
 import CARD_TEMPLATE from "../../assets/card_template.png";
 import PACK_DESIGN2 from "../../assets/pack_design2.png";
 import PACK_DESIGN3 from "../../assets/pack_design3.png";
+import FULL_VIKTOR_FROST from "../../assets/VIKTOR_FROST_HYPER.png";
 
 import { Fragment } from "react";
 import { makeStyles } from "@mui/styles";
 const styles = makeStyles((theme) => ({
     small: {
-        width: "135.125px", height: "262.2px",
+        width: "100%", height: "100%",
     },
     large: {
-        width: "270.25px", height: "525px",
+        width: "100%", height: "100%",
     }
 }))
 
@@ -26,6 +27,8 @@ const ImageHandler = ({ name, size }) => {
             return <img src={PACK_DESIGN2} alt="pack" className={size === "l" ? classes.large : classes.small} />
         case "pack_design3":
             return <img src={PACK_DESIGN3} alt="pack" className={size === "l" ? classes.large : classes.small} />
+        case "full_victor_frost":
+            return <img src={FULL_VIKTOR_FROST} alt="pack" className={size === "l" ? classes.large : classes.small} />
         default:
             return <Fragment />
     }
