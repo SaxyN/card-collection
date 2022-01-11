@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     // --color4: #5ac4e4; blue
     // --color5: #b153dd; purple
     main: {
-        background: "linear-gradient(45deg, transparent 15%, #f32a6d 36%, #e7ac3e 43%, #45e692 50%, #5ac4e4 57%, #b153dd 64%, transparent 100%)",
+        // background: "linear-gradient(45deg, transparent 15%, #f32a6d 36%, #e7ac3e 43%, #45e692 50%, #5ac4e4 57%, #b153dd 64%, transparent 100%)",
         // "&:before": {
         //     backgroundPosition: "50% 50%",
         //     backgroundSize: "300% 300%",
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
             // transform: "scale(1.05)",
         },
         "&:before, &:after": {
-            content: '""',
+            content: "''",
             position: "absolute",
             left: 0,
             right: 0,
@@ -59,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
         "&:before": {
             backgroundPosition: "50% 50%",
             backgroundSize: "300% 300%",
+            backgroundImage: "linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%), linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),  linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%)",
             // backgroundImage: 'linear-gradient(to right bottom, #430089, #82ffa1)',
             // backgroundImage: "linear-gradient(45deg, transparent 15%, #f32a6d 36%, #e7ac3e 43%, #45e692 50%, #5ac4e4 57%, #b153dd 64%, transparent 100%)",
             // clipPath: "polygon(8% 10.5%, 8% 59.5%, 92.5% 59.5%, 92.5% 10.5%)",
@@ -103,11 +104,16 @@ const useStyles = makeStyles((theme) => ({
             transition: "none",
         },
         "&.eevee:hover:before, .eevee.active:before": {
-            backgroundImage: "linear-gradient(45deg, #e02d1650 15%, #fbff0a40 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%)",
-            backgroundSize: "300%",
+            // backgroundImage: "linear-gradient(45deg, #e02d1650 15%, #fbff0a40 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%)",
+            // backgroundImage: "linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%), linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),  linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%)",
+            // backgroundSize: "300%",
             clipPath: "polygon(8% 10.5%, 8% 59.5%, 92.5% 59.5%, 92.5% 10.5%)", // Just Picture
             opacity: 1,
             filter: "brightness(1.0) contrast(0.66)"
+        },
+        "&.card.active:before, .card:hover:before, .card.active:after, .card:hover:after": {
+            animation: "none",
+            transition: "none"
         }
     }
 }))
@@ -146,8 +152,8 @@ const TestCard = () => {
             var ty = ((tp - 50) / 3.0) * -1;
             var tx = ((lp - 50) / 2.5) * .5;
             // css to apply for active card
-            var grad_pos = `background-position: ${lp}% ${tp}%;`
-            var sprk_pos = `background-position: ${px_spark}% ${py_spark}%;`
+            var grad_pos = `backgroundPosition: ${lp}% ${tp}%;`
+            var sprk_pos = `backgroundPosition: ${px_spark}% ${py_spark}%;`
             var opc = `opacity: ${p_opc / 100};`
             var tf = `transform: rotateX(${ty}deg) rotateY(${tx}deg)`
             // need to use a <style> tag for psuedo elements
@@ -178,9 +184,9 @@ const TestCard = () => {
         return (
             <Card className={classes.main}>
                 <div className={["card", classes.card, "eevee"].join(" ")} onMouseOver={() => setHover(true)}>
-                    <ImageHandler name={"card_back"} size={"l"} />
+                    <ImageHandler name={"card_template"} size={"l"} />
                 </div>
-                <style className="hover"></style>
+                {/* <style className="hover"></style> */}
                 {/* <div className={[classes.card, "card"].join(" ")}></div>
                 <style className="hover"></style>
                 <div className={[classes.card, "card"].join(" ")}></div>
