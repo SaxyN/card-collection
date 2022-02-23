@@ -19,6 +19,7 @@ import AccountDetails from "./components/SignUp/AccountDetails";
 import InventoryContainer from "./containers/InventoryContainer";
 import PacksContianer from "./containers/PacksContainer";
 import OpenPackContainer from "./containers/OpenPackContainer";
+import ShowCaseContainer from "./containers/ShowCaseContainer";
 
 const middle = [thunk, logger];
 const store = createStore(combineReducers, applyMiddleware(...middle));
@@ -34,6 +35,7 @@ function Base() {
                     <Route exact path="/signup" component={SignUpContainer} />
                     <Route exact path="/signup/account-details" component={AccountDetails} />
                     <Route exact path="/inventory" component={InventoryContainer} />
+                    <Route exact path="/showcase" component={ShowCaseContainer} />
                     <Route path="/packs" component={PacksContianer} />
                     <Route exact path="/openpack" component={OpenPackContainer} />
                 </Router>

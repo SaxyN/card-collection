@@ -76,6 +76,11 @@ const Header = () => {
                             <Typography className={classes.buttonText} variant="body2">Packs</Typography>
                         </Button>
                     </li>
+                    <li className={classes.li}>
+                        <Button variant="text" component={Link} to={"/showcase"}>
+                            <Typography className={classes.buttonText} variant="body2">ShowCase</Typography>
+                        </Button>
+                    </li>
                     {/* <li className={classes.li}>
                         <Button variant="text" component={Link} to={"/openpack"}>
                             <Typography className={classes.buttonText} variant="body2">Test Pack</Typography>

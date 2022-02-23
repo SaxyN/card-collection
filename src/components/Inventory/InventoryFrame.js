@@ -50,7 +50,7 @@ const InventoryFrame = ({ inventory }) => {
                     }
                 })
                 :
-                // <>Empty</>
+                // <>Empty</>    
                 <>
                     <NormalCard />
                     <HoloCard />
