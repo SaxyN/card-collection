@@ -4,7 +4,9 @@ const ShowCaseContainer = () => {
     return (
         <div>
             <Header />
-            <Originals />
+            <div style={{ width: "100%", display: "flex", justifyContent: "center", marginTop: "20px" }}>
+                <Originals />
+            </div>
         </div>
     )
 
