@@ -20,7 +20,7 @@ const PackOpener = () => {
                 {pack.map((item, index) => {
                     return (
                         <>
-                            <CardFlip cardType={item.type} />
+                            <CardFlip cardType={item.type} cardImage={item.img} />
                             {/* <p>{item.type}</p> */}
                         </>
                     )
