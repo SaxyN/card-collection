@@ -6,7 +6,7 @@ import $ from 'jquery'
 
 import "./normalstyle.scss";
 
-const NormalCard = () => {
+const NormalCard = ({ image }) => {
     const [hover, setHover] = React.useState(false);
 
 
@@ -70,7 +70,9 @@ const NormalCard = () => {
 
     return (
         <>
-            <div className="card_normal eevee animated" onMouseOver={() => setHover(true)}></div>
+            <div className="card_normal eevee animated" onMouseOver={() => setHover(true)}>
+                <img src={image} alt="image" style={{ width: "210px", height: "295px", borderRadius: "5% / 3.5%" }} />
+            </div>
             <style className='hover'></style>
         </>
     )
