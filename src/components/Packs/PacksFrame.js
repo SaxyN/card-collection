@@ -78,7 +78,7 @@ const PacksFrame = () => {
         <div className={classes.main}>
             {packs.map((item, index) => {
                 return (
-                    <Pack packData={item} imageSize={"l"} handlePackOpen={handlePackOpen} />
+                    <Pack key={index} packData={item} imageSize={"l"} handlePackOpen={handlePackOpen} />
                 )
             })}
             {/* <div className={classes.subMain}> */}
