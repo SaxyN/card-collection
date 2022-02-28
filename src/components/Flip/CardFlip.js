@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import ReactCardFlip from 'react-card-flip';
 import card_back from '../CardItem/TestCard/card_back.png';
+import GREEN_FRONT from "../CardItem/CardAssets/green_front.png";
+import BLUE_FRONT from "../CardItem/CardAssets/blue_front.png";
+import RED_FRONT from "../CardItem/CardAssets/red_front.png";
 
 import HoloCard from '../CardItem/HoloCard/HoloCard';
 import ShatterCard from '../CardItem/ShatterCard/ShatterCard';
@@ -13,6 +16,8 @@ import holoFlipSfx from "../../assets/nice.mp3";
 import epicFlipSfx from "../../assets/ohmygod.wav";
 import legendaryFlipSfx from "../../assets/english_rare.mp3";
 import useSound from 'use-sound';
+import ImageHandler from '../ImageHandler/ImageHandler';
+import { ImageFetcher } from '../ImageHandler/ImageHandler';
 
 const styles = makeStyles((theme) => ({
     flipCard: {
@@ -52,7 +57,7 @@ const styles = makeStyles((theme) => ({
     }
 }))
 
-const CardFlip = ({ cardImg, cardType }) => {
+const CardFlip = ({ cardType, cardImg }) => {
     const classes = styles();
     const [flipped, setFlipped] = useState(false);
     const [normalCard] = useSound(
@@ -101,15 +106,27 @@ const CardFlip = ({ cardImg, cardType }) => {
 
     }
 
+    const randomImage = () => {
+        const random = Math.floor(Math.random() * 100);
+        if (random <= 33) {
+            return GREEN_FRONT;
+        } else if (random > 33 && random <= 66) {
+            return BLUE_FRONT;
+        } else {
+            return RED_FRONT;
+        }
+    }
+
     return (
         <div style={{ margin: "10px" }}>
             <ReactCardFlip isFlipped={flipped} flipDirection='horizontal'>
                 <div onClick={() => handleFlip()} className={cardType === "holo" ? classes.holoBack : cardType === "shatter" ? classes.shatterBack : cardType === "legendary" ? classes.legendaryBack : classes.normalBack}>
+                    {/* <ImageHandler name={cardImg} size="s" alt="logo" /> */}
                     <img src={card_back} alt="logo" style={{ width: "210px", height: "295px", borderRadius: "5% / 3.5%" }} />
                 </div>
                 <>
                     {/* <HoloCard /> */}
-                    {cardType === "holo" ? <HoloCard /> : cardType === "shatter" ? <ShatterCard /> : cardType === "legendary" ? <LegendaryCard /> : <NormalCard />}
+                    {cardType === "holo" ? <HoloCard /> : cardType === "shatter" ? <ShatterCard /> : cardType === "legendary" ? <LegendaryCard /> : <NormalCard image={randomImage()} />}
                     {/* <ShatterCard /> */}
                 </>
             </ReactCardFlip>
