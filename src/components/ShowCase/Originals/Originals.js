@@ -7,6 +7,11 @@ import NormalCard from '../../CardItem/NormalCard/NormalCard';
 import HoloCard from '../../CardItem/HoloCard/HoloCard';
 import ShatterCard from '../../CardItem/ShatterCard/ShatterCard';
 
+// Test Fronts
+import GREEN_FRONT from "../../CardItem/CardAssets/green_front.png";
+import BLUE_FRONT from "../../CardItem/CardAssets/blue_front.png";
+import RED_FRONT from "../../CardItem/CardAssets/red_front.png";
+
 const styles = makeStyles((theme) => ({
     wrapper: {
         width: "70%",
@@ -27,24 +32,45 @@ const styles = makeStyles((theme) => ({
         display: "grid",
         gridTemplateColumns: "auto auto auto auto auto auto",
         justifyContent: "center",
+    },
+    cardName: {
+        marginBottom: "25px",
+        textAlign: "center",
     }
 }))
 
+
+
 const Originals = () => {
     const classes = styles();
+
+    const randomImage = () => {
+        const random = Math.floor(Math.random() * 100);
+        if (random <= 33) {
+            return GREEN_FRONT;
+        } else if (random > 33 && random <= 66) {
+            return BLUE_FRONT;
+        } else {
+            return RED_FRONT;
+        }
+    }
+
     return (
         <Box>
             <Paper className={classes.showcaseBack} elevation={5}>
                 <Typography variant="h2">Original Set</Typography>
-                <Divider orientation='horizontal' style={{margin: "15px"}}/>
+                <Divider orientation='horizontal' style={{ margin: "15px" }} />
                 <div className={classes.innerShowcase}>
-                    <div style={{margin:"15px"}}>
-                        <NormalCard />
+                    <div style={{ margin: "15px" }}>
+                        <Typography className={classes.cardName} variant="body1">Normal</Typography>
+                        <NormalCard image={randomImage()} />
                     </div>
-                    <div style={{margin:"15px"}}>
+                    <div style={{ margin: "15px" }}>
+                        <Typography className={classes.cardName} variant="body1">Hologrpahic</Typography>
                         <HoloCard />
                     </div>
-                    <div style={{margin:"15px"}}>
+                    <div style={{ margin: "15px" }}>
+                        <Typography className={classes.cardName} variant="body1">Shatter</Typography>
                         <ShatterCard />
                     </div>
                 </div>
