@@ -71,7 +71,7 @@ const NormalCard = ({ image }) => {
     return (
         <>
             <div className="card_normal eevee animated" onMouseOver={() => setHover(true)}>
-                <img src={image} alt="image" style={{ width: "210px", height: "295px", borderRadius: "5% / 3.5%" }} />
+                <img src={image} alt="alt" style={{ width: "210px", height: "295px", borderRadius: "5% / 3.5%" }} />
             </div>
             <style className='hover'></style>
         </>
