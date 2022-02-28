@@ -40,5 +40,13 @@
             "size": 6,
             "type": "epic"
         }
+    ],
+    "cards": [
+        {
+            "id": "green_front"
+        },
+        {
+            "id": "blue_front"
+        }
     ]
 }
