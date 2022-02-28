@@ -56,7 +56,6 @@ const InventoryFrame = ({ inventory }) => {
                     <HoloCard />
                     <ShatterCard />
                     <LegendaryCard />
-                    <TestCard />
                 </>
             }
         </Card>
