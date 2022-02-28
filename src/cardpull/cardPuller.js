@@ -34,7 +34,12 @@ function shuffle(array) {
     return array;
 }
 
-export function generatePack(packType, packSize,) {
+function randomSelect(itemList) {
+    const random = Math.floor(Math.random() * itemList.length);
+    return itemList[random];
+}
+
+export function generatePack(packType, packSize) {
     let epic = false;
     let legendary = false;
     if (packType === "epic") epic = true;
@@ -46,12 +51,12 @@ export function generatePack(packType, packSize,) {
 
     for (j = 0; j < packSize; j++) {
         if (epic) {
-            newPack.push({ type: "shatter", id: "156_chupador" });
+            newPack.push({ type: "shatter", id: "156_chupador", img: generateCardFromSet(LootData.cards) });
             epic = false;
             continue;
         }
         if (legendary) {
-            newPack.push({ type: "legendary", id: "156_chupador" });
+            newPack.push({ type: "legendary", id: "156_chupador", img: generateCardFromSet(LootData.cards) });
             legendary = false;
             continue;
         }
@@ -61,7 +66,7 @@ export function generatePack(packType, packSize,) {
             v = LootTable[i]
 
             if (randomNumber <= v.upper && randomNumber >= v.lower) {
-                newPack.push({ type: v.type, id: "156_chupador" });
+                newPack.push({ type: v.type, id: "156_chupador", img: generateCardFromSet(LootData.cards) });
                 break;
             };
         }
@@ -76,6 +81,11 @@ export function generatePack(packType, packSize,) {
         return newPack;
     }
 
+}
+
+export function generateCardFromSet() {
+    const randomCard = randomSelect(LootData.cards);
+    return randomCard.id;
 }
 
 export default generateCard;
