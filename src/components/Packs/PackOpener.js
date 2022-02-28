@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import { Button } from "@mui/material";
 import { Link, Redirect } from "react-router-dom";
 import CardFlip from '../../components/Flip/CardFlip';
@@ -19,10 +19,10 @@ const PackOpener = () => {
             <div style={{ width: "100%", display: "flex", justifyContent: "center", paddingTop: "25px" }}>
                 {pack.map((item, index) => {
                     return (
-                        <>
+                        <Fragment>
                             <CardFlip cardType={item.type} cardImage={item.img} />
                             {/* <p>{item.type}</p> */}
-                        </>
+                        </Fragment>
                     )
                 })}
                 {/* <CardFlip cardType={generateCard()} />

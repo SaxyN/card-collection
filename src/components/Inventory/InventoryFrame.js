@@ -10,6 +10,13 @@ import NormalCard from '../CardItem/NormalCard/NormalCard';
 import LegendaryCard from "../CardItem/LegendaryCard/LegendaryCard";
 import TestCard from "../CardItem/TestCard/TestCard";
 
+import {ImageFetcher} from "../ImageHandler/ImageHandler";
+
+// Test Fronts
+import GREEN_FRONT from "../CardItem/CardAssets/green_front.png";
+import BLUE_FRONT from "../CardItem/CardAssets/blue_front.png";
+import RED_FRONT from "../CardItem/CardAssets/red_front.png";
+
 const useStyles = makeStyles((theme) => ({
     frame: {
         // border: "solid red 1px",
@@ -24,6 +31,17 @@ const useStyles = makeStyles((theme) => ({
 
 const InventoryFrame = ({ inventory }) => {
     const classes = useStyles()
+
+    const randomImage = () => {
+        const random = Math.floor(Math.random() * 100);
+        if (random <= 33) {
+            return GREEN_FRONT;
+        } else if (random > 33 && random <= 66) {
+            return BLUE_FRONT;
+        } else {
+            return RED_FRONT;
+        }
+    }
 
     return (
         <Card className={classes.frame} elevation={10}>
@@ -49,10 +67,9 @@ const InventoryFrame = ({ inventory }) => {
                         )
                     }
                 })
-                :
-                // <>Empty</>    
+                :   
                 <>
-                    <NormalCard />
+                    <NormalCard image={randomImage()}/>
                     <HoloCard />
                     <ShatterCard />
                     <LegendaryCard />
@@ -60,17 +77,6 @@ const InventoryFrame = ({ inventory }) => {
             }
         </Card>
     )
-    // if (inventory) {
-    //     inventory.map((item, index) => {
-    //         return (
-    //             <InventoryItem/>
-    //         )
-    //     })}
-    // } else {
-    //     return (
-    //         <>Empty</>
-    //     )
-    // }
 }
 
 export default InventoryFrame;

@@ -116,7 +116,7 @@ const CardFlip = ({ cardType, cardImg }) => {
             return RED_FRONT;
         }
     }
-
+    console.log("render");
     return (
         <div style={{ margin: "10px" }}>
             <ReactCardFlip isFlipped={flipped} flipDirection='horizontal'>
