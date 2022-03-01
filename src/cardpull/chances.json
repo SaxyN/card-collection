@@ -16,12 +16,12 @@
             "type": "shatter",
             "weight": 10,
             "lower": 971,
-            "upper": 980
+            "upper": 997
         },
         {
             "type": "legendary",
             "weight": 10,
-            "lower": 981,
+            "lower": 998,
             "upper": 1000
         }
     ],
