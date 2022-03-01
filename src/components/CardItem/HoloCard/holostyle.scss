@@ -1,5 +1,5 @@
 :root {
-  --eeveefront: url(card_template.png);
+  // --eeveefront: url(blue_face.png);
   --blob: url(testSVG.svg);
 }
 
@@ -52,7 +52,7 @@
   --color3: #45e692;
   --color4: #5ac4e4;
   --color5: #b153dd;
-  --front: var(--eeveefront);
+  // --front: var(--eeveefront);
 }
 
 .card_holo:hover {
@@ -86,7 +86,7 @@
   --color3: #45e692;
   --color4: #5ac4e4;
   --color5: #b153dd;
-  --front: var(--eeveefront);
+  // --front: var(--eeveefront);
 }
 
 .card_holo:before,

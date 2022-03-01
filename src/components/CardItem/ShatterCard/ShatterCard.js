@@ -3,6 +3,8 @@ import card_template from "./card_template.png";
 import card_template_face from "./card_template_face.png";
 import blurred_shatter from "./blurred_shatter.png";
 
+import BLUE_FACE from "../CardAssets/blue_face.png";
+
 import $ from "jquery";
 import "./shatterstyle.scss";
 
@@ -71,7 +73,9 @@ const ShatterCard = () => {
 
     return (
         <>
-            <div className="card_shatter eevee animated" onMouseOver={() => setHover(true)}></div>
+            <div className="card_shatter eevee animated" onMouseOver={() => setHover(true)}>
+                <img src={BLUE_FACE} alt="alt" style={{ width: "210px", height: "295px", borderRadius: "5% / 3.5%" }} />
+            </div>
             <style className='hover'></style>
         </>
     )

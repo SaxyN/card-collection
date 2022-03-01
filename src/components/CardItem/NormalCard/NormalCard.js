@@ -8,11 +8,12 @@ import "./normalstyle.scss";
 
 const NormalCard = ({ image }) => {
     const [hover, setHover] = React.useState(false);
+    const random = Math.floor(Math.random() * 1000);
 
 
     var x;
     var $cards = $(".card_normal");
-    var $style = $(".hover");
+    var $style = $(".normal_hover_" + random);
 
     $cards
         .on("mousemove", function (e) {
@@ -70,10 +71,10 @@ const NormalCard = ({ image }) => {
 
     return (
         <>
-            <div className="card_normal eevee animated" onMouseOver={() => setHover(true)}>
+            <div className="card_normal eevee" onMouseOver={() => setHover(true)}>
                 <img src={image} alt="alt" style={{ width: "210px", height: "295px", borderRadius: "5% / 3.5%" }} />
             </div>
-            <style className='hover'></style>
+            {/* <style className={`normal_hover_` + random}></style> */}
         </>
     )
 
