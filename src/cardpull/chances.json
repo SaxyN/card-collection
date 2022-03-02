@@ -53,6 +53,12 @@
         },
         {
             "id": "red_front"
+        },
+        {
+            "id": "yellow_front"
+        },
+        {
+            "id": "grey_front"
         }
     ]
 }

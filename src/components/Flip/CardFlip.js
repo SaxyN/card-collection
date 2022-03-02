@@ -6,6 +6,7 @@ import GREEN_FRONT from "../CardItem/CardAssets/green_front.png";
 import BLUE_FRONT from "../CardItem/CardAssets/blue_front.png";
 import RED_FRONT from "../CardItem/CardAssets/red_front.png";
 import PURPLE_FRONT from "../CardItem/CardAssets/purple_front.png";
+import YELLOW_FRONT from "../CardItem/CardAssets/yellow_front.png";
 
 import HoloCard from '../CardItem/HoloCard/HoloCard';
 import ShatterCard from '../CardItem/ShatterCard/ShatterCard';
@@ -82,14 +83,16 @@ const CardFlip = ({ cardType, cardImg }) => {
     const handleFlip = () => {
         const random = Math.floor(Math.random() * 100);
         console.log("random: " + random);
-        if (random <= 25) {
+        if (random <= 20) {
             setImage(GREEN_FRONT);
-        } else if (random > 25 && random <= 50) {
+        } else if (random > 20 && random <= 40) {
             setImage(BLUE_FRONT);
-        } else if (random > 50 && random <= 75) {
+        } else if (random > 40 && random <= 60) {
             setImage(PURPLE_FRONT);
-        } else {
+        } else if (random > 60 && random <= 80) {
             setImage(RED_FRONT);
+        } else {
+            setImage(YELLOW_FRONT);
         }
         if (!flipped) {
             setFlipped(true)
