@@ -64,12 +64,13 @@ const useStyles = makeStyles((theme) => ({
 const PacksFrame = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const { packs } = useSelector((state) => ({
+    const { packs, cardPool } = useSelector((state) => ({
         packs: state.cards.packs,
+        cardPool: state.cards.card_pools
     }))
 
     const handlePackOpen = (packData) => {
-        let pack = generatePack(packData.type, packData.size)
+        let pack = generatePack(packData.type, packData.size, packData.set, cardPool)
         // console.log(pack);
         dispatch(storeActions.loadNewPack(pack));
     }
@@ -77,6 +78,7 @@ const PacksFrame = () => {
     return (
         <div className={classes.main}>
             {packs.map((item, index) => {
+                console.log(item.name);
                 return (
                     <Pack key={index} packData={item} imageSize={"l"} handlePackOpen={handlePackOpen} />
                 )

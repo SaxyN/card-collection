@@ -39,11 +39,13 @@ function randomSelect(itemList) {
     return itemList[random];
 }
 
-export function generatePack(packType, packSize) {
+export function generatePack(packType, packSize, packSet, cardPool) {
+    console.log("Open Pack Set: " + packSet);
     let epic = false;
     let legendary = false;
     if (packType === "epic") epic = true;
     if (packType === "legendary") legendary = true;
+
     let newPack = [];
     var LootTable = LootData.chances;
     var v, i, j;

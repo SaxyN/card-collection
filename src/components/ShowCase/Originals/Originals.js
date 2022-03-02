@@ -63,7 +63,7 @@ const Originals = () => {
                 <div className={classes.innerShowcase}>
                     <div style={{ margin: "15px" }}>
                         <Typography className={classes.cardName} variant="body1">Normal</Typography>
-                        <NormalCard image={randomImage()} />
+                        <NormalCard image={BLUE_FRONT} />
                     </div>
                     <div style={{ margin: "15px" }}>
                         <Typography className={classes.cardName} variant="body1">Hologrpahic</Typography>
