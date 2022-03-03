@@ -26,7 +26,7 @@ const styles = makeStyles((theme) => ({
         margin: "35px",
     },
     normalBack: {
-        height: "295px",
+        height: "368.75px",
         transition: "box-shadow 0.1s ease-out",
         borderRadius: "5%/3.5%",
         "&:hover": {
@@ -34,7 +34,7 @@ const styles = makeStyles((theme) => ({
         }
     },
     holoBack: {
-        height: "295px",
+        height: "368.75px",
         transition: "box-shadow 0.1s ease-out",
         borderRadius: "5%/3.5%",
         "&:hover": {
@@ -42,7 +42,7 @@ const styles = makeStyles((theme) => ({
         }
     },
     shatterBack: {
-        height: "295px",
+        height: "368.75px",
         transition: "box-shadow 0.1s ease-out",
         borderRadius: "5%/3.5%",
         "&:hover": {
@@ -50,7 +50,7 @@ const styles = makeStyles((theme) => ({
         }
     },
     legendaryBack: {
-        height: "295px",
+        height: "368.75px",
         transition: "box-shadow 0.1s ease-out",
         borderRadius: "5%/3.5%",
         "&:hover": {
@@ -139,7 +139,7 @@ const CardFlip = ({ cardType, cardImg }) => {
             <ReactCardFlip isFlipped={flipped} flipDirection='horizontal'>
                 <div onClick={() => handleFlip()} className={cardType === "holo" ? classes.holoBack : cardType === "shatter" ? classes.shatterBack : cardType === "legendary" ? classes.legendaryBack : classes.normalBack}>
                     {/* <ImageHandler name={cardImg} size="s" alt="logo" /> */}
-                    <img src={card_back} alt="logo" style={{ width: "210px", height: "295px", borderRadius: "5% / 3.5%" }} />
+                    <img src={card_back} alt="logo" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
                 </div>
                 <>
                     {/* <HoloCard /> */}

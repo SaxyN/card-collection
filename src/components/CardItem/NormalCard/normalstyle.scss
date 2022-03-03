@@ -1,11 +1,15 @@
-:root {
-  // --eeveefront: url(card_template.png);
-}
+// :root {
+//   // --eeveefront: url(card_template.png);
+// }
 
 .card_normal {
   
-  width: 210px;
-  height: 295px;
+  // 210 x 295 Original
+  // 262.5 x 368.75 1.25x Original
+  // 315 x 442.5 1.5x Original
+  // 420 x 590 x2 Original
+  width: 262.5px;
+  height: 368.75px;
     // width: clamp(200px, 61vh, 18vw);
     // height: clamp(280px, 85vh, 25.2vw);
 //   @media screen and (min-width: 600px) {
