@@ -15,7 +15,7 @@ import LegendaryCard from "../CardItem/LegendaryCard/LegendaryCard";
 
 import cardFlipSfx from "../../assets/card_flip.wav";
 import holoFlipSfx from "../../assets/nice.mp3";
-import epicFlipSfx from "../../assets/shatter_card.mp3";
+import epicFlipSfx from "../../assets/found.mp3";
 import legendaryFlipSfx from "../../assets/english_rare.mp3";
 import useSound from 'use-sound';
 import ImageHandler from '../ImageHandler/ImageHandler';

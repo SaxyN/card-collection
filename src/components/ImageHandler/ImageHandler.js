@@ -11,7 +11,7 @@ import { Fragment } from "react";
 import { makeStyles } from "@mui/styles";
 const styles = makeStyles((theme) => ({
     small: {
-        width: "100%", height: "100%",
+        width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%"
     },
     large: {
         width: "100%", height: "100%",
