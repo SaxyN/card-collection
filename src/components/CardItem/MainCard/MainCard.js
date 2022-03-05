@@ -1,5 +1,5 @@
 import "./style.scss";
-import React, { useState } from "react";
+import React from "react";
 import $ from "jquery"
 
 const MainCard = () => {
