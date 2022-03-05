@@ -1,8 +1,6 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { Card } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import card_template_face from "./card_template_face.png";
-import blurred_shatter from "./blurred_shatter.png";
 
 import $ from "jquery";
 import ImageHandler from '../../ImageHandler/ImageHandler';

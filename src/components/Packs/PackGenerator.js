@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Paper, Button, Typography } from "@mui/material";
+import React from 'react';
+import { Paper, Typography } from "@mui/material";
 import { makeStyles } from '@mui/styles';
-import { Route, Link, useRouteMatch } from 'react-router-dom';
+// import { Route, Link, useRouteMatch } from 'react-router-dom';
 
 const styles = makeStyles((theme) => ({
     cardOuter: {
@@ -20,7 +20,7 @@ const styles = makeStyles((theme) => ({
 }))
 
 const PackGenerator = () => {
-    let match = useRouteMatch();
+    // let match = useRouteMatch();
     const classes = styles();
 
     return (

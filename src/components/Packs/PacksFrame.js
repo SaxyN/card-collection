@@ -1,18 +1,18 @@
 import React from 'react';
 import { makeStyles } from "@mui/styles";
-import { Button, Card, CardContent, CardActions, Divider, Typography } from "@mui/material";
-import { Link, useRouteMatch, Redirect } from 'react-router-dom';
-import card_back from "./card_back.png";
-import pack_design from '../../assets/pack_design.png';
-import pack_design2 from '../../assets/pack_design2.png';
-import pack_design3 from '../../assets/pack_design3.png';
+// import { Button, Card, CardContent, CardActions, Divider, Typography } from "@mui/material";
+// import { Link, useRouteMatch, Redirect } from 'react-router-dom';
+// import card_back from "./card_back.png";
+// import pack_design from '../../assets/pack_design.png';
+// import pack_design2 from '../../assets/pack_design2.png';
+// import pack_design3 from '../../assets/pack_design3.png';
 
 // import TestCard from '../CardItem/TestCard/TestCard';
-import MainCard from '../CardItem/MainCard/MainCard';
-import HoloCard from '../CardItem/HoloCard/HoloCard';
+// import MainCard from '../CardItem/MainCard/MainCard';
+// import HoloCard from '../CardItem/HoloCard/HoloCard';
 
 import * as storeActions from "../../store/cards/cards.action";
-import generateCard, { generatePack } from '../../cardpull/cardPuller';
+import { generatePack } from '../../cardpull/cardPuller';
 import { useDispatch, useSelector } from 'react-redux';
 import Pack from "../Packs/Pack";
 
@@ -78,7 +78,7 @@ const PacksFrame = () => {
     return (
         <div className={classes.main}>
             {packs.map((item, index) => {
-                console.log(item.name);
+                // console.log(item.name);
                 return (
                     <Pack key={index} packData={item} imageSize={"l"} handlePackOpen={handlePackOpen} />
                 )

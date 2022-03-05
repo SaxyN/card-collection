@@ -18,8 +18,8 @@ import holoFlipSfx from "../../assets/nice.mp3";
 import epicFlipSfx from "../../assets/found.mp3";
 import legendaryFlipSfx from "../../assets/english_rare.mp3";
 import useSound from 'use-sound';
-import ImageHandler from '../ImageHandler/ImageHandler';
-import { ImageFetcher } from '../ImageHandler/ImageHandler';
+// import ImageHandler from '../ImageHandler/ImageHandler';
+// import { ImageFetcher } from '../ImageHandler/ImageHandler';
 
 const styles = makeStyles((theme) => ({
     flipCard: {
@@ -59,10 +59,10 @@ const styles = makeStyles((theme) => ({
     }
 }))
 
-const CardFlip = ({ cardType, cardImg }) => {
+const CardFlip = ({ cardType, cardImage }) => {
     const classes = styles();
     const [flipped, setFlipped] = useState(false);
-    const [image, setImage] = useState(null);
+    // const [image, setImage] = useState(null);
     const [normalCard] = useSound(
         cardFlipSfx,
         { volume: 0.25 }
@@ -82,18 +82,18 @@ const CardFlip = ({ cardType, cardImg }) => {
 
     const handleFlip = () => {
         const random = Math.floor(Math.random() * 100);
-        console.log("random: " + random);
-        if (random <= 20) {
-            setImage(GREEN_FRONT);
-        } else if (random > 20 && random <= 40) {
-            setImage(BLUE_FRONT);
-        } else if (random > 40 && random <= 60) {
-            setImage(PURPLE_FRONT);
-        } else if (random > 60 && random <= 80) {
-            setImage(RED_FRONT);
-        } else {
-            setImage(YELLOW_FRONT);
-        }
+        // console.log("random: " + random);
+        // if (random <= 20) {
+        //     setImage(GREEN_FRONT);
+        // } else if (random > 20 && random <= 40) {
+        //     setImage(BLUE_FRONT);
+        // } else if (random > 40 && random <= 60) {
+        //     setImage(PURPLE_FRONT);
+        // } else if (random > 60 && random <= 80) {
+        //     setImage(RED_FRONT);
+        // } else {
+        //     setImage(YELLOW_FRONT);
+        // }
         if (!flipped) {
             setFlipped(true)
             if (cardType === "normal") {
@@ -118,10 +118,6 @@ const CardFlip = ({ cardType, cardImg }) => {
         }
     }
 
-    const handleAudio = (type) => {
-
-    }
-
     // const randomImage = () => {
     //     const random = Math.floor(Math.random() * 100);
     //     console.log("random: " + random);
@@ -133,7 +129,7 @@ const CardFlip = ({ cardType, cardImg }) => {
     //         return RED_FRONT;
     //     }
     // }
-    console.log("render");
+
     return (
         <div style={{ margin: "10px" }}>
             <ReactCardFlip isFlipped={flipped} flipDirection='horizontal'>
@@ -143,7 +139,7 @@ const CardFlip = ({ cardType, cardImg }) => {
                 </div>
                 <>
                     {/* <HoloCard /> */}
-                    {cardType === "holo" ? <HoloCard /> : cardType === "shatter" ? <ShatterCard /> : cardType === "legendary" ? <LegendaryCard /> : <NormalCard image={image} />}
+                    {cardType === "holo" ? <HoloCard imageFace={cardImage} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> : cardType === "shatter" ? <ShatterCard imageFace={cardImage} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> : cardType === "legendary" ? <LegendaryCard imageFace={cardImage} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> : <NormalCard imageFace={cardImage} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />}
                     {/* <ShatterCard /> */}
                 </>
             </ReactCardFlip>

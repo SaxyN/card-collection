@@ -1,16 +1,17 @@
-import React, { useState } from "react";
-import card_template from "./card_template.png";
-import card_template_face from "./card_template_face.png";
-import blurred_shatter from "./blurred_shatter.png";
-import animated_fire from "../../../assets/flame.gif";
-import BLUE_FACE from "../CardAssets/blue_face.png";
-import PURPLE_FACE from "../CardAssets/purple_face.png";
-import BURLEY_FACE from "../CardAssets/derek_f.png";
+import React from "react";
+// import card_template from "./card_template.png";
+// import card_template_face from "./card_template_face.png";
+// import blurred_shatter from "./blurred_shatter.png";
+// import animated_fire from "../../../assets/flame.gif";
+// import BLUE_FACE from "../CardAssets/blue_face.png";
+// import PURPLE_FACE from "../CardAssets/purple_face.png";
+// import BURLEY_FACE from "../CardAssets/derek_f.png";
 
 import $ from "jquery";
 import "./holostyle.scss";
+import ImageHandler from '../../ImageHandler/ImageHandler';
 
-const HoloCard = () => {
+const HoloCard = ({ imageFace, imageStyle }) => {
     const [hover, setHover] = React.useState(false);
 
     var x;
@@ -74,7 +75,8 @@ const HoloCard = () => {
     return (
         <>
             <div className="card_holo eevee animated" onMouseOver={() => setHover(true)}>
-                <img src={BURLEY_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
+                {/* <img src={BURLEY_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                <ImageHandler name={imageFace} imageStyle={imageStyle} />
             </div>
             <style className='holo_hover'></style>
         </>

@@ -1,13 +1,13 @@
-import React, { useState, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Button } from "@mui/material";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CardFlip from '../../components/Flip/CardFlip';
-import generateCard, { generatePack } from '../../cardpull/cardPuller';
+// import generateCard, { generatePack } from '../../cardpull/cardPuller';
 import { useSelector } from "react-redux";
 // import generatePack from '../../cardpull/cardPuller';
 
 const PackOpener = () => {
-    const [packData, setPackData] = React.useState([]);
+    // const [packData, setPackData] = React.useState([]);
     const { pack } = useSelector((state) => ({
         pack: state.cards.pack,
     }));

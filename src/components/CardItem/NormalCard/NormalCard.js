@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import card_template from "./card_template.png";
-import card_template_face from "./card_template_face.png";
-import blurred_shatter from "./blurred_shatter.png";
-import PURPLE_FACE from "../CardAssets/purple_face.png";
+import React from 'react';
+// import card_template from "./card_template.png";
+// import card_template_face from "./card_template_face.png";
+// import blurred_shatter from "./blurred_shatter.png";
+// import PURPLE_FACE from "../CardAssets/purple_face.png";
 import $ from 'jquery'
 
 import "./normalstyle.scss";
+import ImageHandler from '../../ImageHandler/ImageHandler';
 
-const NormalCard = ({ image }) => {
+const NormalCard = ({ imageFace, imageStyle }) => {
     const [hover, setHover] = React.useState(false);
     const random = Math.floor(Math.random() * 1000);
 
@@ -73,7 +74,8 @@ const NormalCard = ({ image }) => {
     return (
         <>
             <div className="card_normal eevee" onMouseOver={() => setHover(true)}>
-                <img src={PURPLE_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
+                {/* <img src={PURPLE_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                <ImageHandler name={imageFace} imageStyle={imageStyle} />
             </div>
             {/* <style className={`normal_hover_` + random}></style> */}
         </>

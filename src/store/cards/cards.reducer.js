@@ -17,62 +17,90 @@ const cardsData = {
             "description": "Epic Card Guanteed",
             "image": "pack_design2",
             "size": 6,
-            "type": "epic",
-            "set": "1B"
+            "type": "holo",
+            "set": "1A"
         }
     ],
-    card_pools: {
+    card_pools: [
         // 0 = Normal 1 = Holo 2 = Shatter 3 = Legendary
 
-        // Need to generate multiple normal and holo and shatter cards completely so we can 
-        // test pulling method fully for performance and functionality
-        "1A": [
+        [
             {
-                "id": "derek_f_0",
-                "img": "derek_f",
-                "rarity": 0,
-                "type": "normal" 
-            },
-            {
-                "id": "derek_f_1",
-                "img": "derek_f",
-                "rarity": 1,
-                "type": "holo"
-            },
-            {
-                "id": "derek_f_2",
+                "id": "1",
+                "set": "1A",
                 "img": "derek_f",
                 "rarity": 2,
-                "type": "shatter"
             },
             {
-                "id": "derek_f_3",
-                "img": "derek_f_leg",
-                "rarity": 3,
-                "type": "legendary"
+                "id": "2",
+                "set": "1A",
+                "img": "big_leo_big_meech",
+                "rarity": 2,
+            },
+            {
+                "id": "3",
+                "set": "1A",
+                "img": "ethan_f",
+                "rarity": 2,
+            },
+            {
+                "id": "4",
+                "set": "1A",
+                "img": "harley_s",
+                "rarity": 2,
+            },
+            {
+                "id": "5",
+                "set": "1A",
+                "img": "burley_b",
+                "rarity": 2,
+            },
+            {
+                "id": "6",
+                "set": "1A",
+                "img": "danny_r",
+                "rarity": 2,
             }
         ],
-        "2A": [
+        [
             {
-                "id": "derek_f_0",
-                "img": "derek_f",
-                "rarity": 0,
-                "type": "normal" 
-            },
-            {
-                "id": "derek_f_1",
-                "img": "derek_f",
-                "rarity": 1,
-                "type": "holo"
-            },
-            {
-                "id": "derek_f_2",
+                "id": "1",
+                "set": "2A",
                 "img": "derek_f",
                 "rarity": 2,
-                "type": "shatter"
+            },
+            {
+                "id": "2",
+                "set": "2A",
+                "img": "big_leo_big_meech",
+                "rarity": 2,
+            },
+            {
+                "id": "3",
+                "set": "2A",
+                "img": "ethan_f",
+                "rarity": 2,
+            },
+            {
+                "id": "4",
+                "set": "2A",
+                "img": "harley_s",
+                "rarity": 2,
+            },
+            {
+                "id": "5",
+                "set": "2A",
+                "img": "burley_b",
+                "rarity": 2,
+            },
+            {
+                "id": "6",
+                "set": "2A",
+                "img": "danny_r",
+                "rarity": 2,
             }
         ]
-    }
+    ]
     // card_pool_data: [
     //     {
 

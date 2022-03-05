@@ -27,22 +27,17 @@ function shuffle(array) {
         currentIndex--;
 
         // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
     }
 
     return array;
 }
 
-function randomSelect(itemList) {
-    const random = Math.floor(Math.random() * itemList.length);
-    return itemList[random];
-}
-
 export function generatePack(packType, packSize, packSet, cardPool) {
     console.log("Open Pack Set: " + packSet);
-    let epic = false;
-    let legendary = false;
+
+    let holo, epic, legendary = false;
+    if (packType === "holo") holo = true;
     if (packType === "epic") epic = true;
     if (packType === "legendary") legendary = true;
 
@@ -52,13 +47,18 @@ export function generatePack(packType, packSize, packSet, cardPool) {
     var randomNumber = 0;
 
     for (j = 0; j < packSize; j++) {
+        if (holo) {
+            newPack.push({ type: "holo", id: "156_chupador", img: generateCardFromSet(packSet, cardPool) });
+            holo = false;
+            continue;
+        }
         if (epic) {
-            newPack.push({ type: "shatter", id: "156_chupador", img: generateCardFromSet(LootData.cards) });
+            newPack.push({ type: "shatter", id: "156_chupador", img: generateCardFromSet(packSet, cardPool) });
             epic = false;
             continue;
         }
         if (legendary) {
-            newPack.push({ type: "legendary", id: "156_chupador", img: generateCardFromSet(LootData.cards) });
+            newPack.push({ type: "legendary", id: "156_chupador", img: generateCardFromSet(packSet, cardPool) });
             legendary = false;
             continue;
         }
@@ -68,7 +68,7 @@ export function generatePack(packType, packSize, packSet, cardPool) {
             v = LootTable[i]
 
             if (randomNumber <= v.upper && randomNumber >= v.lower) {
-                newPack.push({ type: v.type, id: "156_chupador", img: generateCardFromSet(LootData.cards) });
+                newPack.push({ type: v.type, id: "156_chupador", img: generateCardFromSet(packSet, cardPool) });
                 break;
             };
         }
@@ -85,9 +85,22 @@ export function generatePack(packType, packSize, packSet, cardPool) {
 
 }
 
-export function generateCardFromSet() {
-    const randomCard = randomSelect(LootData.cards);
-    return randomCard.id;
+export function generateCardFromSet(packSet, cardPool) {
+    for (var i = 0; i < cardPool.length; i++) {
+        if (cardPool[i][0].set === packSet) {
+            // console.log(cardPool[i])
+            const randomCard = randomSelect(cardPool[i]);
+            return randomCard.img;
+        }
+    }
+
+    return -1;
+
+}
+
+function randomSelect(itemList) {
+    const random = Math.floor(Math.random() * itemList.length);
+    return itemList[random];
 }
 
 export default generateCard;
