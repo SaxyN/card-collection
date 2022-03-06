@@ -8,6 +8,8 @@ import ShatterCard from '../CardItem/ShatterCard/ShatterCard';
 import MainCard from "../CardItem/MainCard/MainCard";
 import NormalCard from '../CardItem/NormalCard/NormalCard';
 
+import CardHandler from '../CardHandler/CardHandler';
+
 const useStyles = makeStyles((theme) => ({
     itemOuter: {
         postiion: "relative",
@@ -64,8 +66,9 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const InventoryItem = ({ itemId, itemCount, itemType }) => {
+const InventoryItem = ({ cardId, cardImage, cardType }) => {
     const classes = useStyles();
+    console.log(cardId, cardImage, cardType)
 
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {
@@ -91,49 +94,48 @@ const InventoryItem = ({ itemId, itemCount, itemType }) => {
         zIndex: 500,
     })
 
-    if (itemCount > 1) {
-        return (
-            <div>
-                <div className={classes.itemOuter} >
-                    {itemType === "normal" ?
-                        <NormalCard />
-                        : itemType === "holo" ?
-                            <HoloCard />
-                            : itemType === "shatter" ?
-                                <ShatterCard />
-                                : <></>
-                    }
-                    <StyledCounter>
-                        <Typography variant="body1">
-                            {itemCount}
-                        </Typography>
-                    </StyledCounter>
-                </div>
+    return (
+        <>
+            <CardHandler cardImage={cardImage} cardType={cardType} />
+        </>
+    )
 
-            </div>
-        )
-    } else {
-        return (
-            <div className={classes.itemOuter}>
-                {itemType === "normal" ?
-                    <NormalCard />
-                    : itemType === "holo" ?
-                        <HoloCard />
-                        : itemType === "shatter" ?
-                            <ShatterCard />
-                            : <>Error Unknown Type</>
-                }
-            </div>
-        )
-    }
-    // return <>hi</>
-    // return (
-    //     <>
-    //     <MainCard />
-    //     </>
-    //     <MainCard />
-    //     <MainCard />
-    // )
+
+    // if (itemCount > 1) {
+    //     return (
+    //         <div>
+    //             <div className={classes.itemOuter} >
+    //                 {itemType === "normal" ?
+    //                     <NormalCard />
+    //                     : itemType === "holo" ?
+    //                         <HoloCard />
+    //                         : itemType === "shatter" ?
+    //                             <ShatterCard />
+    //                             : <></>
+    //                 }
+    //                 <StyledCounter>
+    //                     <Typography variant="body1">
+    //                         {itemCount}
+    //                     </Typography>
+    //                 </StyledCounter>
+    //             </div>
+
+    //         </div>
+    //     )
+    // } else {
+    //     return (
+    //         <div className={classes.itemOuter}>
+    //             {itemType === "normal" ?
+    //                 <NormalCard />
+    //                 : itemType === "holo" ?
+    //                     <HoloCard />
+    //                     : itemType === "shatter" ?
+    //                         <ShatterCard />
+    //                         : <>Error Unknown Type</>
+    //             }
+    //         </div>
+    //     )
+    // }
 }
 
 export default InventoryItem;
