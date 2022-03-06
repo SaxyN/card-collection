@@ -47,28 +47,28 @@ export function generatePack(packType, packSize, packSet, cardPool) {
     var randomNumber = 0;
 
     for (j = 0; j < packSize; j++) {
+        var card = generateCardFromSet(packSet, cardPool)
         if (holo) {
-            newPack.push({ type: "holo", id: "156_chupador", img: generateCardFromSet(packSet, cardPool) });
+            newPack.push({ type: 1, id: card.id, img: card.img });
             holo = false;
             continue;
         }
         if (epic) {
-            newPack.push({ type: "shatter", id: "156_chupador", img: generateCardFromSet(packSet, cardPool) });
+            newPack.push({ type: 2, id: card.id, img: card.img });
             epic = false;
             continue;
         }
         if (legendary) {
-            newPack.push({ type: "legendary", id: "156_chupador", img: generateCardFromSet(packSet, cardPool) });
+            newPack.push({ type: 3, id: card.id, img: card.img });
             legendary = false;
             continue;
         }
         randomNumber = Math.floor(Math.random() * 1000);
-        console.log(randomNumber)
+        // console.log(randomNumber)
         for (i = 0; i < LootTable.length; i++) {
             v = LootTable[i]
-
             if (randomNumber <= v.upper && randomNumber >= v.lower) {
-                newPack.push({ type: v.type, id: "156_chupador", img: generateCardFromSet(packSet, cardPool) });
+                newPack.push({ type: v.type, id: card.id, img: card.img });
                 break;
             };
         }
@@ -77,7 +77,7 @@ export function generatePack(packType, packSize, packSet, cardPool) {
         console.log("%cBAD PACK GENERATION", "color:red");
         newPack = generatePack(packType, packSize);
     } else {
-        console.log("%cNew Pack Generation", "color:green");
+        console.log("%cNEW PACK GENERATION", "color:green");
         newPack = shuffle(newPack);
         console.log(newPack);
         return newPack;
@@ -90,7 +90,7 @@ export function generateCardFromSet(packSet, cardPool) {
         if (cardPool[i][0].set === packSet) {
             // console.log(cardPool[i])
             const randomCard = randomSelect(cardPool[i]);
-            return randomCard.img;
+            return randomCard;
         }
     }
 

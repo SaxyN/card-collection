@@ -18,6 +18,7 @@ import holoFlipSfx from "../../assets/nice.mp3";
 import epicFlipSfx from "../../assets/found.mp3";
 import legendaryFlipSfx from "../../assets/english_rare.mp3";
 import useSound from 'use-sound';
+import CardHandler from '../CardHandler/CardHandler';
 // import ImageHandler from '../ImageHandler/ImageHandler';
 // import { ImageFetcher } from '../ImageHandler/ImageHandler';
 
@@ -96,13 +97,13 @@ const CardFlip = ({ cardType, cardImage }) => {
         // }
         if (!flipped) {
             setFlipped(true)
-            if (cardType === "normal") {
+            if (cardType === 0) {
                 normalCard()
-            } else if (cardType === "holo") {
+            } else if (cardType === 1) {
                 holoCard()
-            } else if (cardType === "shatter") {
+            } else if (cardType === 2) {
                 epicCard()
-            } else {
+            } else if (cardType === 3) {
                 legendaryCard()
             }
             // switch (cardType) {
@@ -133,13 +134,14 @@ const CardFlip = ({ cardType, cardImage }) => {
     return (
         <div style={{ margin: "10px" }}>
             <ReactCardFlip isFlipped={flipped} flipDirection='horizontal'>
-                <div onClick={() => handleFlip()} className={cardType === "holo" ? classes.holoBack : cardType === "shatter" ? classes.shatterBack : cardType === "legendary" ? classes.legendaryBack : classes.normalBack}>
+                <div onClick={() => handleFlip()} className={cardType === 1 ? classes.holoBack : cardType === 2 ? classes.shatterBack : cardType === 3 ? classes.legendaryBack : classes.normalBack}>
                     {/* <ImageHandler name={cardImg} size="s" alt="logo" /> */}
                     <img src={card_back} alt="logo" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
                 </div>
                 <>
                     {/* <HoloCard /> */}
-                    {cardType === "holo" ? <HoloCard imageFace={cardImage} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> : cardType === "shatter" ? <ShatterCard imageFace={cardImage} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> : cardType === "legendary" ? <LegendaryCard imageFace={cardImage} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> : <NormalCard imageFace={cardImage} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />}
+                    <CardHandler cardImage={cardImage} cardType={cardType} />
+                    {/* {cardType === "holo" ? <HoloCard imageFace={cardImage} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> : cardType === "shatter" ? <ShatterCard imageFace={cardImage} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> : cardType === "legendary" ? <LegendaryCard imageFace={cardImage} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> : <NormalCard imageFace={cardImage} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />} */}
                     {/* <ShatterCard /> */}
                 </>
             </ReactCardFlip>

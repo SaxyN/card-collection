@@ -1,25 +1,25 @@
 {
     "chances": [
         {
-            "type": "normal",
+            "type": 0,
             "weight": 5,
             "lower": 0,
             "upper": 919
         },
         {
-            "type": "holo",
+            "type": 1,
             "weight": 20,
             "lower": 920,
             "upper": 970
         },
         {
-            "type": "shatter",
+            "type": 2,
             "weight": 10,
             "lower": 971,
             "upper": 997
         },
         {
-            "type": "legendary",
+            "type": 3,
             "weight": 10,
             "lower": 998,
             "upper": 1000
