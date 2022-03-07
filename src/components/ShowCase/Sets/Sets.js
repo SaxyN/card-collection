@@ -27,6 +27,7 @@ const styles = makeStyles((theme) => ({
         display: "grid",
         gridTemplateColumns: "auto auto auto auto auto auto",
         justifyContent: "center",
+        paddingBottom: "50px",
     },
     cardName: {
         marginBottom: "25px",
@@ -43,27 +44,27 @@ const Sets = () => {
                 <Typography variant="h2">Set 1A</Typography>
                 <Divider orientation='horizontal' style={{ margin: "15px" }} />
                 <div className={classes.innerShowcase}>
-                    <div style={{ margin: "15px" }}>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Danny R</Typography>
                         <NormalCard imageFace={"danny_r"} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
                     </div>
-                    <div style={{ margin: "15px" }}>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Harley S</Typography>
                         <NormalCard imageFace={"harley_s"} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
                     </div>
-                    <div style={{ margin: "15px" }}>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Burley B</Typography>
                         <NormalCard imageFace={"burley_b"} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
                     </div>
-                    <div style={{ margin: "15px" }}>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Big Leo & Big Meech</Typography>
                         <NormalCard imageFace={"big_leo_big_meech"} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
                     </div>
-                    <div style={{ margin: "15px" }}>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Derek F</Typography>
                         <NormalCard imageFace={"derek_f"} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
                     </div>
-                    <div style={{ margin: "15px" }}>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Ethan F</Typography>
                         <NormalCard imageFace={"ethan_f"} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
                     </div>
