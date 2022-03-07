@@ -1,12 +1,12 @@
 import React from 'react';
 import { makeStyles, styled } from '@mui/styles';
-import { Badge, Typography } from "@mui/material";
+import { Badge } from "@mui/material";
 
 // Various Card Types
-import HoloCard from '../CardItem/HoloCard/HoloCard';
-import ShatterCard from '../CardItem/ShatterCard/ShatterCard';
-import MainCard from "../CardItem/MainCard/MainCard";
-import NormalCard from '../CardItem/NormalCard/NormalCard';
+// import HoloCard from '../CardItem/HoloCard/HoloCard';
+// import ShatterCard from '../CardItem/ShatterCard/ShatterCard';
+// import MainCard from "../CardItem/MainCard/MainCard";
+// import NormalCard from '../CardItem/NormalCard/NormalCard';
 
 import CardHandler from '../CardHandler/CardHandler';
 
@@ -99,43 +99,6 @@ const InventoryItem = ({ cardId, cardImage, cardType }) => {
             <CardHandler cardImage={cardImage} cardType={cardType} />
         </>
     )
-
-
-    // if (itemCount > 1) {
-    //     return (
-    //         <div>
-    //             <div className={classes.itemOuter} >
-    //                 {itemType === "normal" ?
-    //                     <NormalCard />
-    //                     : itemType === "holo" ?
-    //                         <HoloCard />
-    //                         : itemType === "shatter" ?
-    //                             <ShatterCard />
-    //                             : <></>
-    //                 }
-    //                 <StyledCounter>
-    //                     <Typography variant="body1">
-    //                         {itemCount}
-    //                     </Typography>
-    //                 </StyledCounter>
-    //             </div>
-
-    //         </div>
-    //     )
-    // } else {
-    //     return (
-    //         <div className={classes.itemOuter}>
-    //             {itemType === "normal" ?
-    //                 <NormalCard />
-    //                 : itemType === "holo" ?
-    //                     <HoloCard />
-    //                     : itemType === "shatter" ?
-    //                         <ShatterCard />
-    //                         : <>Error Unknown Type</>
-    //             }
-    //         </div>
-    //     )
-    // }
 }
 
 export default InventoryItem;

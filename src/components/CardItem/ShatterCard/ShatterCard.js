@@ -1,12 +1,4 @@
 import React from 'react';
-// import card_template from "./card_template.png";
-// import card_template_face from "./card_template_face.png";
-// import blurred_shatter from "./blurred_shatter.png";
-
-// import BLUE_FACE from "../CardAssets/blue_face.png";
-// import PURPLE_FACE from "../CardAssets/purple_face.png";
-// import BURLEY_FACE from "../CardAssets/derek_f.png";
-
 import $ from "jquery";
 import "./shatterstyle.scss";
 import ImageHandler from '../../ImageHandler/ImageHandler';
@@ -20,7 +12,6 @@ const ShatterCard = ({ imageFace, imageStyle }) => {
 
     $cards
         .on("mousemove", function (e) {
-            // normalise touch/mouse
             var pos = [e.offsetX, e.offsetY];
             e.preventDefault();
             if (e.type === "touchmove") {
@@ -35,7 +26,6 @@ const ShatterCard = ({ imageFace, imageStyle }) => {
             var px = Math.abs(Math.floor(100 / w * l) - 100);
             var py = Math.abs(Math.floor(100 / h * t) - 100);
             var pa = (50 - px) + (50 - py);
-            // math for gradient / background positions
             var lp = (50 + (px - 50) / 1.5);
             var tp = (50 + (py - 50) / 1.5);
             var px_spark = (50 + (px - 50) / 7);
@@ -48,12 +38,10 @@ const ShatterCard = ({ imageFace, imageStyle }) => {
             var sprk_pos = `background-position: ${px_spark}% ${py_spark}%;`
             var opc = `opacity: ${p_opc / 100};`
             var tf = `transform: rotateX(${ty}deg) rotateY(${tx}deg) scale(1.1)`
-            // need to use a <style> tag for psuedo elements
             var style = `
       .card_shatter:hover:before { ${grad_pos} }  /* gradient */
       .card_shatter:hover:after { ${sprk_pos} ${opc} }   /* sparkles */
     `
-            // set / apply css class and style
             $cards.removeClass("active");
             $card.removeClass("animated");
             $card.attr("style", tf);
@@ -63,13 +51,9 @@ const ShatterCard = ({ imageFace, imageStyle }) => {
             }
             clearTimeout(x);
         }).on("mouseout touchend touchcancel", function () {
-            // remove css, apply custom animation on end
             var $card = $(this);
             $style.html("");
             $card.removeAttr("style");
-            // x = setTimeout(function () {
-            //     $card.addClass("animated");
-            // }, 2500);
         });
 
     return (
