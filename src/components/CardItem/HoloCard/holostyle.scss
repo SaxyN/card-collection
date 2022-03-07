@@ -1,12 +1,13 @@
 :root {
   // --eeveefront: url(blue_face.png);
-  --blob: url(testSVG.svg);
+  // --blob: url(testSVG.svg);
 }
 
 .card_holo {
-  
-  width: 262.5px;
-  height: 368.75px;
+  width: "100%";
+  height: "100%"; 
+  // width: 262.5px;
+  // height: 368.75px;
     // width: clamp(200px, 61vh, 18vw);
     // height: clamp(280px, 85vh, 25.2vw);
 //   @media screen and (min-width: 600px) {

@@ -74,7 +74,7 @@ const ShatterCard = ({ imageFace, imageStyle }) => {
 
     return (
         <>
-            <div className="card_shatter eevee animated" onMouseOver={() => setHover(true)}>
+            <div className="card_shatter eevee" onMouseOver={() => setHover(true)}>
                 {/* <img src={BURLEY_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
                 <ImageHandler name={imageFace} imageStyle={imageStyle} />
             </div>
