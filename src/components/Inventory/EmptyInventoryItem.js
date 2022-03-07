@@ -31,7 +31,6 @@ const EmptyInventoryItem = () => {
     const classes = useStyles();
 
     return (
-        // <Card className={classes.emptyItemOuter}>This is an empty Item</div>
         <Card className={classes.emptyItemOuter}></Card>
     )
 }

@@ -4,11 +4,6 @@ import EmptyInventoryItem from './EmptyInventoryItem';
 import { makeStyles } from '@mui/styles';
 import { Card } from "@mui/material";
 
-import HoloCard from '../CardItem/HoloCard/HoloCard';
-import ShatterCard from '../CardItem/ShatterCard/ShatterCard';
-import NormalCard from '../CardItem/NormalCard/NormalCard';
-import LegendaryCard from "../CardItem/LegendaryCard/LegendaryCard";
-
 const useStyles = makeStyles((theme) => ({
     frame: {
         // border: "solid red 1px",

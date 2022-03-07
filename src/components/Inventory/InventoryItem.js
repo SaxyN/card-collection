@@ -2,12 +2,6 @@ import React from 'react';
 import { makeStyles, styled } from '@mui/styles';
 import { Badge } from "@mui/material";
 
-// Various Card Types
-// import HoloCard from '../CardItem/HoloCard/HoloCard';
-// import ShatterCard from '../CardItem/ShatterCard/ShatterCard';
-// import MainCard from "../CardItem/MainCard/MainCard";
-// import NormalCard from '../CardItem/NormalCard/NormalCard';
-
 import CardHandler from '../CardHandler/CardHandler';
 
 const useStyles = makeStyles((theme) => ({

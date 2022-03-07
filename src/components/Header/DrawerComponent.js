@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 
-// import AcountModal from '../NewHeader/AcountModal';
-
 const useStyles = makeStyles((theme) => ({
     drawer: {
         width: "10%"
@@ -49,11 +47,6 @@ const DrawerComponent = () => {
                     ))}
                 </List>
             </Drawer>
-            {/* <IconButton component={Link} to={"/"}>
-                <HomeIcon style={{color: "black", fontSize: "44px"}}/> */}
-            {/* <ComputerIcon style={{color: "black"}}/> */}
-            {/* <Typography variant="h6">Home</Typography> */}
-            {/* </IconButton> */}
         </Box>
     )
 }

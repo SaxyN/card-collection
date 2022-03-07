@@ -21,7 +21,6 @@ import BURLEY_B from "../CardItem/CardAssets/burley_b.png";
 // 6 DANNY_R
 import DANNY_R from "../CardItem/CardAssets/danny_r.png";
 
-import { Fragment } from "react";
 import { makeStyles } from "@mui/styles";
 const styles = makeStyles((theme) => ({
     small: {
@@ -37,22 +36,10 @@ const ImageHandler = ({ name, imageStyle, size }) => {
     // console.log(imageStyle);
 
     switch (name) {
-        case "card_back":
-            return <img src={CARD_BACK} alt="card" className={size === "l" ? classes.large : classes.small} />
-        // case "card_template":
-        //     return <img src={CARD_TEMPLATE} alt="card" className={size === "l" ? classes.large : classes.small} />
         case "pack_design2":
             return <img src={PACK_DESIGN2} alt="pack" className={size === "l" ? classes.large : classes.small} />
         case "pack_design3":
             return <img src={PACK_DESIGN3} alt="pack" className={size === "l" ? classes.large : classes.small} />
-        // case "green_front":
-        //     // return <img src={GREEN_FRONT} alt="pack" className={size === "l" ? classes.large : classes.small} />
-        //     return GREEN_FRONT;
-        // case "blue_blue":
-        //     return <img src={BLUE_FRONT} alt={name} />;
-        // return <img src={BLUE_FRONT} alt="pack" className={size === "l" ? classes.large : classes.small} />
-        // case "full_victor_frost":
-        // return <img src={FULL_VIKTOR_FROST} alt="pack" className={size === "l" ? classes.large : classes.small} />
 
         // ==== SET 1A ====
 
@@ -76,19 +63,6 @@ const ImageHandler = ({ name, imageStyle, size }) => {
             return <img src={DANNY_R} alt={name} style={imageStyle} />;
         default:
             return <img src={BLACK_CARD} alt={""} style={imageStyle} />
-    }
-}
-
-export function ImageFetcher(imageName) {
-    switch (imageName) {
-        case "green_front":
-            // return <img src={GREEN_FRONT} alt="pack" className={size === "l" ? classes.large : classes.small} />
-            return GREEN_FRONT;
-        case "blue_blue":
-            return BLUE_FRONT;
-        default:
-            return null;
-        // return <img src={BLUE_FRONT} alt="pack" className={size === "l" ? classes.large : classes.small} />
     }
 }
 
