@@ -1,12 +1,4 @@
 import React from "react";
-// import card_template from "./card_template.png";
-// import card_template_face from "./card_template_face.png";
-// import blurred_shatter from "./blurred_shatter.png";
-// import animated_fire from "../../../assets/flame.gif";
-// import BLUE_FACE from "../CardAssets/blue_face.png";
-// import PURPLE_FACE from "../CardAssets/purple_face.png";
-// import BURLEY_FACE from "../CardAssets/derek_f.png";
-
 import $ from "jquery";
 import "./holostyle.scss";
 import ImageHandler from '../../ImageHandler/ImageHandler';
