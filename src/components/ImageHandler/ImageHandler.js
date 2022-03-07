@@ -6,7 +6,7 @@ import PACK_DESIGN3 from "../../assets/pack_design3.png";
 
 import GREEN_FRONT from "../CardItem/CardAssets/green_front.png";
 import BLUE_FRONT from "../CardItem/CardAssets/blue_front.png";
-
+import BLACK_CARD from "../CardItem/CardAssets/black_back.png";
 // ==== SET 1A ====
 // 1 DEREK_F
 import DEREK_F from "../CardItem/CardAssets/derek_f.png";
@@ -75,7 +75,7 @@ const ImageHandler = ({ name, imageStyle, size }) => {
         case "danny_r":
             return <img src={DANNY_R} alt={name} style={imageStyle} />;
         default:
-            return <Fragment />
+            return <img src={BLACK_CARD} alt={""} style={imageStyle} />
     }
 }
 
