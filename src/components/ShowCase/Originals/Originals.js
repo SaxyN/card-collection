@@ -6,6 +6,7 @@ import { makeStyles } from "@mui/styles";
 import NormalCard from '../../CardItem/NormalCard/NormalCard';
 import HoloCard from '../../CardItem/HoloCard/HoloCard';
 import ShatterCard from '../../CardItem/ShatterCard/ShatterCard';
+import CardHandler from '../../CardHandler/CardHandler';
 
 // Test Fronts
 // import GREEN_FRONT from "../../CardItem/CardAssets/green_front.png";
@@ -32,6 +33,7 @@ const styles = makeStyles((theme) => ({
         display: "grid",
         gridTemplateColumns: "auto auto auto auto auto auto",
         justifyContent: "center",
+        paddingBottom: "50px"
     },
     cardName: {
         marginBottom: "25px",
@@ -61,17 +63,20 @@ const Originals = () => {
                 <Typography variant="h2">Original Set Effects</Typography>
                 <Divider orientation='horizontal' style={{ margin: "15px" }} />
                 <div className={classes.innerShowcase}>
-                    <div style={{ margin: "15px" }}>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Normal</Typography>
-                        <NormalCard imageFace={""} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
+                        <CardHandler cardImage={""} cardType={0} />
+                        {/* <NormalCard imageFace={""} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
                     </div>
-                    <div style={{ margin: "15px" }}>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Hologrpahic</Typography>
-                        <HoloCard />
+                        <CardHandler cardImage={""} cardType={1} />
+                        {/* <HoloCard /> */}
                     </div>
-                    <div style={{ margin: "15px" }}>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Shatter</Typography>
-                        <ShatterCard />
+                        <CardHandler cardImage={""} cardType={2} />
+                        {/* <ShatterCard /> */}
                     </div>
                 </div>
             </Paper>
