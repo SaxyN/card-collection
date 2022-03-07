@@ -9,7 +9,7 @@ import DrawerComponent from './DrawerComponent';
 import { AuthContext } from '../../firebase/Authenticator';
 import { useContext } from 'react';
 
-import { getAuth, signOut } from 'firebase/auth';
+// import { getAuth, signOut } from 'firebase/auth';
 
 const useStyles = makeStyles((theme) => ({
     main: {
@@ -38,19 +38,19 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
     const classes = useStyles();
-    const auth = getAuth();
-    const { currentUser } = useContext(AuthContext);
+    // const auth = getAuth();
+    // const { currentUser } = useContext(AuthContext);
     const history = useHistory();
 
-    async function signOutUser() {
-        signOut(auth)
-            .then(() => {
-                history.replace("/login")
-            })
-            .catch((error) => {
-                console.log(error.message)
-            })
-    }
+    // async function signOutUser() {
+    //     signOut(auth)
+    //         .then(() => {
+    //             history.replace("/login")
+    //         })
+    //         .catch((error) => {
+    //             console.log(error.message)
+    //         })
+    // }
 
     return (
         <div className={classes.main}>
@@ -59,13 +59,13 @@ const Header = () => {
                 {/* <Button variant="text" size="large" component={Link} to={"/"}>
                 </Button> */}
 
-                <Typography className={classes.buttonText} variant="h6">{currentUser.displayName}</Typography>
+                {/* <Typography className={classes.buttonText} variant="h6">{currentUser.displayName}</Typography> */}
                 <ul className={classes.ul}>
-                    <li className={classes.li}>
+                    {/* <li className={classes.li}>
                         <Button variant="text" component={Link} to={"/"}>
                             <Typography className={classes.buttonText} variant="body2">Home</Typography>
                         </Button>
-                    </li>
+                    </li> */}
                     <li className={classes.li}>
                         <Button variant="text" component={Link} to={"/inventory"}>
                             <Typography className={classes.buttonText} variant="body2">Inventory</Typography>
@@ -106,9 +106,9 @@ const Header = () => {
                     <Typography className={classes.buttonText} variant="body2">Home</Typography>
                 </Button> */}
                 <div style={{ display: "flex" }}>
-                    <Button variant="text" onClick={() => signOutUser()}>
+                    {/* <Button variant="text" onClick={() => signOutUser()}>
                         <Typography className={classes.buttonText} variant="body2">Sign Out</Typography>
-                    </Button>
+                    </Button> */}
                 </div>
             </div>
         </div>

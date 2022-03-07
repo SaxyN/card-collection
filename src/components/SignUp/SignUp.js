@@ -4,7 +4,7 @@ import React from 'react';
 
 import { Link, useHistory } from "react-router-dom";
 
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const useStyles = makeStyles((theme) => ({
     mainDiv: {
@@ -35,20 +35,20 @@ const SignUp = () => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [passwordConfirm, setPasswordConfirm] = React.useState("");
-    const auth = getAuth();
+    // const auth = getAuth();
     const history = useHistory();
 
-    async function signup(email, password) {
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((user) => {
-                console.log(user);
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode, errorMessage);
-            })
-    }
+    // async function signup(email, password) {
+    //     createUserWithEmailAndPassword(auth, email, password)
+    //         .then((user) => {
+    //             console.log(user);
+    //         })
+    //         .catch((error) => {
+    //             const errorCode = error.code;
+    //             const errorMessage = error.message;
+    //             console.log(errorCode, errorMessage);
+    //         })
+    // }
 
     async function submitSignUp() {
         // console.log(email, password, passwordConfirm);
@@ -60,7 +60,7 @@ const SignUp = () => {
             console.log(passwordConfirm);
             console.log("Good to go");
             try {
-                await signup(email, password);
+                // await signup(email, password);
                 history.replace("/signup/account-details")
             } catch {
                 console.log("Error Creating Account");

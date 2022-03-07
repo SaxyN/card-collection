@@ -28,21 +28,21 @@ const store = createStore(combineReducers, applyMiddleware(...middle));
 function Base() {
 
     return (
-        <AuthProvider>
-            <Provider store={store}>
-                <Router>
-                    <PrivateRoute exact path={"/"} component={InventoryContainer} />
-                    <Route exact path="/login" component={LoginContainer} />
-                    <Route exact path="/signup" component={SignUpContainer} />
-                    <Route exact path="/signup/account-details" component={AccountDetails} />
-                    <Route exact path="/inventory" component={InventoryContainer} />
-                    <Route exact path="/showcase" component={ShowCaseContainer} />
-                    <Route path="/packs" component={PacksContianer} />
-                    <Route exact path="/openpack" component={OpenPackContainer} />
-                    <Route exact path="/test" component={TestContainer} />
-                </Router>
-            </Provider>
-        </AuthProvider>
+        // <AuthProvider>
+        <Provider store={store}>
+            <Router>
+                {/* <PrivateRoute exact path={"/"} component={InventoryContainer} /> */}
+                {/* <Route exact path="/login" component={LoginContainer} /> */}
+                {/* <Route exact path="/signup" component={SignUpContainer} /> */}
+                {/* <Route exact path="/signup/account-details" component={AccountDetails} /> */}
+                <Route exact path="/inventory" component={InventoryContainer} />
+                <Route exact path="/showcase" component={ShowCaseContainer} />
+                <Route path="/packs" component={PacksContianer} />
+                <Route exact path="/openpack" component={OpenPackContainer} />
+                <Route exact path="/test" component={TestContainer} />
+            </Router>
+        </Provider>
+        // </AuthProvider>
     )
 }
 
