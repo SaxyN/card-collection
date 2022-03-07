@@ -4,12 +4,10 @@ function generateCard(packType) {
     var v, i;
     var LootTable = LootData.chances;
     var randomNumber = Math.floor(Math.random() * 100);
-    // console.log(randomNumber);
     for (i = 0; i < LootTable.length; i++) {
         v = LootTable[i]
 
         if (randomNumber <= v.upper && randomNumber >= v.lower) {
-            // console.log(v.type);
             return v.type
         };
         continue;
@@ -33,6 +31,14 @@ function shuffle(array) {
     return array;
 }
 
+/**
+ * Generates a pack of random cards 
+ * @param {string} packType - determines guarenteed card pull ie Holo/Shatter/Legendary
+ * @param {int} packSize - number of cards in the final pack
+ * @param {string} packSet 
+ * @param {array} cardPool 
+ * @returns {array} - parsed in the pack component
+ */
 export function generatePack(packType, packSize, packSet, cardPool) {
     console.log("Open Pack Set: " + packSet);
 
@@ -48,6 +54,7 @@ export function generatePack(packType, packSize, packSet, cardPool) {
 
     for (j = 0; j < packSize; j++) {
         var card = generateCardFromSet(packSet, cardPool)
+        // Check for specialty cards first
         if (holo) {
             newPack.push({ type: 1, id: card.id, img: card.img });
             holo = false;
@@ -63,8 +70,8 @@ export function generatePack(packType, packSize, packSet, cardPool) {
             legendary = false;
             continue;
         }
+        // otherwise fetch a random normal card
         randomNumber = Math.floor(Math.random() * 1000);
-        // console.log(randomNumber)
         for (i = 0; i < LootTable.length; i++) {
             v = LootTable[i]
             if (randomNumber <= v.upper && randomNumber >= v.lower) {
@@ -73,10 +80,11 @@ export function generatePack(packType, packSize, packSet, cardPool) {
             };
         }
     }
+    // alert if we somehow generate a bad length card pull
     if (newPack.length !== packSize) {
         console.log("%cBAD PACK GENERATION", "color:red");
         newPack = generatePack(packType, packSize);
-    } else {
+    } else { // otherwise log successful card pack pull
         console.log("%cNEW PACK GENERATION", "color:green");
         newPack = shuffle(newPack);
         console.log(newPack);
@@ -85,10 +93,15 @@ export function generatePack(packType, packSize, packSet, cardPool) {
 
 }
 
+/**
+ * Pulls random card from specified set
+ * @param {string} packSet - Set String ie. "1A"
+ * @param {array} cardPool - Array of card objects
+ * @returns {object} Card Object
+ */
 export function generateCardFromSet(packSet, cardPool) {
     for (var i = 0; i < cardPool.length; i++) {
         if (cardPool[i][0].set === packSet) {
-            // console.log(cardPool[i])
             const randomCard = randomSelect(cardPool[i]);
             return randomCard;
         }
@@ -98,6 +111,11 @@ export function generateCardFromSet(packSet, cardPool) {
 
 }
 
+/**
+ * Fetches random item from given list
+ * @param {array} itemList 
+ * @returns Random item from given list
+ */
 function randomSelect(itemList) {
     const random = Math.floor(Math.random() * itemList.length);
     return itemList[random];
