@@ -29,3 +29,11 @@ Cards themselves are handled using the `<CardHandler/>` which only needs the ima
 > The showcase tab shows demos of the 3 main card types without an image over them
 
 ![card-showcase](https://github.com/SaxyN/card-collection/blob/master/src/assets/card_demo.PNG?raw=true)
+
+## Generating Packs
+
+Packs are generated on randomly selecting cards from the set the pack is to pull from, in this case is just `1A`. Depending on the pack, the user will either get 6 cards of weighted rarity or a guarenteed card of specified rarity with 5 more weighted random cards.
+
+If the generation method fails to generate the specified number of cards, it will throw an error and restart making another pack. 
+
+Once a pack is generated, it will be passed to the store. From there it is accessed by the packopener component and the user can begin flipping over the cards to see what they got!
