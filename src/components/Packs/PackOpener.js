@@ -19,7 +19,7 @@ const PackOpener = () => {
             <div style={{ width: "100%", display: "flex", justifyContent: "center", paddingTop: "25px" }}>
                 {pack.map((item, index) => {
                     return (
-                        <Fragment>
+                        <Fragment key={index}>
                             <CardFlip cardType={item.type} cardImage={item.img} />
                             {/* <p>{item.type}</p> */}
                         </Fragment>

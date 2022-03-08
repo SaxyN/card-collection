@@ -37,7 +37,7 @@ const DrawerComponent = () => {
                             <MenuOpenIcon />
                         </IconButton>
                     </ListItem>
-                    {['home', 'inventory', 'packs'].map((item, index) => (
+                    {['inventory', 'packs'].map((item, index) => (
                         <div key={index}>
                             <ListItem button className={classes.drawerItem} component={Link} to={item === "home" ? "/" : "/" + item} onClick={() => setOpen(false)}>
                                 <ListItemText primary={item} />
