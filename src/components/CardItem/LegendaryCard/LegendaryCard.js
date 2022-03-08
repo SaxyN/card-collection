@@ -1,7 +1,4 @@
 import React from 'react';
-// import card_template from "./card_template.png";
-// import card_template_face from "./card_template_face.png";
-// import blurred_shatter from "./blurred_shatter.png";
 import ImageHandler from '../../ImageHandler/ImageHandler';
 import $ from 'jquery'
 

@@ -19,7 +19,7 @@ import InventoryContainer from "./containers/InventoryContainer";
 import PacksContianer from "./containers/PacksContainer";
 import OpenPackContainer from "./containers/OpenPackContainer";
 import ShowCaseContainer from "./containers/ShowCaseContainer";
-import TestContainer from "./containers/TestContainer";
+// import TestContainer fr/om "./containers/TestContainer";
 
 const middle = [thunk, logger];
 const store = createStore(combineReducers, applyMiddleware(...middle));
@@ -37,7 +37,7 @@ function Base() {
                 <Route exact path="/showcase" component={ShowCaseContainer} />
                 <Route path="/packs" component={PacksContianer} />
                 <Route exact path="/openpack" component={OpenPackContainer} />
-                <Route exact path="/test" component={TestContainer} />
+                {/* <Route exact path="/test" component={TestContainer} /> */}
             </Router>
         </Provider>
     )

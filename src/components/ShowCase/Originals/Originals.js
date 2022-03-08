@@ -46,17 +46,6 @@ const styles = makeStyles((theme) => ({
 const Originals = () => {
     const classes = styles();
 
-    // const randomImage = () => {
-    //     const random = Math.floor(Math.random() * 100);
-    //     if (random <= 33) {
-    //         return GREEN_FRONT;
-    //     } else if (random > 33 && random <= 66) {
-    //         return BLUE_FRONT;
-    //     } else {
-    //         return RED_FRONT;
-    //     }
-    // }
-
     return (
         <Box>
             <Paper className={classes.showcaseBack} elevation={5}>
@@ -66,17 +55,14 @@ const Originals = () => {
                     <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Normal</Typography>
                         <CardHandler cardImage={""} cardType={0} />
-                        {/* <NormalCard imageFace={""} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
                     </div>
                     <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Hologrpahic</Typography>
                         <CardHandler cardImage={""} cardType={1} />
-                        {/* <HoloCard /> */}
                     </div>
                     <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Shatter</Typography>
                         <CardHandler cardImage={""} cardType={2} />
-                        {/* <ShatterCard /> */}
                     </div>
                 </div>
             </Paper>
