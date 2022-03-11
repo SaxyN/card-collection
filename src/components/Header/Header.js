@@ -40,11 +40,11 @@ const Header = () => {
             <div className={classes.header}>
                 <DrawerComponent />
                 <ul className={classes.ul}>
-                    {/* <li className={classes.li}>
+                    <li className={classes.li}>
                         <Button variant="text" component={Link} to={"/inventory"}>
                             <Typography className={classes.buttonText} variant="body2">Inventory</Typography>
                         </Button>
-                    </li> */}
+                    </li>
                     <li className={classes.li}>
                         <Button variant="text" component={Link} to={"/packs"}>
                             <Typography className={classes.buttonText} variant="body2">Packs</Typography>

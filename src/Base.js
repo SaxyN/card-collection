@@ -30,6 +30,7 @@ function Base() {
         <Provider store={store}>
             <Router>
                 {/* <PrivateRoute exact path={"/"} component={InventoryContainer} /> */}
+                <Route exact path={"/"} component={InventoryContainer} />
                 {/* <Route exact path="/login" component={LoginContainer} /> */}
                 {/* <Route exact path="/signup" component={SignUpContainer} /> */}
                 {/* <Route exact path="/signup/account-details" component={AccountDetails} /> */}

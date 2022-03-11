@@ -101,10 +101,10 @@ export function generatePack(packType, packSize, packSet, cardPool) {
  */
 export function generateCardFromSet(packSet, cardPool) {
     for (var i = 0; i < cardPool.length; i++) {
-        if (cardPool[i][0].set === packSet) {
-            const randomCard = randomSelect(cardPool[i]);
-            return randomCard;
-        }
+        // if (cardPool[i][0].set === packSet) {
+        const randomCard = randomSelect(cardPool);
+        return randomCard;
+        // }
     }
 
     return -1;

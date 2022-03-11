@@ -60,9 +60,8 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const InventoryItem = ({ cardId, cardImage, cardType }) => {
+const InventoryItem = ({ cardId, cardImage, cardType, cardCount }) => {
     const classes = useStyles();
-    console.log(cardId, cardImage, cardType)
 
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {
@@ -78,18 +77,21 @@ const InventoryItem = ({ cardId, cardImage, cardType }) => {
         backgroundColor: 'white',
         border: "solid 2px black",
         textAlign: 'center',
-        width: "20%",
+        width: "1%",
+        position: "absolute",
         paddingTop: 8,
+        paddingBottom: 8,
         borderRadius: 10,
-        top: 300,
-        left: 85,
-        marginLeft: "42%",
-        marginTop: "-20px",
+        top: "50%",
+        left: "10%",
+        marginLeft: "",
+        marginTop: "",
         zIndex: 500,
     })
 
     return (
         <>
+            {/* <StyledCounter>{cardCount}</StyledCounter> */}
             <CardHandler cardImage={cardImage} cardType={cardType} />
         </>
     )
