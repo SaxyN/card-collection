@@ -9,7 +9,10 @@ const cardsData = {
             "set_num": 1,
             "img": "derek_f",
             "type": 2,
-            "count": 1,
+            "count": 6,
+            "collection": [
+
+            ]
         },
         {
             "id": 3,

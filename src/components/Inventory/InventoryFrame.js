@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         marginTop: "20px",
         padding: "20px",
+        textAlign: "center"
         // backgroundColor: "lightgray"
     },
     sortButtons: {

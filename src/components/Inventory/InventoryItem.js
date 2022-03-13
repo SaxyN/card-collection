@@ -65,10 +65,9 @@ const InventoryItem = ({ cardId, cardImage, cardType, cardCount }) => {
 
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {
-            right: -97,
-            top: 295,
             border: `2px solid black`,
             padding: '0 4px',
+            right: -7,
         }
     }))
 
@@ -90,10 +89,11 @@ const InventoryItem = ({ cardId, cardImage, cardType, cardCount }) => {
     })
 
     return (
-        <>
-            {/* <StyledCounter>{cardCount}</StyledCounter> */}
-            <CardHandler cardImage={cardImage} cardType={cardType} />
-        </>
+        <div style={{ margin: "0 15px 0 15px" }}>
+            <StyledBadge badgeContent={cardCount} color="primary" max={5}>
+                <CardHandler cardImage={cardImage} cardType={cardType} />
+            </StyledBadge>
+        </div>
     )
 }
 
