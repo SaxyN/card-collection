@@ -65,9 +65,9 @@ const PacksFrame = () => {
     }
 
     function addToInventory(pack) {
+        console.log("Something");
         var needToAdd = true;
         if (inventory.length === 0) {
-            console.log("Flat Insert");
             inventory.push(pack[0]);
         }
         for (var i = 0; i < pack.length; i++) {

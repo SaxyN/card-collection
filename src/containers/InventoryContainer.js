@@ -11,13 +11,16 @@ const InventoryContainer = () => {
         inventoryData: state.cards.inventory,
         card_pool: state.cards.card_pools,
     }))
+    console.log(inventoryData);
 
     // Card Object
     function buildCollection() {
         var visibleCollection = [];
         var needToAdd = true;
+        console.log("Before: ", inventoryData);
         for (var i = 0; i < inventoryData.length; i++) {
             if (visibleCollection.length === 0) {
+                console.log("Flat Insert: ", inventoryData[0]);
                 visibleCollection.push(inventoryData[0])
             }
             needToAdd = true;
