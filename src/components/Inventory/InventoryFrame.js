@@ -2,20 +2,34 @@ import React from 'react';
 import InventoryItem from './InventoryItem';
 import EmptyInventoryItem from './EmptyInventoryItem';
 import { makeStyles } from '@mui/styles';
-import { Card, IconButton } from "@mui/material";
+import { Card, CardContent } from "@mui/material";
 import MissingCard from './MissingCard/MissingCard';
+import { Box } from '@mui/system';
+import InventoryUtils from './Utils/InventoryUtils';
+import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
     frame: {
-        // border: "solid red 1px",
-        width: "95%",
+        width: "90%",
+        height: "700px",
         display: "grid",
-        gridTemplateColumns: "auto auto auto auto auto auto",
+        gridTemplateColumns: "auto auto auto auto auto",
         justifyContent: "center",
         marginTop: "20px",
-        padding: "20px",
-        textAlign: "center"
-        // backgroundColor: "lightgray"
+        paddingTop: "50px",
+        paddingBottom: "50px",
+        textAlign: "center",
+        backgroundColor: "darkgrey",
+        borderRadius: "5px",
+        marginLeft: "auto",
+        marginRight: "auto",
+        overflow: "auto",
+    },
+    itemCard: {
+        padding: "5px",
+        margin: "15px",
+        border: "grey",
+        borderStyle: "none dotted solid dotted",
     },
     sortButtons: {
         position: "absolute",
@@ -26,9 +40,11 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const InventoryFrame = ({ inventory, cardPool }) => {
-    const classes = useStyles()
-
+const InventoryFrame = ({ inventory, cardPool, updateINV }) => {
+    const classes = useStyles();
+    const { visibleCollection } = useSelector((state) => ({
+        visibleCollection: state.cards.visibleCollection,
+    }));
     function searchPool(cardId) {
         var found = 0;
         var item = null;
@@ -47,17 +63,31 @@ const InventoryFrame = ({ inventory, cardPool }) => {
         }
     }
 
-    function getImageById() {
-
-    }
-
     return (
         <>
-            {/* <div className={classes.sortButtons}>
-                <IconButton>Hi</IconButton>
-            </div> */}
-            <Card className={classes.frame} elevation={10}>
-                {inventory && cardPool ?
+            <InventoryUtils updateINV={updateINV} />
+            <Box className={classes.frame} elevation={10}>
+                {visibleCollection ?
+                    Object.keys(visibleCollection).map((item, index) => {
+                        return (
+                            <div key={index}>
+                                <div className={classes.itemCard}>
+                                    <InventoryItem cardId={visibleCollection[item].id} cardImage={visibleCollection[item].img} cardType={visibleCollection[item].type} cardCount={visibleCollection[item].count} />
+                                </div>
+                            </div>
+                        )
+                    })
+                    : <>Nothing In Here! Go Open Packs!</>}
+                {/* {inventory ?
+                    Object.keys(inventory).map((item, index) => {
+                        return (
+                            <div className={classes.itemCard}>
+                                <InventoryItem key={index} cardId={inventory[item].id} cardImage={inventory[item].img} cardType={inventory[item].type} cardCount={inventory[item].count} />
+                            </div>
+                        )
+                    })
+                    : <>Nothing In Here! Go Open Packs!</>} */}
+                {/* {inventory && cardPool ?
                     Object.keys(cardPool).map((item, index) => {
                         // cardPool.forEach(element => {
                         //     console.log(typeof inventory[item].id, typeof element.id);
@@ -85,7 +115,7 @@ const InventoryFrame = ({ inventory, cardPool }) => {
                     <>
                         Nothing Here
                     </>
-                }
+                } */}
                 {/* {cardPool ? Object.keys(cardPool).map((item, index) => {
                     // console.log(cardPool[item].name)
                     return (
@@ -95,7 +125,7 @@ const InventoryFrame = ({ inventory, cardPool }) => {
                     :
                     <></>
                 } */}
-            </Card>
+            </Box>
         </>
     )
 }

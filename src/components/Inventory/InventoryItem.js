@@ -57,6 +57,10 @@ const useStyles = makeStyles((theme) => ({
         width: "210px",
         height: "295px",
         borderRadius: "7px",
+    },
+
+    generalCard: {
+        margin: "0 15px 0 15px",
     }
 }));
 
@@ -67,7 +71,8 @@ const InventoryItem = ({ cardId, cardImage, cardType, cardCount }) => {
         '& .MuiBadge-badge': {
             border: `2px solid black`,
             padding: '0 4px',
-            right: -7,
+            right: 0,
+            top: -12
         }
     }))
 
@@ -89,8 +94,8 @@ const InventoryItem = ({ cardId, cardImage, cardType, cardCount }) => {
     })
 
     return (
-        <div style={{ margin: "0 15px 0 15px" }}>
-            <StyledBadge badgeContent={cardCount} color="primary" max={5}>
+        <div>
+            <StyledBadge style={{ color: "black" }} badgeContent={cardCount} color="default" max={50}>
                 <CardHandler cardImage={cardImage} cardType={cardType} />
             </StyledBadge>
         </div>

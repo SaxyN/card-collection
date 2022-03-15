@@ -4,6 +4,7 @@ import * as storeActions from "../../store/cards/cards.action";
 import { generatePack } from '../../cardpull/cardPuller';
 import { useDispatch, useSelector } from 'react-redux';
 import Pack from "../Packs/Pack";
+import { useHistory, useRouteMatch } from 'react-router';
 
 const useStyles = makeStyles((theme) => ({
     main: {
@@ -48,15 +49,56 @@ const useStyles = makeStyles((theme) => ({
 
 const PacksFrame = () => {
     const classes = useStyles();
+    const history = useHistory();
     const dispatch = useDispatch();
-    const { packs, cardPool } = useSelector((state) => ({
+    const match = useRouteMatch();
+    const { packs, cardPool, inventory } = useSelector((state) => ({
         packs: state.cards.packs,
-        cardPool: state.cards.card_pools
+        cardPool: state.cards.card_pools,
+        inventory: state.cards.inventory
     }))
 
     const handlePackOpen = (packData) => {
         let pack = generatePack(packData.type, packData.size, packData.set, cardPool)
         dispatch(storeActions.loadNewPack(pack));
+        addToInventory(pack)
+    }
+
+    function addToInventory(pack) {
+        var needToAdd = true;
+        if (inventory.length === 0) {
+            console.log("Flat Insert");
+            inventory.push(pack[0]);
+        }
+        for (var i = 0; i < pack.length; i++) {
+            for (var j = 0; j < inventory.length; j++) {
+                console.log("comparing: ", pack[i], " and ", inventory[j]);
+                if (pack[i].id === inventory[j].id && pack[i].type === inventory[j].type) {
+                    needToAdd = false
+                    inventory[j].count = inventory[j].count + 1;
+                    console.log("Found: ", pack[i], " and ", inventory[j]);
+                }
+            }
+
+            if (needToAdd) {
+                const data = {
+                    count: 1,
+                    id: pack[i].id,
+                    img: pack[i].img,
+                    type: pack[i].type,
+                    name: pack[i].name,
+                    set: pack[i].set
+                }
+                inventory.push(data);
+                console.log("Adding: ", data);
+            } else {
+                needToAdd = true
+            }
+        }
+        dispatch(storeActions.updateInventoryData(inventory));
+        setTimeout(() => {
+            history.push(`${match.url}/packgenerate`);
+        }, 500);
     }
 
     return (

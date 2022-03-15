@@ -1,27 +1,25 @@
 import * as types from "./cards.action.js";
 
 const cardsData = {
+    visibleCollection: [
+
+    ],
     inventory: [
         {
+            "count": 6,
             "id": 1,
+            "img": "derek_f",
+            "type": 0,
             "name": "Derek Fhreebs",
             "set": "1A",
-            "set_num": 1,
-            "img": "derek_f",
-            "type": 2,
-            "count": 6,
-            "collection": [
-
-            ]
         },
         {
-            "id": 3,
-            "name": "Ethan Forelli",
+            "count": 2,
+            "id": 1,
+            "img": "derek_f",
+            "type": 1,
+            "name": "Derek Fhreebs",
             "set": "1A",
-            "set_num": 3,
-            "img": "ethan_f",
-            "type": 0,
-            "count": 1,
         },
     ],
     pack: [],
@@ -44,7 +42,10 @@ const cardsData = {
         }
     ],
     card_pools: [
-        // 0 = Normal 1 = Holo 2 = Shatter 3 = Legendary
+        // 0 = Normal
+        // 1 = Holo
+        // 2 = Shatter
+        // 3 = Legendary
 
         {
             "id": 1,
@@ -87,7 +88,29 @@ const cardsData = {
             "img": "danny_r",
             "name": "Danny Rodriguez",
             "rarity": 2,
-        }
+        },
+        {
+            "id": 7,
+            "set": "1A",
+            "img": "jeremy_s",
+            "name": "Jeremy Schlongberg",
+            "rarity": 2,
+        },
+        {
+            "id": 8,
+            "set": "1A",
+            "img": "demon_t",
+            "name": "Demon Time Tony",
+            "rarity": 2,
+        },
+        {
+            "id": 9,
+            "set": "1A",
+            "img": "isaiah_s",
+            "name": "Isaiah Soprano",
+            "rarity": 2,
+        },
+
     ]
     // card_pool_data: [
     //     {
@@ -111,6 +134,16 @@ export const cardReducer = (state = cardsData, action) => {
         case types.LOAD_PACKS:
             return {
                 packs: action.payload,
+            }
+        case types.UPDATE_VISIBLE_INVENTORY:
+            return {
+                ...state,
+                visibleCollection: action.payload
+            }
+        case types.UPDATE_INVENTORY_DATA:
+            return {
+                ...state,
+                inventory: action.payload
             }
         default:
             return state;

@@ -56,17 +56,17 @@ export function generatePack(packType, packSize, packSet, cardPool) {
         var card = generateCardFromSet(packSet, cardPool)
         // Check for specialty cards first
         if (holo) {
-            newPack.push({ type: 1, id: card.id, img: card.img });
+            newPack.push({ type: 1, id: card.id, img: card.img, name: card.name, set: packSet });
             holo = false;
             continue;
         }
         if (epic) {
-            newPack.push({ type: 2, id: card.id, img: card.img });
+            newPack.push({ type: 2, id: card.id, img: card.img, name: card.name, set: packSet });
             epic = false;
             continue;
         }
         if (legendary) {
-            newPack.push({ type: 3, id: card.id, img: card.img });
+            newPack.push({ type: 3, id: card.id, img: card.img, name: card.name, set: packSet });
             legendary = false;
             continue;
         }
@@ -75,7 +75,7 @@ export function generatePack(packType, packSize, packSet, cardPool) {
         for (i = 0; i < LootTable.length; i++) {
             v = LootTable[i]
             if (randomNumber <= v.upper && randomNumber >= v.lower) {
-                newPack.push({ type: v.type, id: card.id, img: card.img });
+                newPack.push({ type: v.type, id: card.id, img: card.img, name: card.name, set: packSet });
                 break;
             };
         }

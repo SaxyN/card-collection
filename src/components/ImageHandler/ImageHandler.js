@@ -20,7 +20,12 @@ import HARLEY_S from "../CardItem/CardAssets/harley_s.png";
 import BURLEY_B from "../CardItem/CardAssets/burley_b.png";
 // 6 DANNY_R
 import DANNY_R from "../CardItem/CardAssets/danny_r.png";
-
+// 7 JEREMY_S
+import JEREMY_S from "../CardItem/CardAssets/jeremy_s.png";
+// 8 DEMON_T
+import DEMON_T from "../CardItem/CardAssets/demon_t.png";
+// 9 ISAIAH_S
+import ISAIAH_S from "../CardItem/CardAssets/isaiah_s.png";
 import { makeStyles } from "@mui/styles";
 const styles = makeStyles((theme) => ({
     small: {
@@ -61,6 +66,15 @@ const ImageHandler = ({ name, imageStyle, size }) => {
         // 6 DANNY_R
         case "danny_r":
             return <img src={DANNY_R} alt={name} style={imageStyle} />;
+        // 7 JEREMY_S
+        case "jeremy_s":
+            return <img src={JEREMY_S} alt={name} style={imageStyle} />;
+        // 8 DEMON_T
+        case "demon_t":
+            return <img src={DEMON_T} alt={name} style={imageStyle} />;
+        // 8 ISAIAH_S
+        case "isaiah_s":
+            return <img src={ISAIAH_S} alt={name} style={imageStyle} />;
         default:
             return <img src={BLACK_CARD} alt={""} style={imageStyle} />
     }

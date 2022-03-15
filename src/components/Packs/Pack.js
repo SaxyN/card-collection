@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Pack = ({ packData, imageSize, handlePackOpen }) => {
     const classes = useStyles();
-    let match = useRouteMatch()
+    // let match = useRouteMatch()
 
     return (
         <>
@@ -74,7 +74,8 @@ const Pack = ({ packData, imageSize, handlePackOpen }) => {
                 </CardContent>
                 <Divider orientation='horizontal' />
                 <CardActions style={{ justifyContent: "center", padding: "15px" }}>
-                    <Button className={classes.subButton} variant="contained" component={Link} to={`${match.url}/packgenerate`} onClick={() => handlePackOpen(packData)}>Open Now</Button>
+                    {/* component={Link} to={`${match.url}/packgenerate`} */}
+                    <Button className={classes.subButton} variant="contained" onClick={() => handlePackOpen(packData)}>Open Now</Button>
                 </CardActions>
             </Card>
         </>
