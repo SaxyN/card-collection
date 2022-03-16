@@ -52,53 +52,24 @@ const PacksFrame = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const match = useRouteMatch();
-    const { packs, cardPool, inventory } = useSelector((state) => ({
+    const { packs, cardPool, inventoryData } = useSelector((state) => ({
         packs: state.cards.packs,
         cardPool: state.cards.card_pools,
-        inventory: state.cards.inventory
+        inventoryData: state.cards.inventory
     }))
 
     const handlePackOpen = (packData) => {
         let pack = generatePack(packData.type, packData.size, packData.set, cardPool)
         dispatch(storeActions.loadNewPack(pack));
-        addToInventory(pack)
-    }
-
-    function addToInventory(pack) {
-        console.log("Something");
-        var needToAdd = true;
-        if (inventory.length === 0) {
-            inventory.push(pack[0]);
-        }
-        for (var i = 0; i < pack.length; i++) {
-            for (var j = 0; j < inventory.length; j++) {
-                console.log("comparing: ", pack[i], " and ", inventory[j]);
-                if (pack[i].id === inventory[j].id && pack[i].type === inventory[j].type) {
-                    needToAdd = false
-                    inventory[j].count = inventory[j].count + 1;
-                    console.log("Found: ", pack[i], " and ", inventory[j]);
-                }
-            }
-
-            if (needToAdd) {
-                const data = {
-                    count: 1,
-                    id: pack[i].id,
-                    img: pack[i].img,
-                    type: pack[i].type,
-                    name: pack[i].name,
-                    set: pack[i].set
-                }
-                inventory.push(data);
-                console.log("Adding: ", data);
-            } else {
-                needToAdd = true
-            }
-        }
-        dispatch(storeActions.updateInventoryData(inventory));
+        dispatch(storeActions.updateInventoryData(pack, inventoryData))
         setTimeout(() => {
             history.push(`${match.url}/packgenerate`);
         }, 500);
+        // addToinventory(pack)
+    }
+
+    function addToinventory(pack) {
+        // dispatch(storeActions.updateInventoryData(inventoryData));
     }
 
     return (

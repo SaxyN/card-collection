@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, styled } from '@mui/styles';
-import { Badge } from "@mui/material";
+import { Badge, Typography } from "@mui/material";
 
 import CardHandler from '../CardHandler/CardHandler';
 
@@ -61,10 +61,16 @@ const useStyles = makeStyles((theme) => ({
 
     generalCard: {
         margin: "0 15px 0 15px",
+    },
+
+    card_name: {
+        // position: "absolute",
+        // textAlign: "center",
+        // top: -25,
     }
 }));
 
-const InventoryItem = ({ cardId, cardImage, cardType, cardCount }) => {
+const InventoryItem = ({ card }) => {
     const classes = useStyles();
 
     const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -94,9 +100,10 @@ const InventoryItem = ({ cardId, cardImage, cardType, cardCount }) => {
     })
 
     return (
-        <div>
-            <StyledBadge style={{ color: "black" }} badgeContent={cardCount} color="default" max={50}>
-                <CardHandler cardImage={cardImage} cardType={cardType} />
+        <div style={{ justifyContent: "center" }}>
+            <StyledBadge style={{ color: "black" }} badgeContent={card.count} color="default" max={50}>
+                {/* <Typography className={classes.card_name} variant="body1">{card.name}</Typography> */}
+                <CardHandler cardImage={card.img} cardType={card.type} />
             </StyledBadge>
         </div>
     )

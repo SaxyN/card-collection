@@ -10,25 +10,16 @@ import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
     frame: {
-        width: "90%",
-        height: "700px",
+
         display: "grid",
         gridTemplateColumns: "auto auto auto auto auto",
         justifyContent: "center",
-        marginTop: "20px",
-        paddingTop: "50px",
-        paddingBottom: "50px",
-        textAlign: "center",
-        backgroundColor: "darkgrey",
-        borderRadius: "5px",
-        marginLeft: "auto",
-        marginRight: "auto",
-        overflow: "auto",
+
     },
     itemCard: {
         padding: "5px",
         margin: "15px",
-        border: "grey",
+        border: "#BFBFBF",
         borderStyle: "none dotted solid dotted",
     },
     sortButtons: {
@@ -37,10 +28,24 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
 
+    },
+    frameOuter: {
+        overflow: "auto",
+        width: "90%",
+        // marginTop: "20px",
+        paddingTop: "25px",
+        paddingBottom: "50px",
+        textAlign: "center",
+        backgroundColor: "#757575",
+        borderRadius: "5px",
+        marginLeft: "auto",
+        marginRight: "auto",
+        height: "100%",
+        // overflow: "auto",
     }
 }))
 
-const InventoryFrame = ({ inventory, cardPool, updateINV }) => {
+const InventoryFrame = ({ inventory, cardPool }) => {
     const classes = useStyles();
     const { visibleCollection } = useSelector((state) => ({
         visibleCollection: state.cards.visibleCollection,
@@ -65,66 +70,70 @@ const InventoryFrame = ({ inventory, cardPool, updateINV }) => {
 
     return (
         <>
-            <InventoryUtils updateINV={updateINV} />
-            <Box className={classes.frame} elevation={10}>
-                {visibleCollection ?
+            <Box className={classes.frameOuter}>
+                <InventoryUtils />
+                <Box className={classes.frame} elevation={10}>
+                    {/* {visibleCollection ?
                     Object.keys(visibleCollection).map((item, index) => {
                         return (
                             <div key={index}>
-                                <div className={classes.itemCard}>
-                                    <InventoryItem cardId={visibleCollection[item].id} cardImage={visibleCollection[item].img} cardType={visibleCollection[item].type} cardCount={visibleCollection[item].count} />
-                                </div>
-                            </div>
-                        )
-                    })
-                    : <>Nothing In Here! Go Open Packs!</>}
-                {/* {inventory ?
-                    Object.keys(inventory).map((item, index) => {
-                        return (
                             <div className={classes.itemCard}>
-                                <InventoryItem key={index} cardId={inventory[item].id} cardImage={inventory[item].img} cardType={inventory[item].type} cardCount={inventory[item].count} />
+                            <InventoryItem cardId={visibleCollection[item].id} cardImage={visibleCollection[item].img} cardType={visibleCollection[item].type} cardCount={visibleCollection[item].count} />
                             </div>
-                        )
-                    })
+                            </div>
+                            )
+                        })
                     : <>Nothing In Here! Go Open Packs!</>} */}
-                {/* {inventory && cardPool ?
+                    {inventory ?
+                        Object.keys(inventory).map((item, index) => {
+                            return (
+                                <div key={index}>
+                                    <div className={classes.itemCard}>
+                                        <InventoryItem key={index} card={inventory[item]} />
+                                    </div>
+                                </div>
+                            )
+                        })
+                        : <>Nothing In Here! Go Open Packs!</>}
+                    {/* {inventory && cardPool ?
                     Object.keys(cardPool).map((item, index) => {
                         // cardPool.forEach(element => {
-                        //     console.log(typeof inventory[item].id, typeof element.id);
-                        //     if (inventory[item].id === element.id) {
-                        //         return (
-                        //             <InventoryItem key={index} cardId={inventory[item].id} cardImage={inventory[item].img} cardType={inventory[item].type} />
-                        //         )
-                        //     } else {
-                        //         <MissingCard key={index} card={element} />
-                        //     }
-                        // });
-                        // console.log(searchPool(cardPool[item].id));
-                        var card = searchPool(cardPool[item].id)
-                        if (card) {
-                            return (
-                                <InventoryItem key={index} cardId={card.id} cardImage={card.img} cardType={card.type} cardCount={card.count} />
-                            )
-                        } else {
-                            return (
-                                <MissingCard key={index} card={cardPool[item]} />
-                            )
-                        }
-                    })
-                    :
-                    <>
-                        Nothing Here
-                    </>
-                } */}
-                {/* {cardPool ? Object.keys(cardPool).map((item, index) => {
+                            //     console.log(typeof inventory[item].id, typeof element.id);
+                            //     if (inventory[item].id === element.id) {
+                                //         return (
+                                    //             <InventoryItem key={index} cardId={inventory[item].id} cardImage={inventory[item].img} cardType={inventory[item].type} />
+                                    //         )
+                                    //     } else {
+                                        //         <MissingCard key={index} card={element} />
+                                        //     }
+                                        // });
+                                        // console.log(searchPool(cardPool[item].id));
+                                        var card = searchPool(cardPool[item].id)
+                                        if (card) {
+                                            return (
+                                                <InventoryItem key={index} cardId={card.id} cardImage={card.img} cardType={card.type} cardCount={card.count} />
+                                                )
+                                            } else {
+                                                return (
+                                                    <MissingCard key={index} card={cardPool[item]} />
+                                                    )
+                                                }
+                                            })
+                                            :
+                                            <>
+                                            Nothing Here
+                                            </>
+                                        } */}
+                    {/* {cardPool ? Object.keys(cardPool).map((item, index) => {
                     // console.log(cardPool[item].name)
                     return (
                         <MissingCard key={index} card={cardPool[item]} />
-                    )
-                })
+                        )
+                    })
                     :
                     <></>
                 } */}
+                </Box>
             </Box>
         </>
     )
