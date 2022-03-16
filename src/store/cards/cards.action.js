@@ -100,7 +100,28 @@ export const updateInventoryData = (pack, inventoryData) => {
     }
 }
 
-export const sortInentoryByCount = (inventoryData) => {
+export const sortInventoryByCount = (inventoryData) => {
+    inventoryData.sort(function (a, b) {
+        return a.count - b.count;
+    });
+}
+
+export const sortInventoryByType = (inventoryData) => {
+    inventoryData.sort(function (a, b) {
+        return a.type - b.type;
+    });
+}
+
+export const sortInventoryByName = (inventoryData) => {
+    inventoryData.sort(function (a, b) {
+        if (a.name === b.name) {
+            return b.type - a.type;
+        }
+        return a.name - b.name;
+    });
+}
+
+export const sortInventoryByID = (inventoryData) => {
     inventoryData.sort(function (a, b) {
         return a.count - b.count;
     });
