@@ -22,11 +22,11 @@ const cardsData = {
             "set": "1A",
         },
         {
-            "count": 6,
-            "id": 1,
-            "img": "derek_f",
+            "count": 1,
+            "id": 2,
+            "img": "big_leo_big_meech",
             "type": 0,
-            "name": "Derek Fhreebs",
+            "name": "Big Leo & Big Meech",
             "set": "1A",
         },
     ],
@@ -149,6 +149,11 @@ export const cardReducer = (state = cardsData, action) => {
                 visibleCollection: action.payload
             }
         case types.UPDATE_INVENTORY_DATA:
+            return {
+                ...state,
+                inventory: action.payload
+            }
+        case types.UPDATE_INVENTORY:
             return {
                 ...state,
                 inventory: action.payload

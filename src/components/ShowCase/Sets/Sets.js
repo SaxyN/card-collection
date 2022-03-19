@@ -4,8 +4,8 @@ import { makeStyles } from "@mui/styles";
 import { useSelector } from 'react-redux';
 
 import NormalCard from '../../CardItem/NormalCard/NormalCard';
-import HoloCard from '../../CardItem/HoloCard/HoloCard';
-import ShatterCard from '../../CardItem/ShatterCard/ShatterCard';
+// import HoloCard from '../../CardItem/HoloCard/HoloCard';
+// import ShatterCard from '../../CardItem/ShatterCard/ShatterCard';
 
 const styles = makeStyles((theme) => ({
     wrapper: {
@@ -58,32 +58,6 @@ const Sets = () => {
                         )
                     }) : <></>}
                 </div>
-                {/* <div className={classes.innerShowcase}>
-                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
-                        <Typography className={classes.cardName} variant="body1">Danny R</Typography>
-                        <NormalCard imageFace={"danny_r"} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
-                    </div>
-                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
-                        <Typography className={classes.cardName} variant="body1">Harley S</Typography>
-                        <NormalCard imageFace={"harley_s"} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
-                    </div>
-                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
-                        <Typography className={classes.cardName} variant="body1">Burley B</Typography>
-                        <NormalCard imageFace={"burley_b"} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
-                    </div>
-                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
-                        <Typography className={classes.cardName} variant="body1">Big Leo & Big Meech</Typography>
-                        <NormalCard imageFace={"big_leo_big_meech"} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
-                    </div>
-                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
-                        <Typography className={classes.cardName} variant="body1">Derek F</Typography>
-                        <NormalCard imageFace={"derek_f"} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
-                    </div>
-                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
-                        <Typography className={classes.cardName} variant="body1">Ethan F</Typography>
-                        <NormalCard imageFace={"ethan_f"} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
-                    </div>
-                </div> */}
             </Paper>
         </Box>
     )

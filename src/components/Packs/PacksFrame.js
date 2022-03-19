@@ -64,7 +64,7 @@ const PacksFrame = () => {
         dispatch(storeActions.updateInventoryData(pack, inventoryData))
         setTimeout(() => {
             history.push(`${match.url}/packgenerate`);
-        }, 500);
+        }, 250);
         // addToinventory(pack)
     }
 

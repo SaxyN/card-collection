@@ -1,12 +1,9 @@
 import React from 'react';
 import InventoryItem from './InventoryItem';
-import EmptyInventoryItem from './EmptyInventoryItem';
 import { makeStyles } from '@mui/styles';
-import { Card, CardContent } from "@mui/material";
-import MissingCard from './MissingCard/MissingCard';
 import { Box } from '@mui/system';
 import InventoryUtils from './Utils/InventoryUtils';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
     frame: {
@@ -19,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
     itemCard: {
         padding: "5px",
         margin: "15px",
-        border: "#BFBFBF",
-        borderStyle: "none dotted solid dotted",
+        // border: "#BFBFBF",
+        // borderStyle: "none dotted solid dotted",
     },
     sortButtons: {
         position: "absolute",
@@ -47,26 +44,26 @@ const useStyles = makeStyles((theme) => ({
 
 const InventoryFrame = ({ inventory, cardPool }) => {
     const classes = useStyles();
-    const { visibleCollection } = useSelector((state) => ({
-        visibleCollection: state.cards.visibleCollection,
-    }));
-    function searchPool(cardId) {
-        var found = 0;
-        var item = null;
-        inventory.forEach(element => {
-            console.log("looking", cardId, "against", element.id);
-            if (cardId === element.id) {
-                found = 1;
-                item = element;
-            }
-        })
+    // const { visibleCollection } = useSelector((state) => ({
+    //     visibleCollection: state.cards.visibleCollection,
+    // }));
+    // function searchPool(cardId) {
+    //     var found = 0;
+    //     var item = null;
+    //     inventory.forEach(element => {
+    //         console.log("looking", cardId, "against", element.id);
+    //         if (cardId === element.id) {
+    //             found = 1;
+    //             item = element;
+    //         }
+    //     })
 
-        if (found === 1) {
-            return item;
-        } else {
-            return null;
-        }
-    }
+    //     if (found === 1) {
+    //         return item;
+    //     } else {
+    //         return null;
+    //     }
+    // }
 
     return (
         <>

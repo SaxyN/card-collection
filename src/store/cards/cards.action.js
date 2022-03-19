@@ -12,6 +12,10 @@ export const SORT_INVENTORY_BY_ID = "SORT_INVENTORY_BY_ID";
 export const SORT_INVENTORY_BY_TYPE = "SORT_INVENTORY_BY_TYPE";
 export const SORT_INVENTORY_BY_COUNT = "SORT_INVENTORY_BY_COUNT";
 
+export const SORT_INVENTORY_BY_SEARCH = "SORT_INVENTORY_BY_SEARCH";
+
+export const UPDATE_INVENTORY = "UPDATE_INVENTORY";
+
 export const loadInventoryData = (data) => {
     return (dispatch) => {
         // console.log(data);
@@ -28,6 +32,12 @@ export const loadNewPack = (data) => {
 export const loadPacks = (data) => {
     return (dispatch) => {
         dispatch({ type: LOAD_PACKS, payload: dataBank.packs })
+    }
+}
+
+export const updateInventory = (inventoryData) => {
+    return (dispatch) => {
+        dispatch({ type: UPDATE_INVENTORY, payload: inventoryData })
     }
 }
 
@@ -102,27 +112,49 @@ export const updateInventoryData = (pack, inventoryData) => {
 
 export const sortInventoryByCount = (inventoryData) => {
     inventoryData.sort(function (a, b) {
-        return a.count - b.count;
+        return b.count - a.count;
     });
+    return (dispatch) => {
+        dispatch({ type: UPDATE_INVENTORY_DATA, payload: inventoryData });
+    }
 }
 
 export const sortInventoryByType = (inventoryData) => {
     inventoryData.sort(function (a, b) {
-        return a.type - b.type;
+        return b.type - a.type;
     });
+    return (dispatch) => {
+        dispatch({ type: UPDATE_INVENTORY_DATA, payload: inventoryData });
+    }
 }
 
 export const sortInventoryByName = (inventoryData) => {
     inventoryData.sort(function (a, b) {
-        if (a.name === b.name) {
-            return b.type - a.type;
+        if (a.name < b.name) {
+            return -1;
         }
-        return a.name - b.name;
+        if (a.name > b.name) {
+            return 1;
+        }
+        return 0;
     });
+    return (dispatch) => {
+        dispatch({ type: UPDATE_INVENTORY_DATA, payload: inventoryData });
+    }
 }
 
 export const sortInventoryByID = (inventoryData) => {
     inventoryData.sort(function (a, b) {
-        return a.count - b.count;
+        if (a.id === b.id) {
+            return b.type - a.type;
+        }
+        return a.id - b.id;
     });
+    return (dispatch) => {
+        dispatch({ type: UPDATE_INVENTORY_DATA, payload: inventoryData });
+    }
+}
+
+export const sortInventoryBySearch = (inventoryData, search) => {
+
 }
