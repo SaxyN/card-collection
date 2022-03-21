@@ -70,7 +70,7 @@ import CardHandler from '../CardHandler/CardHandler';
 //     }
 // }));
 
-const InventoryItem = ({ card }) => {
+const InventoryItem = ({ card, openCardInfo }) => {
     // const classes = useStyles();
 
     const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -100,7 +100,7 @@ const InventoryItem = ({ card }) => {
     // })
 
     return (
-        <div style={{ justifyContent: "center" }}>
+        <div style={{ justifyContent: "center" }} onClick={() => openCardInfo(card.id)}>
             <StyledBadge style={{ color: "black" }} badgeContent={card.count} color="default" max={50}>
                 {/* <Typography className={classes.card_name} variant="body1">{card.name}</Typography> */}
                 <CardHandler cardImage={card.img} cardType={card.type} />
