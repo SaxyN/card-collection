@@ -76,10 +76,14 @@ const InventoryItem = ({ card, openCardInfo, sizeTag }) => {
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {
             border: `2px solid black`,
-            padding: '0 4px',
+            // padding: '1px 4px 1px 0px',
             paddingLeft: "20px",
+            paddingTop: "5px",
+            paddingBottom: "5px",
+            paddingRight: "5px",
             right: -6,
-            top: 20,
+            top: "8%",
+            fontSize: 15,
         }
     }))
 
