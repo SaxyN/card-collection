@@ -90,7 +90,7 @@ const CardFlip = ({ cardType, cardImage }) => {
                     <img src={card_back} alt="logo" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
                 </div>
                 <>
-                    <CardHandler cardImage={cardImage} cardType={cardType} />
+                    <CardHandler cardImage={cardImage} cardType={cardType} sizeTag={"normal"} />
                 </>
             </ReactCardFlip>
         </div>

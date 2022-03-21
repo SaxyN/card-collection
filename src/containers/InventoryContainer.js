@@ -11,7 +11,6 @@ const InventoryContainer = () => {
         inventoryData: state.cards.inventory,
         card_pool: state.cards.card_pools,
     }))
-    console.log(inventoryData);
 
     // Card Object
     // function buildCollection() {

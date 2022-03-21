@@ -54,15 +54,15 @@ const Originals = () => {
                 <div className={classes.innerShowcase}>
                     <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Normal</Typography>
-                        <CardHandler cardImage={"burley_b"} cardType={0} />
+                        <CardHandler cardImage={"burley_b"} cardType={0} sizeTag={0}/>
                     </div>
                     <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Hologrpahic</Typography>
-                        <CardHandler cardImage={"burley_b"} cardType={1} />
+                        <CardHandler cardImage={"burley_b"} cardType={1} sizeTag={0}/>
                     </div>
                     <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Shatter</Typography>
-                        <CardHandler cardImage={"burley_b"} cardType={2} />
+                        <CardHandler cardImage={"burley_b"} cardType={2} sizeTag={0}/>
                     </div>
                 </div>
             </Paper>

@@ -36,9 +36,8 @@ const styles = makeStyles((theme) => ({
     }
 }))
 
-const ImageHandler = ({ name, imageStyle, size }) => {
+const ImageHandler = ({ name, imageStyle, size, sizeTag }) => {
     const classes = styles();
-    // console.log(imageStyle);
 
     switch (name) {
         case "pack_design2":

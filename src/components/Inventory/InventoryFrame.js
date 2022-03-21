@@ -97,7 +97,6 @@ const InventoryFrame = ({ inventory, cardPool }) => {
                 onClose={closeInfo}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
-
             >
                 <Fade in={openInfo}>
                     <Card className={classes.modalStyle}>

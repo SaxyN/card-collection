@@ -53,7 +53,7 @@ const Sets = () => {
                         return (
                             <div key={index} style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                                 <Typography className={classes.cardName} variant="body1">{allCard[item].name}</Typography>
-                                <NormalCard imageFace={allCard[item].img} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
+                                <NormalCard imageFace={allCard[item].img} imageStyle={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} sizeTag={0} />
                             </div>
                         )
                     }) : <></>}
