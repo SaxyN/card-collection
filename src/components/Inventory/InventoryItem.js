@@ -70,15 +70,16 @@ import CardHandler from '../CardHandler/CardHandler';
 //     }
 // }));
 
-const InventoryItem = ({ card, openCardInfo }) => {
+const InventoryItem = ({ card, openCardInfo, sizeTag }) => {
     // const classes = useStyles();
 
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {
             border: `2px solid black`,
             padding: '0 4px',
-            right: 0,
-            top: -12
+            paddingLeft: "20px",
+            right: -6,
+            top: 20,
         }
     }))
 
@@ -103,7 +104,7 @@ const InventoryItem = ({ card, openCardInfo }) => {
         <div style={{ justifyContent: "center" }} onClick={() => openCardInfo(card.id)}>
             <StyledBadge style={{ color: "black" }} badgeContent={card.count} color="default" max={50}>
                 {/* <Typography className={classes.card_name} variant="body1">{card.name}</Typography> */}
-                <CardHandler cardImage={card.img} cardType={card.type} />
+                <CardHandler cardImage={card.img} cardType={card.type} sizeTag={sizeTag} />
             </StyledBadge>
         </div>
     )

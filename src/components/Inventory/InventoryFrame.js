@@ -1,7 +1,7 @@
 import * as React from 'react';
 import InventoryItem from './InventoryItem';
 import { makeStyles } from '@mui/styles';
-import { Modal, Fade } from "@mui/material";
+import { Modal, Fade, Card, CardHeader, CardContent, Divider } from "@mui/material";
 import { Box } from '@mui/system';
 import InventoryUtils from './Utils/InventoryUtils';
 // import { useSelector } from 'react-redux';
@@ -12,11 +12,16 @@ const useStyles = makeStyles((theme) => ({
         display: "grid",
         gridTemplateColumns: "auto auto auto auto",
         justifyContent: "center",
+        height: "700px",
+        // overflowY: "hidden",
 
     },
     itemCard: {
         padding: "5px",
-        margin: "15px",
+        paddingTop: "15px",
+        margin: "15px 25px 15px 25px",
+        // marginTop: "15px",
+        // marginBottom: "15px",
         // border: "#BFBFBF",
         // borderStyle: "none dotted solid dotted",
     },
@@ -43,8 +48,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     modalStyle: {
-        display: 'grid',
-        gridTemplateColumns: 'auto auto auto',
+        // display: 'grid',
+        // gridTemplateColumns: 'auto auto auto',
         position: 'absolute',
         top: '50%',
         left: '50%',
@@ -55,6 +60,12 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: 24,
         borderRadius: "15px",
         p: 4,
+        textAlign: "center"
+    },
+
+    modalContent: {
+        display: "grid",
+        gridTemplateColumns: 'auto auto auto'
     }
 }))
 
@@ -71,6 +82,9 @@ const InventoryFrame = ({ inventory, cardPool }) => {
                 tempArray.push(inventory[i]);
             }
         }
+        tempArray.sort(function (a, b) {
+            return b.type - a.type;
+        })
         setInfoSet(tempArray);
         setOpenInfo(true);
     }
@@ -86,20 +100,24 @@ const InventoryFrame = ({ inventory, cardPool }) => {
 
             >
                 <Fade in={openInfo}>
-                    <div className={classes.modalStyle}>
-                        {infoSet ?
-                            Object.keys(infoSet).map((item, index) => {
-                                return (
-                                    <div key={index}>
-                                        <div className={classes.itemCard}>
-                                            <InventoryItem key={index} card={infoSet[item]} />
+                    <Card className={classes.modalStyle}>
+                        {/* <CardHeader title={infoSet[0].name} />
+                        <Divider orientation="horizontal" /> */}
+                        <CardContent className={classes.modalContent}>
+
+                            {infoSet ?
+                                Object.keys(infoSet).map((item, index) => {
+                                    return (
+                                        <div key={index}>
+                                            <div className={classes.itemCard}>
+                                                <InventoryItem key={index} card={infoSet[item]} sizeTag={2} />
+                                            </div>
                                         </div>
-                                    </div>
-                                )
-                            })
-                            : <>No Info Here?</>}
-                        {/* Hello */}
-                    </div>
+                                    )
+                                })
+                                : <>No Info Here?</>}
+                        </CardContent>
+                    </Card>
                 </Fade>
             </Modal>
             <Box className={classes.frameOuter}>
@@ -110,7 +128,7 @@ const InventoryFrame = ({ inventory, cardPool }) => {
                             return (
                                 <div key={index}>
                                     <div className={classes.itemCard}>
-                                        <InventoryItem key={index} card={inventory[item]} openCardInfo={openCardInfo} />
+                                        <InventoryItem key={index} card={inventory[item]} openCardInfo={openCardInfo} sizeTag={0} />
                                     </div>
                                 </div>
                             )
