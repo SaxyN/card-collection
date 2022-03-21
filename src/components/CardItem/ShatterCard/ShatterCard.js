@@ -3,7 +3,7 @@ import $ from "jquery";
 import "./shatterstyle.scss";
 import ImageHandler from '../../ImageHandler/ImageHandler';
 
-const ShatterCard = ({ imageFace, imageStyle }) => {
+const ShatterCard = ({ imageFace, imageStyle, sizeTag }) => {
     const [hover, setHover] = React.useState(false);
 
     var x;
@@ -56,15 +56,64 @@ const ShatterCard = ({ imageFace, imageStyle }) => {
             $card.removeAttr("style");
         });
 
-    return (
-        <>
-            <div className="card_shatter eevee" onMouseOver={() => setHover(true)}>
-                {/* <img src={BURLEY_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
-                <ImageHandler name={imageFace} imageStyle={imageStyle} />
-            </div>
-            <style className='hover'></style>
-        </>
-    )
+
+    switch (sizeTag) {
+        case 0: {
+            return (
+                <>
+                    <div className="card_shatter normal_size eevee" onMouseOver={() => setHover(true)}>
+                        {/* <img src={PURPLE_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                        <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                    </div>
+                    <style className='hover'></style>
+                </>
+            )
+        }
+        case 1: {
+            return (
+                <>
+                    <div className="card_shatter medium_size eevee" onMouseOver={() => setHover(true)}>
+                        {/* <img src={PURPLE_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                        <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                    </div>
+                    <style className='hover'></style>
+                </>
+            )
+        }
+        case 2: {
+            return (
+                <>
+                    <div className="card_shatter large_size eevee" onMouseOver={() => setHover(true)}>
+                        {/* <img src={PURPLE_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                        <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                    </div>
+                    <style className='hover'></style>
+                </>
+            )
+        }
+        default: {
+            return (
+                <>
+                    <div className="card_shatter normal_size eevee" onMouseOver={() => setHover(true)}>
+                        {/* <img src={PURPLE_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                        <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                    </div>
+                    <style className='hover'></style>
+                </>
+            )
+        }
+    }
+
+
+    // return (
+    //     <>
+    //         <div className="card_shatter eevee" onMouseOver={() => setHover(true)}>
+    //             {/* <img src={BURLEY_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+    //             <ImageHandler name={imageFace} imageStyle={imageStyle} />
+    //         </div>
+    //         <style className='hover'></style>
+    //     </>
+    // )
 
 }
 
