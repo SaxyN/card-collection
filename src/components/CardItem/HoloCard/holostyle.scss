@@ -1,24 +1,4 @@
-:root {
-  // --eeveefront: url(blue_face.png);
-  // --blob: url(testSVG.svg);
-}
-
 .card_holo {
-  // width: "100%";
-  // height: "100%"; 
-  width: 262.5px;
-  height: 368.75px;
-    // width: clamp(200px, 61vh, 18vw);
-    // height: clamp(280px, 85vh, 25.2vw);
-//   @media screen and (min-width: 600px) {
-//     // width: 61vh;
-//     // height: 85vh;
-//     // max-width: 500px;
-//     // max-height: 700px;
-//     width: clamp(12.9vw, 61vh, 18vw);
-//     height: clamp(18vw, 85vh, 25.2vw);
-//   }
-  
   position: relative;
   overflow: hidden;
   margin: 0px;
@@ -28,8 +8,6 @@
   
   border-radius: 5% / 3.5%;
   box-shadow: 
-  //   -5px -5px 5px -5px var(--color1), 
-  //   5px 5px 5px -5px var(--color2), 
     -7px -7px 10px -5px transparent, 
     7px 7px 10px -5px transparent, 
     0 0 5px 0px rgba(255,255,255,0),
@@ -43,9 +21,22 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  transform-origin: center;
-  
+  transform-origin: center; 
 }
+
+.card_holo.normal_size {
+  width: 262.5px;
+  height: 368.75px;
+}
+.card_holo.medium_size {
+  width: 315px;
+  height: 442.5px;
+}
+.card_holo.large_size {
+  width: 420px;
+  height: 590px;
+}
+
 
 .card_holo.eevee {
   --color1: #f32a6d;
@@ -53,7 +44,6 @@
   --color3: #45e692;
   --color4: #5ac4e4;
   --color5: #b153dd;
-  // --front: var(--eeveefront);
 }
 
 .card_holo:hover {
@@ -66,28 +56,12 @@
     0 55px 35px -20px rgba(0, 0, 0, 0.5);
 }
 
-.card_holo.charizard {
-  --color1: var(--charizard1);
-  --color2: var(--charizard2);
-  --front: var(--charizardfront);
-}
-.card_holo.pika {
-  --color1: var(--pika1);
-  --color2: var(--pika2);
-  --front: var(--pikafront);
-}
-.card_holo.mewtwo {
-  --color1: var(--mewtwo1);
-  --color2: var(--mewtwo2);
-  --front: var(--mewtwofront);
-}
 .card_holo.eevee {
   --color1: #f32a6d;
   --color2: #e7ac3e;
   --color3: #45e692;
   --color4: #5ac4e4;
   --color5: #b153dd;
-  // --front: var(--eeveefront);
 }
 
 .card_holo:before,
@@ -174,87 +148,6 @@
   animation: none;
   transition: none;
 }
-
-// .card_holo.animated {
-//   transition: none;
-//   animation: holoCard 12s ease 0s 1;
-//   &:before { 
-//     transition: none;
-//     animation: holoGradient 12s ease 0s 1;
-//   }
-//   &:after {
-//     transition: none;
-//     animation: holoSparkle 12s ease 0s 1;
-//   }
-// }
-
-
-
-
-@keyframes holoSparkle {
-  0%, 100% {
-    opacity: .75; background-position: 50% 50%; filter: brightness(1.2) contrast(1.25);
-  }
-  5%, 8% {
-    opacity: 1; background-position: 40% 40%; filter: brightness(.8) contrast(1.2);
-  }
-  13%, 16% {
-    opacity: .5; background-position: 50% 50%; filter: brightness(1.2) contrast(.8);
-  }
-  35%, 38% {
-    opacity: 1; background-position: 60% 60%; filter: brightness(1) contrast(1);
-  }
-  55% {
-    opacity: .33; background-position: 45% 45%; filter: brightness(1.2) contrast(1.25);
-  }
-}
-
-@keyframes holoGradient {
-  0%, 100% {
-    opacity: 0.5;
-    background-position: 50% 50%;
-    filter: brightness(.75) contrast(1);
-  }
-  5%, 9% {
-    background-position: 100% 100%;
-    opacity: 1;
-    filter: brightness(.75) contrast(1.25);
-  }
-  13%, 17% {
-    background-position: 0% 0%;
-    opacity: .88;
-  }
-  35%, 39% {
-    background-position: 100% 100%;
-    opacity: 1;
-    filter: brightness(.90) contrast(1);
-  }
-  55% {
-    background-position: 0% 0%;
-    opacity: 1;
-    filter: brightness(.75) contrast(1.25);
-  }
-}
-
-@keyframes holoCard {
-  0%, 100% {
-    transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
-  }
-  5%, 8% {
-    transform: rotateZ(0deg) rotateX(6deg) rotateY(-20deg);
-  }
-  13%, 16% {
-    transform: rotateZ(0deg) rotateX(-9deg) rotateY(32deg);
-  }
-  35%, 38% {
-    transform: rotateZ(3deg) rotateX(12deg) rotateY(20deg);
-  }
-  55% {
-    transform: rotateZ(-3deg) rotateX(-12deg) rotateY(-27deg);
-  }
-}
-
-
 
 .card_holo.eevee:hover {
   box-shadow: 

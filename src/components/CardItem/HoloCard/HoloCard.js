@@ -3,7 +3,7 @@ import $ from "jquery";
 import "./holostyle.scss";
 import ImageHandler from '../../ImageHandler/ImageHandler';
 
-const HoloCard = ({ imageFace, imageStyle }) => {
+const HoloCard = ({ imageFace, imageStyle, sizeTag }) => {
     const [hover, setHover] = React.useState(false);
 
     var x;
@@ -64,15 +64,48 @@ const HoloCard = ({ imageFace, imageStyle }) => {
             // }, 2500);
         });
 
-    return (
-        <>
-            <div className="card_holo eevee animated" onMouseOver={() => setHover(true)}>
-                {/* <img src={BURLEY_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
-                <ImageHandler name={imageFace} imageStyle={imageStyle} />
-            </div>
-            <style className='holo_hover'></style>
-        </>
-    )
+    switch (sizeTag) {
+        case 0:
+            return (
+                <>
+                    <div className="card_holo normal_size eevee" onMouseOver={() => setHover(true)}>
+                        {/* <img src={BURLEY_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                        <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                    </div>
+                    <style className='holo_hover'></style>
+                </>
+            )
+        case 1:
+            return (
+                <>
+                    <div className="card_holo medium_size eevee" onMouseOver={() => setHover(true)}>
+                        {/* <img src={BURLEY_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                        <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                    </div>
+                    <style className='holo_hover'></style>
+                </>
+            )
+        case 2:
+            return (
+                <>
+                    <div className="card_holo large_size eevee" onMouseOver={() => setHover(true)}>
+                        {/* <img src={BURLEY_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                        <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                    </div>
+                    <style className='holo_hover'></style>
+                </>
+            )
+        default:
+            return (
+                <>
+                    <div className="card_holo normal_size eevee" onMouseOver={() => setHover(true)}>
+                        {/* <img src={BURLEY_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                        <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                    </div>
+                    <style className='holo_hover'></style>
+                </>
+            )
+    }
 
 }
 
