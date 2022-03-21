@@ -18,7 +18,6 @@ export const UPDATE_INVENTORY = "UPDATE_INVENTORY";
 
 export const loadInventoryData = (data) => {
     return (dispatch) => {
-        // console.log(data);
         dispatch({ type: LOAD_INVENTORY_DATA, payload: dataBank.inventory })
     }
 }

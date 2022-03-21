@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import NormalCard from "../CardItem/NormalCard/NormalCard";
 import HoloCard from "../CardItem/HoloCard/HoloCard";
 import ShatterCard from "../CardItem/ShatterCard/ShatterCard";
@@ -11,7 +11,6 @@ const cardSizes = {
 }
 
 const CardHandler = ({ cardImage, cardType, sizeTag }) => {
-    // const [cardStyle, setCardStyle] = React.useState({});
 
     function getStyle(tag) {
         if (tag === 0) return cardSizes.normal
@@ -19,8 +18,6 @@ const CardHandler = ({ cardImage, cardType, sizeTag }) => {
         if (tag === 2) return cardSizes.large
         else return cardSizes.normal
     }
-    var cardStyle = null;
-    console.log(sizeTag);
     switch (cardType) {
         case 0:
             return <NormalCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} />

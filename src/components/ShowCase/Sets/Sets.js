@@ -49,7 +49,6 @@ const Sets = () => {
                 <Divider orientation='horizontal' style={{ margin: "15px" }} />
                 <div className={classes.innerShowcase}>
                     {allCard ? Object.keys(allCard).map((item, index) => {
-                        console.log(item);
                         return (
                             <div key={index} style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                                 <Typography className={classes.cardName} variant="body1">{allCard[item].name}</Typography>

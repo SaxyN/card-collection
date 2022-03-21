@@ -12,42 +12,6 @@ const InventoryContainer = () => {
         card_pool: state.cards.card_pools,
     }))
 
-    // Card Object
-    // function buildCollection() {
-    //     var visibleCollection = [];
-    //     var needToAdd = true;
-    //     console.log("Before: ", inventoryData);
-    //     for (var i = 0; i < inventoryData.length; i++) {
-    //         // if (visibleCollection.length === 0) {
-    //         //     console.log("Flat Insert: ", inventoryData[0]);
-    //         //     visibleCollection.push(inventoryData[0])
-    //         // }
-    //         needToAdd = true;
-    //         for (var j = 0; j < visibleCollection.length; j++) {
-    //             if (inventoryData[i].id === visibleCollection[j].id && inventoryData[i].type !== visibleCollection[j].type) {
-    //                 visibleCollection[j].count = visibleCollection[j].count + inventoryData[i].count;
-    //                 // if (inventoryData[i].type > visibleCollection[j].type) {
-    //                 //     visibleCollection[j].type = inventoryData[i].type;
-    //                 // }
-    //                 needToAdd = false;
-    //             } else if (inventoryData[i].id === visibleCollection[j].id && inventoryData[i].type === visibleCollection[j].type) {
-    //                 // visibleCollection[j].count = visibleCollection[j].count + inventoryData[i].count;
-    //                 needToAdd = false;
-    //             }
-    //         }
-    //         if (needToAdd) {
-    //             visibleCollection.push(inventoryData[i]);
-    //         } else {
-    //             needToAdd = true;
-    //         }
-    //     }
-    //     visibleCollection.sort(function (a, b) {
-    //         return a.id - b.id;
-    //     });
-    //     console.log("Sorted: ", visibleCollection);
-    //     dispatch(cardActions.updateVisibleInventory(visibleCollection));
-    // }
-
     return (
         <div>
             <Header />
