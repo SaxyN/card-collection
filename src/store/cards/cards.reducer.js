@@ -6,11 +6,11 @@ const cardsData = {
     ],
     inventory: [
         {
-            "count": 2,
+            "count": 65,
             "id": 5,
             "img": "burley_b",
             "type": 1,
-            "name": "Burley Bob",
+            "name": "Burley Barret",
             "set": "1A",
         },
         {
@@ -18,7 +18,7 @@ const cardsData = {
             "id": 5,
             "img": "burley_b",
             "type": 2,
-            "name": "Burley Bob",
+            "name": "Burley Barret",
             "set": "1A",
         },
         {
@@ -87,7 +87,7 @@ const cardsData = {
             "id": 5,
             "set": "1A",
             "img": "burley_b",
-            "name": "Burley Bob",
+            "name": "Burley Barret",
             "rarity": 2,
         },
         {
