@@ -8,7 +8,7 @@ import $ from 'jquery'
 import "./normalstyle.scss";
 import ImageHandler from '../../ImageHandler/ImageHandler';
 
-const NormalCard = ({ imageFace, imageStyle }) => {
+const NormalCard = ({ imageFace, imageStyle, sizeTag }) => {
     const [hover, setHover] = React.useState(false);
     const random = Math.floor(Math.random() * 1000);
 
@@ -70,16 +70,49 @@ const NormalCard = ({ imageFace, imageStyle }) => {
             //     $card.addClass("animated");
             // }, 2500);
         });
-
-    return (
-        <>
-            <div className="card_normal eevee" onMouseOver={() => setHover(true)}>
-                {/* <img src={PURPLE_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
-                <ImageHandler name={imageFace} imageStyle={imageStyle} />
-            </div>
-            {/* <style className={`normal_hover_` + random}></style> */}
-        </>
-    )
+    switch (sizeTag) {
+        case 0: {
+            return (
+                <div className="card_normal normal_size eevee" onMouseOver={() => setHover(true)}>
+                    {/* <img src={PURPLE_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                    <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                </div>
+            )
+        }
+        case 1: {
+            return (
+                <div className="card_normal medium_size eevee" onMouseOver={() => setHover(true)}>
+                    {/* <img src={PURPLE_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                    <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                </div>
+            )
+        }
+        case 2: {
+            return (
+                <div className="card_normal large_size eevee" onMouseOver={() => setHover(true)}>
+                    {/* <img src={PURPLE_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                    <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                </div>
+            )
+        }
+        default: {
+            return (
+                <div className="card_normal normal_size eevee" onMouseOver={() => setHover(true)}>
+                    {/* <img src={PURPLE_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+                    <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                </div>
+            )
+        }
+    }
+    // return (
+    //     <>
+    //         <div className="card_normal eevee" onMouseOver={() => setHover(true)}>
+    //             {/* <img src={PURPLE_FACE} alt="alt" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} /> */}
+    //             <ImageHandler name={imageFace} imageStyle={imageStyle} />
+    //         </div>
+    //         {/* <style className={`normal_hover_` + random}></style> */}
+    //     </>
+    // )
 
 }
 
