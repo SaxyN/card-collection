@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from "@mui/styles";
 import { Button, Card, CardContent, CardActions, CardHeader, Divider, Typography } from "@mui/material";
-import { Link, useRouteMatch } from 'react-router-dom';
 
 import ImageHandler from "../ImageHandler/ImageHandler";
-
-import * as storeActions from "../../store/cards/cards.action";
 
 const useStyles = makeStyles((theme) => ({
     main: {
@@ -25,23 +22,10 @@ const useStyles = makeStyles((theme) => ({
         margin: "15px",
         textAlign: "center"
     },
-    show: {
-        display: "auto",
-        position: "absolute",
-        marginLeft: "45%",
-        width: 600,
-        height: 600,
-        transition: "transform 1s ease"
-    },
-    packOuter: {
-        // display: "flex",
-        // justifyContent: "center",
-    },
     pack: {
         transition: "transform ease .5s",
         width: "270.25px", height: "525px",
         borderRadius: "15px",
-        // marginTop: "10px",
         marginBottom: "10px",
         "&:hover": {
             transform: "scale(1.05)",
@@ -49,16 +33,11 @@ const useStyles = makeStyles((theme) => ({
     },
     packDescription: {
         marginTop: "10px",
-    },
-    "image": {
-        width: "210px",
-        height: "295px",
     }
 }))
 
 const Pack = ({ packData, imageSize, handlePackOpen }) => {
     const classes = useStyles();
-    // let match = useRouteMatch()
 
     return (
         <>
@@ -74,7 +53,6 @@ const Pack = ({ packData, imageSize, handlePackOpen }) => {
                 </CardContent>
                 <Divider orientation='horizontal' />
                 <CardActions style={{ justifyContent: "center", padding: "15px" }}>
-                    {/* component={Link} to={`${match.url}/packgenerate`} */}
                     <Button className={classes.subButton} variant="contained" onClick={() => handlePackOpen(packData)}>Open Now</Button>
                 </CardActions>
             </Card>

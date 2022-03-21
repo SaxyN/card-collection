@@ -2,11 +2,9 @@ import React from 'react';
 import Header from '../components/Header/Header';
 import InventoryFrame from '../components/Inventory/InventoryFrame';
 
-import * as cardActions from "../store/cards/cards.action";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const InventoryContainer = () => {
-    const dispatch = useDispatch();
     const { inventoryData, card_pool } = useSelector((state) => ({
         inventoryData: state.cards.inventory,
         card_pool: state.cards.card_pools,

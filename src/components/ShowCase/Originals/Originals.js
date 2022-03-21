@@ -2,16 +2,7 @@ import React from 'react';
 import { Paper, Box, Typography, Divider } from '@mui/material';
 import { makeStyles } from "@mui/styles";
 
-// Cards For Showcasing
-import NormalCard from '../../CardItem/NormalCard/NormalCard';
-import HoloCard from '../../CardItem/HoloCard/HoloCard';
-import ShatterCard from '../../CardItem/ShatterCard/ShatterCard';
 import CardHandler from '../../CardHandler/CardHandler';
-
-// Test Fronts
-// import GREEN_FRONT from "../../CardItem/CardAssets/green_front.png";
-// import BLUE_FRONT from "../../CardItem/CardAssets/blue_front.png";
-// import RED_FRONT from "../../CardItem/CardAssets/red_front.png";
 
 const styles = makeStyles((theme) => ({
     wrapper: {
@@ -54,15 +45,15 @@ const Originals = () => {
                 <div className={classes.innerShowcase}>
                     <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Normal</Typography>
-                        <CardHandler cardImage={"burley_b"} cardType={0} sizeTag={0}/>
+                        <CardHandler cardImage={"burley_b"} cardType={0} sizeTag={0} />
                     </div>
                     <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Hologrpahic</Typography>
-                        <CardHandler cardImage={"burley_b"} cardType={1} sizeTag={0}/>
+                        <CardHandler cardImage={"burley_b"} cardType={1} sizeTag={0} />
                     </div>
                     <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Shatter</Typography>
-                        <CardHandler cardImage={"burley_b"} cardType={2} sizeTag={0}/>
+                        <CardHandler cardImage={"burley_b"} cardType={2} sizeTag={0} />
                     </div>
                 </div>
             </Paper>

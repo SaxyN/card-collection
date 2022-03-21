@@ -12,8 +12,6 @@ const useStyles = makeStyles((theme) => ({
     mainDiv: {
         width: "100%",
         maxWidth: "400px",
-        // height: "428px",
-        // maxHeight: "428px",
         textAlign: "center",
     },
     loginPaper: {

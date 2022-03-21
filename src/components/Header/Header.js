@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import DrawerComponent from './DrawerComponent';
 
@@ -32,8 +32,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
     const classes = useStyles();
-    const history = useHistory();
-
 
     return (
         <div className={classes.main}>

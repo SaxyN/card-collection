@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "../components/Header/Header";
 import { Button } from "@mui/material";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CardFlip from '../components/Flip/CardFlip';
 import generateCard from '../cardpull/cardPuller';
 

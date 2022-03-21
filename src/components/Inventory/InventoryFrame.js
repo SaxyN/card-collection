@@ -1,29 +1,21 @@
 import * as React from 'react';
 import InventoryItem from './InventoryItem';
 import { makeStyles } from '@mui/styles';
-import { Modal, Fade, Card, CardHeader, CardContent, Divider } from "@mui/material";
+import { Modal, Fade, Card, CardContent } from "@mui/material";
 import { Box } from '@mui/system';
 import InventoryUtils from './Utils/InventoryUtils';
-// import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
     frame: {
-
         display: "grid",
         gridTemplateColumns: "auto auto auto auto",
         justifyContent: "center",
         height: "700px",
-        // overflowY: "hidden",
-
     },
     itemCard: {
         padding: "5px",
         paddingTop: "15px",
         margin: "15px 25px 15px 25px",
-        // marginTop: "15px",
-        // marginBottom: "15px",
-        // border: "#BFBFBF",
-        // borderStyle: "none dotted solid dotted",
     },
     sortButtons: {
         position: "absolute",
@@ -35,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
     frameOuter: {
         overflow: "auto",
         width: "90%",
-        // marginTop: "20px",
         paddingTop: "25px",
         paddingBottom: "50px",
         textAlign: "center",
@@ -44,12 +35,9 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "auto",
         marginRight: "auto",
         height: "100%",
-        // overflow: "auto",
     },
 
     modalStyle: {
-        // display: 'grid',
-        // gridTemplateColumns: 'auto auto auto',
         position: 'absolute',
         top: '50%',
         left: '50%',
@@ -100,8 +88,6 @@ const InventoryFrame = ({ inventory, cardPool }) => {
             >
                 <Fade in={openInfo}>
                     <Card className={classes.modalStyle}>
-                        {/* <CardHeader title={infoSet[0].name} />
-                        <Divider orientation="horizontal" /> */}
                         <CardContent className={classes.modalContent}>
 
                             {infoSet ?

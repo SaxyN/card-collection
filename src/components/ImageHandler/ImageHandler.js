@@ -1,12 +1,8 @@
-import CARD_BACK from "../../assets/card_back.png";
-// import CARD_TEMPLATE from "../../assets/card_template.png";
 import PACK_DESIGN2 from "../../assets/pack_design2.png";
 import PACK_DESIGN3 from "../../assets/pack_design3.png";
-// import FULL_VIKTOR_FROST from "../../assets/VIKTOR_FROST_HYPER.png";
 
-import GREEN_FRONT from "../CardItem/CardAssets/green_front.png";
-import BLUE_FRONT from "../CardItem/CardAssets/blue_front.png";
 import BLACK_CARD from "../CardItem/CardAssets/black_back.png";
+
 // ==== SET 1A ====
 // 1 DEREK_F
 import DEREK_F from "../CardItem/CardAssets/derek_f.png";
@@ -26,7 +22,9 @@ import JEREMY_S from "../CardItem/CardAssets/jeremy_s.png";
 import DEMON_T from "../CardItem/CardAssets/demon_t.png";
 // 9 ISAIAH_S
 import ISAIAH_S from "../CardItem/CardAssets/isaiah_s.png";
+
 import { makeStyles } from "@mui/styles";
+
 const styles = makeStyles((theme) => ({
     small: {
         width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%"
