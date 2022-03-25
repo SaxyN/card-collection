@@ -8,11 +8,11 @@ import BLACK_CARD from "../CardItem/CardAssets/black_back.png";
 import DEREK_F from "../CardItem/CardAssets/derek_f.png";
 // 2 BIG_L_M
 import BIG_L_M from "../CardItem/CardAssets/big_leo_big_meech.png";
-// 2 ETHAN_F
+// 3 ETHAN_F
 import ETHAN_F from "../CardItem/CardAssets/ethan_f.png";
 // 4 HARLEY_S
 import HARLEY_S from "../CardItem/CardAssets/harley_s.png";
-// 4 BURLEY_B
+// 5 BURLEY_B
 import BURLEY_B from "../CardItem/CardAssets/burley_b.png";
 // 6 DANNY_R
 import DANNY_R from "../CardItem/CardAssets/danny_r.png";
@@ -22,6 +22,13 @@ import JEREMY_S from "../CardItem/CardAssets/jeremy_s.png";
 import DEMON_T from "../CardItem/CardAssets/demon_t.png";
 // 9 ISAIAH_S
 import ISAIAH_S from "../CardItem/CardAssets/isaiah_s.png";
+// 10 MOB_BOSS_TONY
+import MOB_BOSS_TONY from "../CardItem/CardAssets/full_tony_s_32.png";
+// 140 G_DEMON_T
+import G_DEMON_T from "../CardItem/CardAssets/g_demon_t.png";
+// 140 R_DEMON_T
+import R_DEMON_T from "../CardItem/CardAssets/r_demon_t.png";
+
 
 import { makeStyles } from "@mui/styles";
 
@@ -51,13 +58,13 @@ const ImageHandler = ({ name, imageStyle, size, sizeTag }) => {
         // 2 Big_L_M
         case "big_leo_big_meech":
             return <img src={BIG_L_M} alt={name} style={imageStyle} />;
-        // 2 ETHAN_F
+        // 3 ETHAN_F
         case "ethan_f":
             return <img src={ETHAN_F} alt={name} style={imageStyle} />;
         // 4 HARLEY_S
         case "harley_s":
             return <img src={HARLEY_S} alt={name} style={imageStyle} />;
-        // 4 BURLEY_B
+        // 5 BURLEY_B
         case "burley_b":
             return <img src={BURLEY_B} alt={name} style={imageStyle} />;
         // 6 DANNY_R
@@ -69,9 +76,21 @@ const ImageHandler = ({ name, imageStyle, size, sizeTag }) => {
         // 8 DEMON_T
         case "demon_t":
             return <img src={DEMON_T} alt={name} style={imageStyle} />;
-        // 8 ISAIAH_S
+        // 9 ISAIAH_S
         case "isaiah_s":
             return <img src={ISAIAH_S} alt={name} style={imageStyle} />;
+        // 10 MOB_BOSS_TONY
+        case "full_tony_s_32":
+            return <img src={MOB_BOSS_TONY} alt={name} style={imageStyle} />;
+        // 140 G_DEMON_T
+        case "g_demon_t":
+            return <img src={G_DEMON_T} alt={name} style={imageStyle} />;
+        // 140 G_DEMON_T
+        case "g_demon_t":
+            return <img src={G_DEMON_T} alt={name} style={imageStyle} />;
+        // 160 R_DEMON_T
+        case "r_demon_t":
+            return <img src={R_DEMON_T} alt={name} style={imageStyle} />;
         default:
             return <img src={BLACK_CARD} alt={""} style={imageStyle} />
     }

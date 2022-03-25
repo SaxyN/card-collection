@@ -3,6 +3,10 @@ import NormalCard from "../CardItem/NormalCard/NormalCard";
 import HoloCard from "../CardItem/HoloCard/HoloCard";
 import ShatterCard from "../CardItem/ShatterCard/ShatterCard";
 import LegendaryCard from "../CardItem/LegendaryCard/LegendaryCard";
+import FullArtCard from "../CardItem/FullArtCard/FullArtCard";
+import FullArtCardSpecial from "../CardItem/FullArtCardSpecial/FullArtCardSpecial";
+import GoldCard from "../CardItem/GoldCard/GoldCard";
+import RainbowCard from "../CardItem/RainbowCard/RainbowCard";
 
 const cardSizes = {
     "normal": { width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" },
@@ -10,7 +14,7 @@ const cardSizes = {
     "large": { width: "420px", height: "590px", borderRadius: "5% / 3.5%" }
 }
 
-const CardHandler = ({ cardImage, cardType, sizeTag }) => {
+const CardHandler = ({ cardImage, cardType, sizeTag, specialTag }) => {
 
     function getStyle(tag) {
         if (tag === 0) return cardSizes.normal
@@ -27,6 +31,14 @@ const CardHandler = ({ cardImage, cardType, sizeTag }) => {
             return <ShatterCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} />
         case 3:
             return <LegendaryCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} />
+        case 4:
+            return <FullArtCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} />
+        case 5:
+            return <FullArtCardSpecial imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} specialTag={specialTag} />
+        case 6:
+            return <GoldCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} />
+        case 7:
+            return <RainbowCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} />
         default:
             return <>Unknown Card Type</>
     }
