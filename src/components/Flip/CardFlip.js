@@ -45,10 +45,26 @@ const styles = makeStyles((theme) => ({
         "&:hover": {
             boxShadow: "0 0 30px 5px gold, 0 0 10px -2px gold, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
         }
-    }
+    },
+    fullArtBack: {
+        height: "368.75px",
+        transition: "box-shadow 0.1s ease-out",
+        borderRadius: "5%/3.5%",
+        "&:hover": {
+            boxShadow: "0 0 30px 5px purple, 0 0 10px -2px purple, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
+        }
+    },
+    fullArtSpecialBack: {
+        height: "368.75px",
+        transition: "box-shadow 0.1s ease-out",
+        borderRadius: "5%/3.5%",
+        "&:hover": {
+            boxShadow: "0 0 30px 5px cyan, 0 0 10px -2px cyan, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
+        }
+    },
 }))
 
-const CardFlip = ({ cardType, cardImage }) => {
+const CardFlip = ({ cardType, cardImage, specialTag }) => {
     const classes = styles();
     const [flipped, setFlipped] = useState(false);
     const [normalCard] = useSound(
@@ -79,6 +95,10 @@ const CardFlip = ({ cardType, cardImage }) => {
                 epicCard()
             } else if (cardType === 3) {
                 legendaryCard()
+            } else if (cardType === 4) {
+                holoCard()
+            } else if (cardType === 5) {
+                epicCard()
             }
         }
     }
@@ -86,11 +106,17 @@ const CardFlip = ({ cardType, cardImage }) => {
     return (
         <div style={{ margin: "10px" }}>
             <ReactCardFlip isFlipped={flipped} flipDirection='horizontal'>
-                <div onClick={() => handleFlip()} className={cardType === 1 ? classes.holoBack : cardType === 2 ? classes.shatterBack : cardType === 3 ? classes.legendaryBack : classes.normalBack}>
-                    <img src={card_back} alt="logo" style={{ width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
+                <div onClick={() => handleFlip()} className={
+                    cardType === 1 ? classes.holoBack :
+                        cardType === 2 ? classes.shatterBack :
+                            cardType === 3 ? classes.legendaryBack :
+                                cardType === 4 ? classes.fullArtBack :
+                                    cardType === 5 ? classes.fullArtSpecialBack :
+                                        classes.normalBack}>
+                    <img src={card_back} alt="logo" style={{ width: "263px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
                 </div>
                 <>
-                    <CardHandler cardImage={cardImage} cardType={cardType} sizeTag={"normal"} />
+                    <CardHandler cardImage={cardImage} cardType={cardType} sizeTag={"normal"} specialTag={specialTag !== undefined ? specialTag : ""} />
                 </>
             </ReactCardFlip>
         </div>

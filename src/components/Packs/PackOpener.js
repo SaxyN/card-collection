@@ -15,7 +15,7 @@ const PackOpener = () => {
                 {pack.map((item, index) => {
                     return (
                         <Fragment key={index}>
-                            <CardFlip cardType={item.type} cardImage={item.img} />
+                            <CardFlip cardType={item.type} cardImage={item.img} specialTag={item.specialTag !== undefined ? item.specialTag : ""} />
                         </Fragment>
                     )
                 })}

@@ -12,6 +12,7 @@ const cardsData = {
             "type": 1,
             "name": "Burley Barret",
             "set": "1A",
+            "specialTag": ""
         },
         {
             "count": 2,
@@ -20,6 +21,7 @@ const cardsData = {
             "type": 2,
             "name": "Burley Barret",
             "set": "1A",
+            "specialTag": ""
         },
         {
             "count": 1,
@@ -28,6 +30,7 @@ const cardsData = {
             "type": 0,
             "name": "Big Leo & Big Meech",
             "set": "1A",
+            "specialTag": ""
         },
         {
             "count": 1,
@@ -36,6 +39,7 @@ const cardsData = {
             "type": 4,
             "name": "Mob Boss Tony Soprano",
             "set": "1A",
+            "specialTag": ""
         }
     ],
     pack: [],
@@ -53,7 +57,7 @@ const cardsData = {
             "description": "Epic Card Guanteed",
             "image": "pack_design2",
             "size": 6,
-            "type": "gold",
+            "type": "fullSpecial",
             "set": "1A"
         }
     ],

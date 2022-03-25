@@ -39,7 +39,7 @@ const InventoryItem = ({ card, openCardInfo, sizeTag }) => {
     return (
         <div style={{ justifyContent: "center" }} onClick={() => openCardInfo ? openCardInfo(card.id) : null}>
             <StyledBadge style={{ color: "black" }} badgeContent={card.count} color="default" max={50}>
-                <CardHandler cardImage={card.img} cardType={card.type} sizeTag={sizeTag} />
+                <CardHandler cardImage={card.img} cardType={card.type} sizeTag={sizeTag} specialTag={card.specialTag} />
             </StyledBadge>
         </div>
     )

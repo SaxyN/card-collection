@@ -24,21 +24,21 @@ const CardHandler = ({ cardImage, cardType, sizeTag, specialTag }) => {
     }
     switch (cardType) {
         case 0:
-            return <NormalCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} />
+            return <NormalCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} specialTag={specialTag} />
         case 1:
-            return <HoloCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} />
+            return <HoloCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} specialTag={specialTag} />
         case 2:
-            return <ShatterCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} />
+            return <ShatterCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} specialTag={specialTag} />
         case 3:
-            return <LegendaryCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} />
+            return <LegendaryCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} specialTag={specialTag} />
         case 4:
-            return <FullArtCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} />
+            return <FullArtCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} specialTag={specialTag} />
         case 5:
             return <FullArtCardSpecial imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} specialTag={specialTag} />
         case 6:
-            return <GoldCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} />
+            return <GoldCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} specialTag={specialTag} />
         case 7:
-            return <RainbowCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} />
+            return <RainbowCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} specialTag={specialTag} />
         default:
             return <>Unknown Card Type</>
     }

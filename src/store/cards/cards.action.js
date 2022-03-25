@@ -91,7 +91,8 @@ export const updateInventoryData = (pack, inventoryData) => {
                 img: pack[i].img,
                 type: pack[i].type,
                 name: pack[i].name,
-                set: pack[i].set
+                set: pack[i].set,
+                specialTag: pack[i].specialTag,
             }
             inventoryData.push(data);
         } else {

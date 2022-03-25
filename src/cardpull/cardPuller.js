@@ -1,3 +1,4 @@
+import { Fullscreen } from "@mui/icons-material";
 import LootData from "./chances.json";
 
 function generateCard(packType) {
@@ -76,10 +77,11 @@ function getRandomType(randomNumber) {
 export function generatePack(packType, packSize, packSet, cardPool) {
     console.log("Open Pack Set: " + packSet);
 
-    let holo, epic, legendary, gold = false;
+    let holo, epic, legendary, fullSpecial, gold = false;
     if (packType === "holo") holo = true;
     if (packType === "epic") epic = true;
     if (packType === "legendary") legendary = true;
+    if (packType === "fullSpecial") fullSpecial = true;
     if (packType === "gold") gold = true;
 
 
@@ -93,25 +95,31 @@ export function generatePack(packType, packSize, packSet, cardPool) {
     for (j = 0; j < packSize; j++) {
         if (holo) {
             card = getNormalCard();
-            newPack.push({ type: 1, id: card.id, img: card.img, name: card.name, set: packSet });
+            newPack.push({ type: 1, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" });
             holo = false;
             continue;
         }
         if (epic) {
             card = getNormalCard();
-            newPack.push({ type: 2, id: card.id, img: card.img, name: card.name, set: packSet });
+            newPack.push({ type: 2, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" });
             epic = false;
             continue;
         }
         if (legendary) {
             card = getNormalCard();
-            newPack.push({ type: 3, id: card.id, img: card.img, name: card.name, set: packSet });
+            newPack.push({ type: 3, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" });
             legendary = false;
+            continue;
+        }
+        if (fullSpecial) {
+            card = getFullArtCard();
+            newPack.push({ type: 5, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "lightning" });
+            fullSpecial = false;
             continue;
         }
         if (gold) {
             card = getGoldCard();
-            newPack.push({ type: 6, id: card.id, img: card.img, name: card.name, set: packSet });
+            newPack.push({ type: 6, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" });
             gold = false;
             continue;
         }
@@ -121,35 +129,39 @@ export function generatePack(packType, packSize, packSet, cardPool) {
         switch (type) {
             case 0: // Normal
                 card = getNormalCard()
-                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet })
+                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" })
                 continue
             case 1: // Holo
                 card = getNormalCard()
-                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet })
+                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" })
                 continue
             case 2: // Epic
                 card = getNormalCard()
-                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet })
+                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" })
                 continue
             case 3: // Legendary
                 card = getNormalCard()
-                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet })
+                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" })
                 continue
             case 4: // Full Art
                 card = getFullArtCard()
-                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet })
+                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" })
                 continue
             case 5: // Full Art Special
                 card = getFullArtCard()
-                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet })
+                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "lightning" })
                 continue
             case 6: // Gold
                 card = getGoldCard()
-                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet })
+                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" })
+                continue
+            case 7: // Rainbow
+                card = getRainbowCard()
+                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" })
                 continue
             default: // Rainbow
                 card = getRainbowCard()
-                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet })
+                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" })
                 continue
         }
 
