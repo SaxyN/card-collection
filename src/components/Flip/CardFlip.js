@@ -5,7 +5,7 @@ import card_back from '../CardItem/TestCard/card_back.png';
 
 import cardFlipSfx from "../../assets/card_flip.wav";
 import holoFlipSfx from "../../assets/nice.mp3";
-import epicFlipSfx from "../../assets/found.mp3";
+import epicFlipSfx from "../../assets/thunder.mp3";
 import legendaryFlipSfx from "../../assets/english_rare.mp3";
 import useSound from 'use-sound';
 import CardHandler from '../CardHandler/CardHandler';
