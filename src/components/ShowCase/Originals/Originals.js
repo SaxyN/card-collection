@@ -56,6 +56,24 @@ const Originals = () => {
                         <CardHandler cardImage={"burley_b"} cardType={2} sizeTag={0} />
                     </div>
                 </div>
+                <div className={classes.innerShowcase}>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
+                        <Typography className={classes.cardName} variant="body1">Full Art</Typography>
+                        <CardHandler cardImage={"full_tony_s_32"} cardType={4} sizeTag={0} />
+                    </div>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
+                        <Typography className={classes.cardName} variant="body1">Full Art Special</Typography>
+                        <CardHandler cardImage={"full_tony_s_32"} cardType={5} sizeTag={0} specialTag={"lightning"} />
+                    </div>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
+                        <Typography className={classes.cardName} variant="body1">Gold</Typography>
+                        <CardHandler cardImage={"g_demon_t"} cardType={6} sizeTag={0} />
+                    </div>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
+                        <Typography className={classes.cardName} variant="body1">Rainbow</Typography>
+                        <CardHandler cardImage={"r_demon_t"} cardType={7} sizeTag={0} />
+                    </div>
+                </div>
             </Paper>
         </Box>
     )
