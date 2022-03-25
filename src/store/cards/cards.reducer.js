@@ -29,6 +29,14 @@ const cardsData = {
             "name": "Big Leo & Big Meech",
             "set": "1A",
         },
+        {
+            "count": 1,
+            "id": 10,
+            "img": "full_tony_s_32",
+            "type": 4,
+            "name": "Mob Boss Tony Soprano",
+            "set": "1A",
+        }
     ],
     pack: [],
     packs: [
@@ -45,7 +53,7 @@ const cardsData = {
             "description": "Epic Card Guanteed",
             "image": "pack_design2",
             "size": 6,
-            "type": "epic",
+            "type": "gold",
             "set": "1A"
         }
     ],
@@ -54,71 +62,91 @@ const cardsData = {
         // 1 = Holo
         // 2 = Shatter
         // 3 = Legendary
+        // 4 = Full Art
+        // 5 = Special Full Art
+        // 6 = GOLD
+        // 7 = RAINBOW
 
         {
             "id": 1,
             "set": "1A",
             "img": "derek_f",
             "name": "Derek Fhreebs",
-            "rarity": 2,
+            "rarity_lower": 0,
+            "rarity_upper": 4
         },
         {
             "id": 2,
             "set": "1A",
             "img": "big_leo_big_meech",
             "name": "Big Leo & Big Meech",
-            "rarity": 2,
+            "rarity_lower": 0,
+            "rarity_upper": 4
         },
         {
             "id": 3,
             "set": "1A",
             "img": "ethan_f",
             "name": "Ethan Forelli",
-            "rarity": 2,
+            "rarity_lower": 0,
+            "rarity_upper": 4
         },
         {
             "id": 4,
             "set": "1A",
             "img": "harley_s",
             "name": "Harley S",
-            "rarity": 2,
+            "rarity_lower": 0,
+            "rarity_upper": 3
         },
         {
             "id": 5,
             "set": "1A",
             "img": "burley_b",
             "name": "Burley Barret",
-            "rarity": 2,
+            "rarity_lower": 0,
+            "rarity_upper": 3
         },
         {
             "id": 6,
             "set": "1A",
             "img": "danny_r",
             "name": "Danny Rodriguez",
-            "rarity": 2,
+            "rarity_lower": 0,
+            "rarity_upper": 4
         },
         {
             "id": 7,
             "set": "1A",
             "img": "jeremy_s",
             "name": "Jeremy Schlongberg",
-            "rarity": 2,
+            "rarity_lower": 0,
+            "rarity_upper": 4
         },
         {
             "id": 8,
             "set": "1A",
             "img": "demon_t",
             "name": "Demon Time Tony",
-            "rarity": 2,
+            "rarity_lower": 0,
+            "rarity_upper": 4
         },
         {
             "id": 9,
             "set": "1A",
             "img": "isaiah_s",
             "name": "Isaiah Soprano",
-            "rarity": 2,
+            "rarity_lower": 0,
+            "rarity_upper": 4
         },
-
+        {
+            "id": 10,
+            "set": "1A",
+            "img": "full_tony_s_32",
+            "name": "Mob Boss Tony Soprano",
+            "rarity_lower": 4,
+            "rarity_upper": 5
+        }
     ]
     // card_pool_data: [
     //     {
