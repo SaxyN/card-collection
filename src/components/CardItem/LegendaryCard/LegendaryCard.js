@@ -4,13 +4,13 @@ import $ from 'jquery'
 
 import "./legendarystyle.scss";
 
-const LegendaryCard = () => {
+const LegendaryCard = ({ imageFace, imageStyle, sizeTag }) => {
     const [hover, setHover] = React.useState(false);
 
 
     var x;
     var $cards = $(".card_legendary");
-    var $style = $(".hover");
+    var $style = $(".legendary_hover");
 
     $cards
         .on("mousemove", function (e) {
@@ -66,14 +66,44 @@ const LegendaryCard = () => {
             // }, 2500);
         });
 
-    return (
-        <>
-            <div className="card_legendary eevee animated" onMouseOver={() => setHover(true)}>
-                <ImageHandler name={"full_victor_frost"} size={"l"} />
-            </div>
-            <style className='hover'></style>
-        </>
-    )
+    switch (sizeTag) {
+        case 0:
+            return (
+                <>
+                    <div className="card_legendary normal_size eevee" onMouseOver={() => setHover(true)}>
+                        <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                    </div>
+                    <style className='legendary_hover'></style>
+                </>
+            )
+        case 1:
+            return (
+                <>
+                    <div className="card_legendary medium_size eevee" onMouseOver={() => setHover(true)}>
+                        <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                    </div>
+                    <style className='legendary_hover'></style>
+                </>
+            )
+        case 2:
+            return (
+                <>
+                    <div className="card_legendary large_size eevee" onMouseOver={() => setHover(true)}>
+                        <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                    </div>
+                    <style className='legendary_hover'></style>
+                </>
+            )
+        default:
+            return (
+                <>
+                    <div className="card_legendary normal_size eevee" onMouseOver={() => setHover(true)}>
+                        <ImageHandler name={imageFace} imageStyle={imageStyle} />
+                    </div>
+                    <style className='legendary_hover'></style>
+                </>
+            )
+    }
 
 }
 
