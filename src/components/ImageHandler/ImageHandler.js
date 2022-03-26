@@ -28,6 +28,8 @@ import MOB_BOSS_TONY from "../CardItem/CardAssets/full_tony_s_32.png";
 import G_DEMON_T from "../CardItem/CardAssets/g_demon_t.png";
 // 140 R_DEMON_T
 import R_DEMON_T from "../CardItem/CardAssets/r_demon_t.png";
+// 130 B_DEMON_T
+import B_DEMON_T from "../CardItem/CardAssets/b_demon_t.png";
 
 
 import { makeStyles } from "@mui/styles";
@@ -82,9 +84,9 @@ const ImageHandler = ({ name, imageStyle, size, sizeTag }) => {
         // 10 MOB_BOSS_TONY
         case "full_tony_s_32":
             return <img src={MOB_BOSS_TONY} alt={name} style={imageStyle} />;
-        // 140 G_DEMON_T
-        case "g_demon_t":
-            return <img src={G_DEMON_T} alt={name} style={imageStyle} />;
+        // 130 B_DEMON_T
+        case "b_demon_t":
+            return <img src={B_DEMON_T} alt={name} style={imageStyle} />;
         // 140 G_DEMON_T
         case "g_demon_t":
             return <img src={G_DEMON_T} alt={name} style={imageStyle} />;

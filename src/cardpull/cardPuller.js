@@ -50,6 +50,12 @@ function getGoldCard() {
     return goldCards[random];
 }
 
+function getBlackPearlCard() {
+    var blackPearlCards = LootData.black_pearl_cards
+    const random = Math.floor(Math.random() * blackPearlCards.length);
+    return blackPearlCards[random];
+}
+
 function getRainbowCard() {
     var rainbowCards = LootData.rainbow_cards
     const random = Math.floor(Math.random() * rainbowCards.length);
@@ -77,12 +83,14 @@ function getRandomType(randomNumber) {
 export function generatePack(packType, packSize, packSet, cardPool) {
     console.log("Open Pack Set: " + packSet);
 
-    let holo, epic, legendary, fullSpecial, gold = false;
+    let holo, epic, legendary, fullSpecial, gold, blackPearl, rainbow = false;
     if (packType === "holo") holo = true;
     if (packType === "epic") epic = true;
     if (packType === "legendary") legendary = true;
     if (packType === "fullSpecial") fullSpecial = true;
     if (packType === "gold") gold = true;
+    if (packType === "blackpearl") blackPearl = true;
+    if (packType === "rainbow") rainbow = true;
 
 
     let newPack = [];
@@ -123,6 +131,18 @@ export function generatePack(packType, packSize, packSet, cardPool) {
             gold = false;
             continue;
         }
+        if (blackPearl) {
+            card = getBlackPearlCard();
+            newPack.push({ type: 7, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" });
+            blackPearl = false;
+            continue;
+        }
+        if (rainbow) {
+            card = getRainbowCard();
+            newPack.push({ type: 8, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" });
+            rainbow = false;
+            continue;
+        }
         randomNumber = Math.floor(Math.random() * 10000);
         type = getRandomType(randomNumber);
 
@@ -155,12 +175,16 @@ export function generatePack(packType, packSize, packSet, cardPool) {
                 card = getGoldCard()
                 newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" })
                 continue
-            case 7: // Rainbow
+            case 7: // Black Pearl
+                card = getBlackPearlCard()
+                newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" })
+                continue
+            case 8: // Rainbow
                 card = getRainbowCard()
                 newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" })
                 continue
-            default: // Rainbow
-                card = getRainbowCard()
+            default: // Normal
+                card = getNormalCard()
                 newPack.push({ type: type, id: card.id, img: card.img, name: card.name, set: packSet, specialTag: "" })
                 continue
         }

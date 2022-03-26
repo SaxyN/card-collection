@@ -3,59 +3,47 @@
         {
             "type": 0,
             "lower": 0,
-            "upper": 8016
+            "upper": 8000
         },
         {
             "type": 1,
-            "lower": 8016,
-            "upper": 9016
+            "lower": 8000,
+            "upper": 9000
         },
         {
             "type": 2,
-            "lower": 9016,
-            "upper": 9516
+            "lower": 9000,
+            "upper": 9500
         },
         {
             "type": 3,
-            "lower": 9516,
-            "upper": 9766
+            "lower": 9500,
+            "upper": 9750
         },
         {
             "type": 4,
-            "lower": 9766,
-            "upper": 9891
+            "lower": 9750,
+            "upper": 9875
         },
         {
             "type": 5,
-            "lower": 9891,
-            "upper": 9953
+            "lower": 9875,
+            "upper": 9937
         },
         {
             "type": 6,
-            "lower": 9953,
-            "upper": 9984
+            "lower": 9937,
+            "upper": 9968
         },
         {
             "type": 7,
+            "lower": 9968,
+            "upper": 9984
+        },
+        {
+            "type": 8,
             "lower": 9984,
             "upper": 9999
-        }
-    ],
-    "special_chances": [
-        {
-            "type": 4,
-            "lower": 0,
-            "upper": 80
-        },
-        {
-            "type": 5,
-            "lower": 81,
-            "upper": 95
-        },
-        {
-            "type": 6,
-            "lower": 96,
-            "upper": 100
         }
     ],
     "packs": [
@@ -167,13 +155,22 @@
             "rarity": 6
         }
     ],
+    "black_pearl_cards": [
+        {
+            "id": 130,
+            "set": "1A",
+            "img": "b_demon_t",
+            "name": "Demon Time Tony",
+            "rarity": 7
+        }
+    ],
     "rainbow_cards": [
         {
             "id": 160,
             "set": "1A",
             "img": "r_demon_t",
             "name": "Demon Time Tony",
-            "rarity": 7
+            "rarity": 8
         }
     ]
 }

@@ -70,8 +70,12 @@ const Originals = () => {
                         <CardHandler cardImage={"g_demon_t"} cardType={6} sizeTag={0} />
                     </div>
                     <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
+                        <Typography className={classes.cardName} variant="body1">Black Pearl</Typography>
+                        <CardHandler cardImage={"b_demon_t"} cardType={7} sizeTag={0} />
+                    </div>
+                    <div style={{ margin: "15px", width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" }}>
                         <Typography className={classes.cardName} variant="body1">Rainbow</Typography>
-                        <CardHandler cardImage={"r_demon_t"} cardType={7} sizeTag={0} />
+                        <CardHandler cardImage={"r_demon_t"} cardType={8} sizeTag={0} />
                     </div>
                 </div>
             </Paper>

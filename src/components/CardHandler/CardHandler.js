@@ -7,6 +7,7 @@ import FullArtCard from "../CardItem/FullArtCard/FullArtCard";
 import FullArtCardSpecial from "../CardItem/FullArtCardSpecial/FullArtCardSpecial";
 import GoldCard from "../CardItem/GoldCard/GoldCard";
 import RainbowCard from "../CardItem/RainbowCard/RainbowCard";
+import BlackPearlCard from "../CardItem/BlackPearlCard/BlackPearlCard";
 
 const cardSizes = {
     "normal": { width: "262.5px", height: "368.75px", borderRadius: "5% / 3.5%" },
@@ -38,6 +39,8 @@ const CardHandler = ({ cardImage, cardType, sizeTag, specialTag }) => {
         case 6:
             return <GoldCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} specialTag={specialTag} />
         case 7:
+            return <BlackPearlCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} specialTag={specialTag} />
+        case 8:
             return <RainbowCard imageFace={cardImage} imageStyle={getStyle(sizeTag)} sizeTag={sizeTag} specialTag={specialTag} />
         default:
             return <>Unknown Card Type</>
