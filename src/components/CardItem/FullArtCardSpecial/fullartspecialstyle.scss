@@ -102,7 +102,7 @@
   .card_full_art_special.lightning:after {
     opacity: 1;
     background-image:
-    url("lightning.gif");
+    url("holo.png"),url("lightning.gif");
     background-position: 50% 50%;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -113,6 +113,7 @@
     mix-blend-mode: color-dodge;
     opacity: .75;
   }
+
   .card_full_art_special:after {
     opacity: 1;
     background-position: 50% 50%;
