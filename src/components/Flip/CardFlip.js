@@ -5,7 +5,8 @@ import card_back from '../CardItem/TestCard/card_back.png';
 
 import cardFlipSfx from "../../assets/card_flip.wav";
 import holoFlipSfx from "../../assets/nice.mp3";
-import epicFlipSfx from "../../assets/thunder.mp3";
+import epicFlipSfx from "../../assets/found.mp3";
+import fullArtSpecialSfx from "../../assets/thunder.mp3";
 import legendaryFlipSfx from "../../assets/english_rare.mp3";
 import useSound from 'use-sound';
 import CardHandler from '../CardHandler/CardHandler';
@@ -43,7 +44,7 @@ const styles = makeStyles((theme) => ({
         transition: "box-shadow 0.1s ease-out",
         borderRadius: "5%/3.5%",
         "&:hover": {
-            boxShadow: "0 0 30px 5px gold, 0 0 10px -2px gold, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
+            boxShadow: "0 0 30px 5px yellow, 0 0 10px -2px yellow, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
         }
     },
     fullArtBack: {
@@ -60,6 +61,30 @@ const styles = makeStyles((theme) => ({
         borderRadius: "5%/3.5%",
         "&:hover": {
             boxShadow: "0 0 30px 5px cyan, 0 0 10px -2px cyan, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
+        }
+    },
+    goldBack: {
+        height: "368.75px",
+        transition: "box-shadow 0.1s ease-out",
+        borderRadius: "5%/3.5%",
+        "&:hover": {
+            boxShadow: "0 0 30px 5px gold, 0 0 10px -2px gold, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
+        }
+    },
+    blackPearlBack: {
+        height: "368.75px",
+        transition: "box-shadow 0.1s ease-out",
+        borderRadius: "5%/3.5%",
+        "&:hover": {
+            boxShadow: "0 0 30px 5px black, 0 0 10px -2px black, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
+        }
+    },
+    rainbowBack: {
+        height: "368.75px",
+        transition: "box-shadow 0.1s ease-out",
+        borderRadius: "5%/3.5%",
+        "&:hover": {
+            boxShadow: "0 0 30px 5px red, 0 0 10px -2px blue, 0 55px 35px -20px rgba(0, 0, 0, 0.5)",
         }
     },
 }))
@@ -83,6 +108,18 @@ const CardFlip = ({ cardType, cardImage, specialTag }) => {
         legendaryFlipSfx,
         { volume: 0.25 }
     );
+    const [fullArtCard] = useSound(
+        epicFlipSfx,
+        { volume: 0.25 }
+    )
+    const [fullArtSpecialCard] = useSound(
+        fullArtSpecialSfx,
+        { volume: 0.25 }
+    )
+    // const [] = useSound(
+    //     "sound here",
+    //     { volume: 0.25 }
+    // )
 
     const handleFlip = () => {
         if (!flipped) {
@@ -96,9 +133,9 @@ const CardFlip = ({ cardType, cardImage, specialTag }) => {
             } else if (cardType === 3) {
                 legendaryCard()
             } else if (cardType === 4) {
-                holoCard()
+                fullArtCard()
             } else if (cardType === 5) {
-                epicCard()
+                fullArtSpecialCard()
             }
         }
     }
@@ -112,11 +149,14 @@ const CardFlip = ({ cardType, cardImage, specialTag }) => {
                             cardType === 3 ? classes.legendaryBack :
                                 cardType === 4 ? classes.fullArtBack :
                                     cardType === 5 ? classes.fullArtSpecialBack :
-                                        classes.normalBack}>
+                                        cardType === 6 ? classes.goldBack :
+                                            cardType === 7 ? classes.blackPearlBack :
+                                                cardType === 8 ? classes.rainbowBack :
+                                                    classes.normalBack}>
                     <img src={card_back} alt="logo" style={{ width: "263px", height: "368.75px", borderRadius: "5% / 3.5%" }} />
                 </div>
                 <>
-                    <CardHandler cardImage={cardImage} cardType={cardType} sizeTag={"normal"} specialTag={specialTag !== undefined ? specialTag : ""} />
+                    <CardHandler cardImage={cardImage} cardType={cardType} sizeTag={"normal"} specialTag={specialTag} />
                 </>
             </ReactCardFlip>
         </div>

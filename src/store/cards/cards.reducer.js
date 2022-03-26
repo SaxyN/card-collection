@@ -57,7 +57,7 @@ const cardsData = {
             "description": "Epic Card Guanteed",
             "image": "pack_design2",
             "size": 6,
-            "type": "fullSpecial",
+            "type": "epic",
             "set": "1A"
         }
     ],
