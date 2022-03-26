@@ -101,7 +101,9 @@
   
   .card_full_art:after {
     opacity: 1;
-    // background-image:
+    background-image:
+    url("holo.png");
+    clip-path: polygon(0% 0%, 0% 67%, 100% 67%, 100% 0%); // Just Upper
     // url(https://assets.codepen.io/13471/holo.png),
     // var(--blob);
     //  linear-gradient(125deg, #e02d1650 15%, #fbff0a40 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
