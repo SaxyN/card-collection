@@ -1,4 +1,3 @@
-import { Fullscreen } from "@mui/icons-material";
 import LootData from "./chances.json";
 
 function generateCard(packType) {
